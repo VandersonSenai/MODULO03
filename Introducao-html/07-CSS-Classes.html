@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Classes</title>
+    <style>
+        p {
+            color: green;
+        }
+
+        .vermelho {
+            color: rgb(255, 0, 0);
+        }
+
+        .azul {
+            color: rgb(0, 0, 255);
+        }
+
+        .bgciano {
+            background-color: cyan;
+        }
+
+        #roxo {
+            color: rgb(128, 0, 128);
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ola Mundo</p>
+    <p>Ola Mundo</p>
+    <p class="vermelho"> Eu sou vermelho</p>
+    <p class="azul"> Eu sou azul</p>
+    <p class="bgciano"> Eu tenho background cyano</p>
+    <p class="azul" id="roxo">Atenção</p>
+
+    <!-- Seletores rem níveis de especificidade 
+     Ex: Seletor class para classes 
+     Ex: Seletor id mais especifico que as classes 
+     Ex: Seletor style mais especifico que id 
+     -->
+    <p class="bgciano" id="roxo" style="color: brown;background: 
+    pink;">Tudo Muda</p>
+
+    <BR></BR>
+    <a href="./"><img src="./imagens/btn_voltar3.png" alt="voltar" height="5%" width="5%"></a>
+</body>
+
+</html>
