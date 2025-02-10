@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <style>
+        #maca {
+            color: red;
+        }
+        #alface {
+            color: green;
+        }
+        #arroz {
+            color: brown;
+        }
+        #laranja {
+            color: orange;
+        }
+        #beterraba {
+            color: purple;
+        }
+        #trigo {
+            color: yellow;
+        }
+        #tres3linhas {
+            color: blue;
+        }
+        #tres3colunas {
+            color: rgb(0, 255, 85);
+        }
+        thead {
+            background-color: rgb(74, 74, 77);
+            color: white;
+        }
+        table{
+            background-color: rgb(187, 187, 187);
+        }
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table align="center" border="1" width="50%">
+
+        <thead>
+            <tr>
+                <th> Frutas </th>
+                <th> Verduras </th>
+                <th> Grãos </th>
+                <th> ... </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="maca">Maçã</td>
+                <td id="alface">Alface</td>
+                <td id="arroz">Arroz</td>
+                <td rowspan="3" id="tres3linhas">3 Linhas</td>
+            </tr>
+            <tr>
+                <td id="laranja">Laranja</td>
+                <td id="beterraba">Beterraba</td>
+                <td id="trigo">Trigo</td>
+            </tr>
+            <tr>
+                <td colspan="3" id="tres3colunas">3 Colunas</td>
+            </tr>
+
+        </tbody>
+
+        <!-- tfoot rodapé da rabela -->
+        <!-- <tfoot>
+            <td colspan="3">3 Colunas</td>
+        </tfoot> -->
+    </table>
+</body>
+
+</html>
