@@ -1,0 +1,62 @@
+#maca {
+    color: red;
+}
+
+#alface {
+    color: green;
+}
+
+#arroz {
+    color: brown;
+}
+
+#laranja {
+    color: orange;
+}
+
+#beterraba {
+    color: purple;
+}
+
+#trigo {
+    color: yellow;
+}
+
+#tres3linhas {
+    color: blue;
+}
+
+#tres3colunas {
+    color: rgb(0, 255, 85);
+}
+
+thead {
+    background-color: rgb(74, 74, 77);
+    color: white;
+}
+
+table {
+    background-color: rgb(187, 187, 187);
+}
+
+td {
+    padding: 10px;
+    border-style: groove;
+}
+
+div {
+    border-style: ridge;
+    border-width: 7px;
+    border-color: coral;
+}
+table {
+    border-style: ridge;
+    border-width: 7px;
+    border-color: coral;
+}
+
+/* thead {
+    border-style: ridge;
+    border-width: 7px;
+    border-color: coral;
+} */
