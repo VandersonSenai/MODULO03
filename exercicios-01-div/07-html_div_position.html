@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Div Position</title>
+    <style>
+        #elemento_pai{
+            width: 250px;
+            height: 250px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .posrelativa{
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        .posabsoluta{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+        }
+        .azul{
+            background-color: blue;
+        }
+        .vermelho{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="elemento_pai">
+        <div class="posrelativa azul">01</div>
+        <div class="posabsoluta vermelho">02</div>
+    </div>    
+
+</br>
+<a href="./"><img src="./imagens/btn_voltar3.png" alt="voltar" height="5%" width="5%"></a>
+
+</body>
+</html>
