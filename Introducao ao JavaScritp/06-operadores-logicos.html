@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Lógicos</title>
+</head>
+
+<body>
+    <script>
+
+        var variavelE;
+        var variavelOU;
+        var variavelNao;
+
+        // $$ : E
+        var a = 5;
+        if ((a > 1) && (a < 6)) {
+            variavelE = 'Maior que 1 E menor que 6';
+            console.log(variavelE);
+        }
+
+        // || : OU
+        var a = 5;
+        if ((a > 1) || (a < 6)) {
+            variavelOU = 'Maior que 1 OU menor que 6';
+            console.log(variavelOU);
+        }
+
+        // ! : NÃO
+        var a = 10;
+        if (!((a > 1) || (a < 6))) {
+            variavelNao = 'Não é maior que 1 OU menor que 6';
+            console.log(variavelNao);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
