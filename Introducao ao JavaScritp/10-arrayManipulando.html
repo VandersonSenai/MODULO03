@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Array</title>
+</head>
+<body>
+    <script>
+        var numeros = [1, 2, 3, 4, 5];
+
+        document.write(numeros);
+        document.write('</BR></BR>');
+        // push - Adiciona um elemento no final do array
+        numeros.push(6);
+        document.write(numeros);
+        document.write('</BR></BR>');
+        // remove o último elemento do array
+        numeros.pop();
+        document.write(numeros);
+        document.write('</BR></BR>');
+        // unshift - Adiciona um elemento no início do array
+        numeros.unshift(6);
+        document.write(numeros);
+        document.write('</BR></BR>');
+        // shift - Remove o primeiro elemento do array
+        numeros.shift();
+        document.write(numeros);
+        document.write('</BR></BR>');
+        // spice - Remove um ou mais elementos em qualquer posição do array
+        numeros.splice(1,1);
+        document.write(numeros);
+        document.write('</BR></BR>');
+
+        numeros.forEach(function (numero) {
+            document.write(`${numero} </br>`);
+        });
+
+    </script>
+</body>
+</html>

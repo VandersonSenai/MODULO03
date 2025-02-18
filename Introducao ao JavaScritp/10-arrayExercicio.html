@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Array</title>
+</head>
+<body>
+    <script>
+        var numeros = [1, 2, 3, 4, 5];
+
+        for (var numero of numeros) {
+            document.write(`${numero} </br>`);
+        }
+        document.write('</BR></BR>');
+
+
+        for (var numero of numeros) {
+            if ((numero % 2)==0) {
+                numeros.push(numero+1);
+            }
+            document.write(`${numeros} </br>`);
+        }
+        document.write('</BR></BR>');
+
+        // numeros.forEach(function (numero, key) {
+        //     if ((numero % 2)>0) {
+        //         numeros.push(numero+1);
+        //     }
+        //     numeros.splice(key,1);
+        // });
+
+        // document.write(`${numeros}</br>`);
+
+
+    </script>
+</body>
+</html>
