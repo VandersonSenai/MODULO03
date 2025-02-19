@@ -7,30 +7,44 @@
 </head>
 <body>
     <script>
-        var numeros = [1, 2, 3, 4, 5];
+        var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.write(`Matriz Original: ${numeros} </br>`);
+        document.write('</BR></BR>');
 
+        document.write(`Listando com FOR : </br>`);
         for (var numero of numeros) {
             document.write(`${numero} </br>`);
         }
-        document.write('</BR></BR>');
 
-
-        for (var numero of numeros) {
-            if ((numero % 2)==0) {
-                numeros.push(numero+1);
-            }
-            document.write(`${numeros} </br>`);
-        }
-        document.write('</BR></BR>');
-
-        // numeros.forEach(function (numero, key) {
-        //     if ((numero % 2)>0) {
+        // for (var numero of numeros) {
+        //     if ((numero % 2)==0) {
         //         numeros.push(numero+1);
         //     }
-        //     numeros.splice(key,1);
-        // });
+            
+        // }
+        document.write('</BR></BR>');
+        for (var i=0; i < numeros.length; i++) {
+            if ((numeros[i] % 2)==0) {
+                numeros.push(numeros[i]+1);
+            } else {
+                // numeros.splice(i,1);
+                // i--;
+            }
+        }
+        
+        document.write(`${numeros} </br>`);
+        document.write('</BR></BR>');
 
-        // document.write(`${numeros}</br>`);
+        for (var i=0; i < numeros.length; i++) {
+            if (!((numeros[i] % 2)==0)) {
+                numeros.splice(i,1);
+                i--;
+            }
+        }
+
+        document.write(`${numeros} </br>`);
+        document.write('</BR></BR>');
+
 
 
     </script>

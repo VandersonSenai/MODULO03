@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos JavaScript</title>
+</head>
+<body>
+    <script>
+
+        var pessoa = {};
+        pessoa.nome = "Vanderson";
+        console.log(pessoa);
+        console.log("");
+        console.log(JSON.stringify(pessoa));
+        document.write(`Pessoa : ${pessoa.nome} `);
+
+        var obj = {};
+        obj["model"] = 'modelo';
+        obj['nome'] = 'name';
+
+        // Pode declarar uma funcão dentro de um objeto
+        obj.start = function() {
+            console.log('Estou pronto');
+        }
+
+        console.log(obj);
+        console.log(JSON.stringify(obj));
+
+        // Executando a funcão dentro do objeto,
+        // declarada na linha 22.
+        obj.start();
+
+
+
+
+    </script>
+    
+</body>
+</html>
