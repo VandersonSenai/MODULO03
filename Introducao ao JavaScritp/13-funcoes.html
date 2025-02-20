@@ -29,7 +29,19 @@
         var resultado = soma(15,5);
         console.log(resultado);
 
-        
+        var pessoa = {
+            nome: "Vanderson",
+            idade: 30
+        }
+
+        var mudaNome = (objetoPessoa) => {
+            objetoPessoa.nome = "João";
+            objetoPessoa.municipio = "São Paulo";
+        }
+
+        mudaNome(pessoa);
+
+        console.log(pessoa);
 
     </script>
 </body>
