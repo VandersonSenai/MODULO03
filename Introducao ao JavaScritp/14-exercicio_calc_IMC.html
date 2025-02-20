@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <script>
+
+    function resultado() {
+        altura = parseInt(document.getElementById(`n1`).value);
+        peso = parseInt(document.getElementById(`n2`).value);
+        imc =  peso % (altura * altura);
+        document.getElementById('result').innerHTML = imc
+    }
+
+    </script>
+    <div>
+        <h1>Calculo IMC</h1>
+        <form>
+          <label for="n1">Entre com a altura : </label>
+          <input type="text" id="n1" name="n1" /><br /><br />
+          <label for="n2">Entre com o peso : </label>
+          <input type="text" id="n2" name="n2" /><br /><br />
+        </form>
+        <button align="center" onclick="resultado()">
+          Clique aqui para saber o IMC
+        </button>
+        <h2 id="result"></h2>
+      </div>
+</body>
+</html>
