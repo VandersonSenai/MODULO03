@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Desenvolva uma função que receba um número como 
+     parâmetro e verifique se ele é par ou ímpar. 
+     Retorne true se for par e false se for ímpar. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica par ou ímpar</title>
+    <script>
+        function verificaParImpar(){
+            var numero = parseInt(document.getElementById('numero').value);
+            var resultado = document.getElementById('resultado');
+            if(numero % 2 == 0){
+                resultado.innerHTML = 'O número ' + numero + ' é par.';
+            }else{
+                resultado.innerHTML = 'O número ' + numero + ' é ímpar.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div align="center">
+        <h1>Verifica par ou ímpar</h1>
+        <label for="numero" ></label>
+        <input type="text" id="numero" name="numero" placeholder="Digite um número">
+        <button onclick="verificaParImpar()">Verificar</button>
+        <h2 id="resultado"></h2>
+    </div>
+</br>
+<a href="./"><img src="./imagens/btn_voltar3.png" alt="voltar" height="5%" width="5%"></a>        
+</body>
+</html>
