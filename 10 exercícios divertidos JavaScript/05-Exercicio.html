@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Desenvolva uma função que determine se um número é primo ou não. 
+     Retorne true se for primo e false se não for. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número é primo ou não</title>
+    <script>
+        function verificaPrimo() {
+            var numero = document.getElementById(`numero`).value;
+            var resultado = document.getElementById('resultado');
+            var achouDivisor = 0;
+            if (isNaN(numero) || numero <= 0 ) {
+                // resultado.innerHTML = 'Digite um valor válido';
+                // document.write('Digite um valor válido </br>');
+                resultado.innerHTML = 'Digite um valor valido';
+                return;
+            }
+
+            for (var i = numero-1; i > 0; i--) {
+                if (numero % i == 0){
+                    achouDivisor = 1
+                } else{
+                    achouDivisor = 1
+                    // resultado.innerHTML = 'é  primo';
+                }
+            // document.write('Linha ' + i + '</br>');
+                if (achouDivisor == 1){
+                    resultado.innerHTML = 'Não é  primo';
+                } else {
+                    resultado.innerHTML = 'é  primo';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+    <div align="Center">
+    <h1>
+        Número é primo ou não
+    </h1>
+    <label for="numero"></label>
+    <input type="text" id="numero" name="numero" />
+    <button onclick="verificaPrimo()">Verificar</button>
+    <p>Resultado : <span id="resultado">*_*</span></p>
+    </div>  
+</body>
+</html>
