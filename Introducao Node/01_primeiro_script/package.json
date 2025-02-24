@@ -1,0 +1,22 @@
+{
+  "name": "senai-api",
+  "version": "1.1.1",
+  "description": "API HTTP para gerenciar itens do banco de dados",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test especificado\" && exit 1"
+  },
+  "keywords": [
+    "Projeto",
+    "API",
+    "database",
+    "Node"
+  ],
+  "author": "Vanderson da Silva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
