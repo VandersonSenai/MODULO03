@@ -4,7 +4,10 @@ Extensão
 ES7+ React/Redux/React-Native snippets
 Prettier - Code formatter
 
-Arquivo / Preferencias / Configurações
+Arquivo / Preferencias / Configurações (^ + ,)
 		digite na busca [ emmet ]
 		Encontre o : [ Emmet: Include Languages ]
-			Adicione o ITEM: javascript com o VALOR: javascriptreact
+			Adicione o ITEM: javascript 
+            com o VALOR: javascriptreact.
+
+

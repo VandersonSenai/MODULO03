@@ -1,0 +1,26 @@
+Vamos usar o VITE
+
+VITE: https://vite.dev
+
+NPM : https://www.npmjs.com
+
+NODE: https://nodejs.org/pt
+
+
+Assistir playlist no canva sobre NPM
+
+criar projeto React utilizando o VITE
+
+$ npm create vite meuApp01
+	ou
+$ npm create vite@latest meuApp01	
+
+	-	Selecione o React
+	-	Selecione o Javascript
+
+	- Entra no diretório da aplica~ção
+		cd meuApp01
+	- Instalar os pacotes do node
+		npm install
+	- Executar a aplicação que por padrao esta no script [dev].
+		npm run dev
