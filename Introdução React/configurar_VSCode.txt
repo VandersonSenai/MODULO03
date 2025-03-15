@@ -9,5 +9,10 @@ Arquivo / Preferencias / Configurações (^ + ,)
 		Encontre o : [ Emmet: Include Languages ]
 			Adicione o ITEM: javascript 
             com o VALOR: javascriptreact.
+		Clique em [ Edit in settings.json ] e adicione o script abaixo.
+		"emmet.variables": {
+			"lang": "pt-br",
+			"charset": "UTF-8"
+  	}
 
 

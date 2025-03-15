@@ -24,3 +24,5 @@ $ npm create vite@latest meuApp01
 		npm install
 	- Executar a aplicação que por padrao esta no script [dev].
 		npm run dev
+	- Atualizar o NPM "se necessario" 
+		npm install -g npm
