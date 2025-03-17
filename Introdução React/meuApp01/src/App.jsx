@@ -12,8 +12,6 @@ function App() {
       <FirstComponent/>
       <SecComponent/>
       <TemplateExpressions/>
-
-
     </>
   )
 }
