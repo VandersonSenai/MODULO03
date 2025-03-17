@@ -26,3 +26,6 @@ $ npm create vite@latest meuApp01
 		npm run dev
 	- Atualizar o NPM "se necessario" 
 		npm install -g npm
+	- o snippet [ rafc  ] cria a estrutura basica para um novo componente.
+	- o snippet [ rafce ] cria a estrutura basica para um novo componente com export.
+	- o snippet [ rafcp ] cria a estrutura basica para um novo componente com export e propTypes.
