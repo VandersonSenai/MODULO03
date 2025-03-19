@@ -1,8 +1,9 @@
 import React from "react";
 import FirstComponent from "./FirstComponent";
+import SecComponent from "./SecComponent";
 
 const TemplateExpressions = () => {
-  let vTeste = "3";
+  let vTeste = "2";
   let aluno = {
     nome:"Vanderson",
     turma:"DDS-19-3",
@@ -22,8 +23,9 @@ const TemplateExpressions = () => {
       <h4>{aluno.nome} - {aluno.turma} - {aluno.curso}</h4>
          
         {
-            'vTeste'==='3' ? <p>Hi</p> : <FirstComponent/>
+            'vTeste'=='2' ? <p>Hi</p> : <FirstComponent/>
         } 
+
     
     </div>
   );
