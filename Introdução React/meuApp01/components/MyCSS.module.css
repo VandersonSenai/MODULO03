@@ -1,5 +1,5 @@
-//  o arquivo CSS com a extensao ".module" impede que o css
-//  vaze para outros modulos a nao ser que seja importado o estilo/styles
+/* o arquivo CSS com a extensao ".module" impede que o css */
+/* vaze para outros modulos a nao ser que seja importado o estilo/styles */
 
 .meuTitulo{
     color: hsl(141, 85%, 51%);
