@@ -48,7 +48,7 @@ export const ListRender = () => {
         {/* Add item a uma lista */}
         <button onClick= {() => {
             setNumber(number + 1);
-            console.log([...listaNome]);
+            // console.log([...listaNome]);
             setListaNome([...listaNome, number]);
         }}> ADD </button>
 
