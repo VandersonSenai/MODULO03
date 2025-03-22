@@ -1,7 +1,6 @@
 import React from 'react'
-import chap from '../src/assets/chapolin.png'
 
-
+import chap from '../assets/chapolin.png'
 const Images = () => {
   return (
     <div>

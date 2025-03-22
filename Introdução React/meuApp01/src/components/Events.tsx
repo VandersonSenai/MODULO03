@@ -3,7 +3,7 @@ import React from 'react'
 const Events = () => {
 
     const tesTe = (e) => {
-        // e = propriedades do evendo que chamou a funcão.
+        // Definindo [e] = para receber os eventos relacionados a esta função.
         console.log(e)
 
         console.log("teste função externa")
@@ -13,8 +13,8 @@ const Events = () => {
     <div>Events
         <button onClick={ () => {console.log("teste o 1º btn")}}>Clic AKI</button>
         <br />
-        {/* nao precisa carregar a funcao teste() assim pq ela esta dento de uma variavel e nao desejamos que seja executada a nao ser que seja chamado o evento
-        se dixamos ela com os parantezes ela roda no momento da carga do codigo */}
+        {/* nao precisa carregar a função teste() assim pq ela esta dento de uma variável e nao desejamos que seja executada a nao ser que seja chamado o evento
+        se deixamos ela com os parenteses ela roda no momento da carga do código */}
         <button onClick={tesTe}>Cli KA KI</button>
     </div>
   )
