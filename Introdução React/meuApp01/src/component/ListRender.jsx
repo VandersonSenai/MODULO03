@@ -34,9 +34,9 @@ export const ListRender = () => {
             {listaNome.map( (item, index) => (
                 <li key={index}>{item}</li>
                 ))}
-            
             <hr />  
         </ul>
+
         <hr />
 
         {/* Lista com ID de Chave */}
@@ -50,7 +50,7 @@ export const ListRender = () => {
             setNumber(number + 1);
             // console.log([...listaNome]);
             setListaNome([...listaNome, number]);
-        }}> ADD </button>
+        }}> + </button>
 
     </div>
    
