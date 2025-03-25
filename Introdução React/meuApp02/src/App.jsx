@@ -5,7 +5,10 @@ import Time from "./components/Time";
 import ListaCantor from "./components/ListaCantor";
 
 function App() {
+
   const nj = 6;
+  const titulo = true;
+
   const nome = "Vanderson";
   const [name] = useState("Ney");
   const [cantor] = useState([
@@ -72,6 +75,11 @@ function App() {
             ? { color: "green", backgroundColor: "yellow", fontSize: "30px" }
             : { color: "red", backgroundColor: "white", fontSize: "20px" }
         }>Este CSS também é dinâmico</h2>
+        <hr />
+
+        <h1 className={titulo ? "titulo-incrivel" : "textoPaia" }
+        
+        >Titulo Superb! para testes!</h1>
       {/*       
       <ListaCantor
       key="" nome={cantor.nome} estiloMusical={cantor.estiloMusical} premiado={cantor.premiado}
