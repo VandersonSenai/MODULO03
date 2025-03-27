@@ -27,7 +27,7 @@ $ npm create vite@latest meuApp01
 	- Atualizar o NPM "se necessário" 
 		npm install -g npm
 	- Instala o gerenciador de rotas do React
-	npm intall react-router-dom
+	npm install react-router-dom
 	
 	- o snippet [ rafc  ] cria a estrutura básica para um novo componente.
 	- o snippet [ rafce ] cria a estrutura básica para um novo componente com export.
