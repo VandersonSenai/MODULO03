@@ -1,0 +1,35 @@
+.navbar{
+    background-color: #0271e0;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    display: flexbox;
+    justify-content: space-between;
+    
+    /* align-items: center; */
+    
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    
+
+}
+.link:active {
+    color: rgb(216, 10, 51);
+}
+
+.link{
+    color: wheat;
+    text-decoration: none;
+    margin: 10px 10px;
+
+}
+
+
+
+.link:hover{
+    text-decoration: underline;
+    color: rgb(239, 179, 68);
+}
+
