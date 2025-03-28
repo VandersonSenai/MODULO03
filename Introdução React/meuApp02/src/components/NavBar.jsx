@@ -10,19 +10,15 @@ const NavBar = () => {
         className={styles.link}
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-      >
-        Home
+        }}>
+          Home
       </NavLink>
       <NavLink
         to="/Login"
         className={styles.link}
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-      >
+        }}>
         Login
       </NavLink>
       <NavLink
@@ -30,9 +26,7 @@ const NavBar = () => {
         className={styles.link}
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-      >
+        }}>
         Cadastro
       </NavLink>
       <NavLink
@@ -40,22 +34,14 @@ const NavBar = () => {
         className={styles.link}
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-      >
+        }}>
         Sobre
       </NavLink>
       <NavLink
         to="/Contato"
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-        style={({ isActive }) => {
-          return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}
-        className={styles.link}
-      >
+        }}>
         Contato
       </NavLink>
     </nav>

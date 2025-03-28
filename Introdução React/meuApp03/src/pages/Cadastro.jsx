@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
-
+import styles from './css/Cadastro.module.css';
 
 const Cadastro = () => {
   return (
-    <div>Cadastro
+    
+    <div className='divD' className={styles.divD}>
+
+      <div>
+        <label for="nome">Nome : </label>
+        <input type="text" name="nome" id="nome" required placeholder="Vanderson da Silva"></input>
+      </div>
+
+      <div>
+        <label for="mail">e-mail : </label>
+        <input type="mail" name="mail" id="email" required placeholder="teste@mail.com"></input>
+      </div>
+      <div>
+        <label for="mail">Senha : </label>
+        <input type="password" id="pass" name="password" minlength="8" required />
+      </div>
+
+      <div>
+        <label for="mail">Confirmação de Senha : </label>
+        <input type="password" id="pass" name="password" minlength="8" required />
+      </div>
+
+
     </div>
 
   )

@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
 :root {
     --base-clr: #11121a;
     --line-clr: #42434a;
@@ -9,15 +13,16 @@
   .navbar{
     background-color: #11121a;
     
-    padding: 4px 10px 4px 10px;
+    padding: 10px 10px 10px 10px;
     color: white;
-    display: flex ;
-    justify-content: space-around;
+    display: flex 1;
+    min-width: 300;
+    justify-content: space-between;
     height:  auto;
     /* align-items: center; */
     
     text-color : #e6e6ef;
-    gap:1;
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +35,8 @@
 .link{
     color: #e6e6ef;
     text-decoration: none;
-    margin: 10px 10px ;
+    margin: 10px 10px  ;
+    
 
 }
 
