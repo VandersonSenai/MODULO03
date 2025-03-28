@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 
 const Cadastro = () => {
   return (
-    <div>Cadastro</div>
+    <div>Cadastro
+    </div>
+
   )
 }
 

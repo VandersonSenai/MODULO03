@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Cadastro from "./pages/Cadastro.jsx";
 import Login from "./pages/Login.jsx"
 import Sobre from "./pages/Sobre.jsx"
+import CadNovo from "./pages/CadNovo.jsx"
 
 const router = createBrowserRouter([
     {
@@ -19,9 +20,14 @@ const router = createBrowserRouter([
             {
                 path:"/cadastro",
                 element:<Cadastro />
-            },            {
+            },            
+            {
                 path:"/sobre",
                 element:<Sobre />
+            },            
+            {
+                path:"/cadnovo",
+                element:<CadNovo />
             }
         ]
     },

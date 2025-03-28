@@ -2,13 +2,13 @@
     background-color: #0271e0;
     padding: 10px 10px 10px 10px;
     color: white;
-    display: flex;
-    /* justify-content: space-between; */
-    justify-content: space-around;
-    
+    display: flex 1;
+    /* justify-content: space-evenly; */
+    /* justify-content: space-around; */
+    justify-content: space-between;
     /* align-items: center; */
     
-    
+    gap: 2px;
     position: fixed;
     top: 0;
     left: 0;
