@@ -11,11 +11,24 @@
   --secondary-text-clr: #b0b3c1;
 }
 
-label{
-  width: 100%;
-  /* background-color:rgb(11, 16, 177); */
+div{
+  maxWidth: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  marginBottom: 15px;
 }
 
-divD{
-  background-color:rgb(11, 16, 177);
+.div {
+  background-color: #5e63ff;
 }
+
+.label{
+  background-color: #ff845e;
+}
+
+
+h2 { 
+  text-align: center;
+ }
+
+ 

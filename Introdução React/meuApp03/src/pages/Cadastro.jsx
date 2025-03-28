@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import styles from './css/Cadastro.module.css';
+import  Styles from '../pages/css/Cadastro.module.css';
+
 
 const Cadastro = () => {
   return (
     
-    <div className='divD' className={styles.divD}>
+    <div className={Styles.div}>
 
-      <div>
-        <label for="nome">Nome : </label>
+      <div >
+        <label for="nome" className={Styles.label}>Nome : </label>
         <input type="text" name="nome" id="nome" required placeholder="Vanderson da Silva"></input>
       </div>
 
