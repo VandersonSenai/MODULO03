@@ -12,11 +12,13 @@
 }
 
 .div {
-  border-radius: 6px;
-  background-color: #5e63ff;
+  /* border-radius: 6px; */
+  border: border-box;
+  /* border: 1px solid transparent; */
+  background-color: var (--line-clr);
   max-width: 390px;
   min-width: 380px;
-  padding: 10px 10px 15px 15px;
+  padding: 20px 10px 20px 10px;
   display: flex ;
   /* justify-content: space-between; */
   flex-wrap: wrap;
@@ -24,7 +26,6 @@
 
     label {
       margin-top: .3rem;
-      /* background-color: #2dd72d; */
       min-width: 380px;
       max-width: 100%;
       display: flex ;
@@ -47,18 +48,28 @@
       /* margin-bottom: .9rem; */
       
     }
+    button {
+      border-radius: 8px;
+      width: 100%;
+      margin-top: .5rem;
+      color: #000000;
+  
+      border: 1px solid transparent;
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      font-weight: 500;
+      font-family: inherit;
+      background-color: var(--secondary-text-clr);    cursor: pointer;
+      transition: border-color 0.25s;
+    }
 
   }
 
-  h2 { 
-    text-align: center;
-   }
 
 
 /* .label {
   background-color: #ff845e;
 }
-
 .input {
 
 } */
