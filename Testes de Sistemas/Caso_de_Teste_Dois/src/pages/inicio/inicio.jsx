@@ -1,10 +1,11 @@
 import React from 'react'
+// import Style from './inicio.module.css'
 
-export const inicio = () => {
+export const Inicio = () => {
   return (
   <div className="divcontainer">
     <div className="container">
-      <p>Deseja realizar um <a href="/login">login</a> ou <a href="/cadastro">cadastrar</a> uma conta?</p>
+      <p> - Inicio - <a href="/">Retornar</a></p>
     </div>
   </div>
   )

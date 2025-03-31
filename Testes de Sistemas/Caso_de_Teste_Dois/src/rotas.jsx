@@ -1,17 +1,17 @@
 import { Children } from "react";
 import { createBrowserRouter }  from "react-router-dom";
-// import App from "./app.jsx";
-import ErrorPage from "./pages/errorpage";
-import Inicio from "./pages/inicio/inicio.jsx";
-import Cadastro from "./pages/cadastro";
-import Login from "./pages/login/login.jsx";
+import {App} from "./App.jsx";
+import {ErrorPage} from "./pages/errorpage/errorpage.jsx";
+import {Inicio} from "./pages/inicio/inicio.jsx";
+import {Cadastro} from "./pages/cadastro/cadastro.jsx";
+import {Login} from "./pages/login/login.jsx";
 
-export const rotas = createBrowserRouter([
+export const Rotas = createBrowserRouter([
     {
         path:"/",
         element:<App />,  // componente que sera usando ao entrar nessa rota
         errorElement: <ErrorPage />,
-        children:[
+        Children:[
             {
                 path:"/",
                 element:<Inicio />
