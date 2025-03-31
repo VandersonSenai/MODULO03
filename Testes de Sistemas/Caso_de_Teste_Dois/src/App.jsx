@@ -64,8 +64,8 @@ export function App() {
               <a href="/">Retornar</a>
         </div>
     </div>
-      <Outlet style={{}}/> 
-      {/* Responsável pela troca das rotas */}
+    <Outlet style={{}}/> 
+    {/* Responsável pela troca das rotas */}
 
     </>
   )
