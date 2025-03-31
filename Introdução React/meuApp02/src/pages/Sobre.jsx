@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sobre = () => {
   return (
-    <div>Sobre</div>
+    <div>Sobre2</div>
   )
 }
 
