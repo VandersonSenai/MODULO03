@@ -5,7 +5,7 @@
   align-items: center; 
   justify-content: center;
   background: var(--base-clr);
-  }
+}
 
 .formularioItems {
   
@@ -77,9 +77,11 @@
     }
     
     a {
+      /* min-width: 300px; */
       text-decoration: none;
+      /* text-align: center; */
       border: 1px solid var(--line-clr);
-      display: flex 1;
+      display: flex ;
       /* gap: 10px;  */
       /* min-width: 50%; */
       /* width: 100%; */
@@ -89,9 +91,8 @@
       /* justify-content: space-after;  */
       justify-content: space-between; 
       justify-content: center;
-      text-align: center;
       
-
+    
       padding: 10px 20px;
       background-color: #007bff;
       color: white;
