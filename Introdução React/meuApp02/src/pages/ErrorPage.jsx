@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ErrorPage = () => {
+const Errorpage = () => {
   return (
-    <div>ErrorPage2
+    <div>
+      <h1>Erro!!! Pagina nao encontrada</h1>
       <br />
-      <link to="/">Retornar</link>
+      <Link to="/">Retornar</Link>
     </div>
   )
 }
 
-export default ErrorPage
+export default Errorpage

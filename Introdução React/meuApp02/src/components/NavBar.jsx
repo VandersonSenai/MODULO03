@@ -38,11 +38,28 @@ const NavBar = () => {
         Sobre
       </NavLink>
       <NavLink
+        to="/home2"
+        className={styles.link}
+        style={({ isActive }) => {
+          return { color: isActive ? '#5e63ff' : '#e6e6ef' }
+        }}>
+        Homedois
+      </NavLink>
+      <NavLink
         to="/Contato"
+        className={styles.link}
         style={({ isActive }) => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
         }}>
         Contato
+      </NavLink>     
+      <NavLink
+        to="/Forms"
+        className={styles.link}
+        style={({ isActive }) => {
+          return { color: isActive ? '#5e63ff' : '#e6e6ef' }
+        }}>
+        Forms
       </NavLink>
     </nav>
   )

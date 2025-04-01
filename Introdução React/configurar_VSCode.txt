@@ -11,7 +11,7 @@ Arquivo / Preferencias / Configurações (^ + ,)
             com o VALOR: javascriptreact.
 		Clique em [ Edit in settings.json ] e adicione o script abaixo.
 		"emmet.variables": {
-			"lang": "pt-br",
+			"lang": "pt-BR",
 			"charset": "UTF-8"
   	}
 

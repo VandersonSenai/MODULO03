@@ -27,7 +27,7 @@ $ npm create vite@latest meuApp01
 	- Atualizar o NPM "se necessário" 
 		npm install -g npm
 	- Instala o gerenciador de rotas do React
-	npm install react-router-dom
+		npm install react-router-dom
 	
 	Instale o [ ES7+ React/Redux/React-Native snippets ]  +14mi Users para os snippets.
 	- o snippet [ rafc  ] cria a estrutura básica para um novo componente.
