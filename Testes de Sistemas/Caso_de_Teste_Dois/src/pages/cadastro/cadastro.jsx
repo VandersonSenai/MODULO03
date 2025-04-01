@@ -46,11 +46,19 @@ export const Cadastro = () => {
                     setSenhaConfirm(e.target.value);
                 }}/>
             
-              <a href="#" onClick={
+            <button type="submit">Enviar</button>
+            <button href="./">Retornar</button>
+              {/* <a href="#" onClick={
                 () => document.getElementById("mform").submit()} className="btn">
                 Enviar
                 </a>
-              <a href="/">Retornar</a>
+              <a href="/">Retornar</a> */}
+              <a href="/">
+              <button>Retornar</button>
+              </a>
+              <a href="/">
+              <button>Retornar</button>
+              </a>
          </form>
 
     </div>

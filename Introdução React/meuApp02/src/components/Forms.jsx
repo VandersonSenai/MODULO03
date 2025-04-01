@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from './Forms.module.css';
 
 
-const Forms = () => {
-    const [nome, setNome] = useState()
-    const [email, setEmail] = useState()
-    const [senha, setSenha] = useState()
+const Forms = (props) => {
+
+    const [nome, setNome]   = useState(props ? props.nome : "")
+    const [email, setEmail] = useState(props ? props.email : "")
+    const [senha, setSenha] = useState(props ? props.senha : "")
 
     const handleName = (e) => {
         // sempre que é chamado definimos um novo valor para a variavel que no caso recebe o nome
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setNome(e.target.value)
     }
     // const [ varForm, setvarForm ] = useState() {
@@ -18,6 +20,7 @@ const Forms = () => {
     //     senha
     // }
 
+        // aqui que devem ser feitas as verificações
     const handleSubmit = (e) => {
         e.preventDefault()
         
@@ -34,16 +37,19 @@ const Forms = () => {
         <form className={styles.formulario} 
         onSubmit={handleSubmit}>
             <label htmlFor="nome">Nome: </label>
-            <input type="text" name="nome" id="nome" placeholder='Digite seu nome...' onChange={handleName}/>
+            <input type="text" name="nome" id="nome"
+            value={nome} placeholder='Digite seu nome...' onChange={handleName} />
             {/* o evento onChance é chamado sempre que se altera o valor dentro do input */}
             <br />
             {/* label envolvendo input */}
             <label >
                 <span>email:</span>
-                <input type="email" name="email" id="" placeholder='Digite seu email...'
+                <input type="email" name="email" id="email" 
+                value={email}
+                placeholder='Digite seu email...'
                 onChange={(e)=>{
                     setEmail(e.target.value);
-                }}
+                }} 
                 // com a funcao de seta dentro do onChange
                 // praticamente repetimos o que ja esta no topo do da pagina porem deste vez ele só vai atualizar o valor para visualizar no console.log quando for clicado no submit
 
@@ -53,11 +59,12 @@ const Forms = () => {
             <br />
             <label >
                 <span>Senha: </span>
-                <input type="password" name="senha" id="" maxLength={16} minLength={5}
+                <input type="password" name="senha" id="senha" maxLength={16} minLength={5}
+                value={senha}
                 placeholder='Digite sua senha...'               
                 onChange={(e)=>{
                     setSenha(e.target.value);
-                }}/>
+                }} />
             </label>
 
             {/* input e buttom devem ficar dentro do form para que o browser engenda o que fazer com os campos do form quando for clicado*/}

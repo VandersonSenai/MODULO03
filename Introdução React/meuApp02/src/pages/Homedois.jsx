@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 const Homedois = () => {
-  const isAuth = false;
+  const isAuth = true;
 
   return (
     <div>

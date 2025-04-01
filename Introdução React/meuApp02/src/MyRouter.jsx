@@ -8,7 +8,8 @@ import Sobre from "./pages/Sobre.jsx";
 import Login from "./pages/Login.jsx";
 import Homedois from "./pages/Homedois.jsx";
 import InfoCard from "./components/InfoCard.jsx";
-import Forms from "./components/forms.jsx";
+
+
 
 const router = createBrowserRouter([
     {
@@ -38,10 +39,6 @@ const router = createBrowserRouter([
             {
                 path:"/sobre",
                 element:<Sobre />
-            },
-            {
-                path:"/forms",
-                element:<Forms />
             },
             {
                 path:"/informacao/:id",

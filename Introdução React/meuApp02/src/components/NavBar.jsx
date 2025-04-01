@@ -52,15 +52,7 @@ const NavBar = () => {
           return { color: isActive ? '#5e63ff' : '#e6e6ef' }
         }}>
         Contato
-      </NavLink>     
-      <NavLink
-        to="/Forms"
-        className={styles.link}
-        style={({ isActive }) => {
-          return { color: isActive ? '#5e63ff' : '#e6e6ef' }
-        }}>
-        Forms
-      </NavLink>
+      </NavLink>        
     </nav>
   )
 }
