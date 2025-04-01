@@ -3,10 +3,10 @@
 
 export const Inicio = () => {
   return (
-  <div className="divcontainer">
-    <div className="container">
-      <p> - Inicio - <a href="/">Retornar</a></p>
-    </div>
-  </div>
+      <div className="divcontainer">
+        <div className="container">
+          <p>Deseja realizar um <a href="/login">login</a> ou <a href="/cadastro">cadastrar</a> uma conta?</p>
+        </div>
+      </div>  
   )
 }

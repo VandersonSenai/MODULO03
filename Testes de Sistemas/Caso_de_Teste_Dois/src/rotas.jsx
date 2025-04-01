@@ -1,17 +1,17 @@
-import { Children } from "react";
 import { createBrowserRouter }  from "react-router-dom";
 import {App} from "./App.jsx";
-import {ErrorPage} from "./pages/errorpage/errorpage.jsx";
+import {Errorpage} from "./pages/errorpage/errorpage.jsx";
 import {Inicio} from "./pages/inicio/inicio.jsx";
 import {Cadastro} from "./pages/cadastro/cadastro.jsx";
 import {Login} from "./pages/login/login.jsx";
+
 
 export const Rotas = createBrowserRouter([
     {
         path:"/",
         element:<App />,  // componente que sera usando ao entrar nessa rota
-        errorElement: <ErrorPage />,
-        Children:[
+        errorElement: <Errorpage />,
+        children:[
             {
                 path:"/",
                 element:<Inicio />
@@ -23,8 +23,8 @@ export const Rotas = createBrowserRouter([
             {
                 path:"/cadastro",
                 element:<Cadastro />
-            }
-        ]
+            },
+        ],
     },
-])
+]);
 
