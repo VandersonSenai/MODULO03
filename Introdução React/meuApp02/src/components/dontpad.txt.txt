@@ -1,37 +1,3 @@
-// https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page
-// onClick={event =>  window.location.href='/your-href'}
-
-// First, import it:
-// import { useHistory } from 'react-router-dom';
-// Then, in function or class:
-// const history = useHistory();
-// Finally, you put it in the onClick function:
-{/* <Button onClick={()=> history.push("/mypage")}>Click me!</Button> */}
-
-
-import styles from './Forms.module.css';
-import React from 'react'
-import { useForm } from 'react-hook-form';
-
-export const NewForms = () => {
-    const { 
-        register, 
-        handleSubmit,
-        formState: { errors },
-         } = useForm();
-    // const { handleSubmit, register, formState: { errors } } = useForm();
-    // const onSubmit = values => console.log(values);
-    // const onSubmit = values => console.log(values);
-    const onSubmit = (data) => {
-        console.log("DADOS : ", data)
-
-    };
-
-    const onError = (errors) => {
-        console.log("ERROS : ", errors)
-    };
-
-  return (
 <div>
       <form
         onSubmit={handleSubmit(onSubmit, onError)}
@@ -172,5 +138,3 @@ export const NewForms = () => {
         </button>
       </form>
     </div>
-  )
-}
