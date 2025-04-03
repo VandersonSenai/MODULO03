@@ -3,7 +3,11 @@ import {App} from "./App.jsx";
 import {Errorpage} from "./pages/errorpage/errorpage.jsx";
 import {Inicio} from "./pages/inicio/inicio.jsx";
 import {Cadastro} from "./pages/cadastro/cadastro.jsx";
+import {Cadastronovo} from "./pages/cadastro/cadastronovo.jsx";
 import {Login} from "./pages/login/login.jsx";
+
+// import {Stateteste} from "./pages/stateteste.jsx";
+
 
 
 export const Rotas = createBrowserRouter([
@@ -23,7 +27,11 @@ export const Rotas = createBrowserRouter([
             {
                 path:"/cadastro",
                 element:<Cadastro />
-            },
+            },            
+            {
+                path:"/cadastronovo",
+                element:<Cadastronovo />
+            },            
         ],
     },
 ]);

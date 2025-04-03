@@ -8,7 +8,7 @@
 // Finally, you put it in the onClick function:
 {/* <Button onClick={()=> history.push("/mypage")}>Click me!</Button> */}
 
-
+ 
 import styles from './Forms.module.css';
 import React from 'react'
 import { useForm } from 'react-hook-form';
@@ -77,6 +77,7 @@ export const NewForms = () => {
           <span>Senha:</span>
           <input
             type="password"
+            placeholder="Senha"
             {...register("senha", {
               required: "A senha é obrigatória",
               minLength: {
@@ -94,7 +95,6 @@ export const NewForms = () => {
                   "A senha deve conter pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial",
               },
             })}
-            placeholder="Senha"
           />
           {errors.senha && (
             <p className={styles.error}>{errors.senha.message}</p>
@@ -115,7 +115,7 @@ export const NewForms = () => {
             <p className={styles.error}>{errors.confirmarSenha.message}</p>
           )}
         </label>
-        <label>
+        {/* <label>
           <span>Descrição:</span>
           <textarea {...register("descricao")} placeholder="Descrição" />
         </label>
@@ -167,6 +167,7 @@ export const NewForms = () => {
           <span>Concordo com os termos:</span>
           <input type="checkbox" {...register("checkbox")} />
         </label>
+         */}
         <button type="submit" className={styles.botao}>
           Enviar
         </button>

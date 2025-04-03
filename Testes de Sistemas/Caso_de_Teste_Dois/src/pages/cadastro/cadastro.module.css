@@ -8,55 +8,52 @@
 }
 
 .formularioItems {
-  
+
   border-radius: 6px;
-  /* max-width: 800px; */
-  /* backgroundColor: var (--accent-clr); */
-  backgroundColor: var (--secondary-text-clr);
-  padding: 20px 10px 20px 10px;
-  /* border-radius: 6px; */
-  /* border: border-box; */
-  /* border: 1px solid transparent; */
-  /* background-color: var (--line-clr); */
-  min-width: 390px;
-  display: flex 1 ; 
-  justify-content: space-between;
+  max-width: 800px;
   
-  flex-wrap: wrap;
+  padding: 20px 10px 20px 10px;
+  display: flex ; 
   flex-direction: column;
-  /* flex-direction: column; */
+  justify-content: space-between;
+  justify-items: stretch;
 
     label {
+      display: flex ;
+      flex-basis: 110;
       color: var(--text-clr);
       margin-top: .3rem;
-      min-width: 180px;
-      /* max-width: 100vw; */
-      display: flex ;
+      min-width: 190px;
       text-align: left;
-      justify-content: space-between;
-      /* margin-bottom: .1rem; */
+
     }
 
     input {
       gap: 1;
       border-radius: 6px;
-      min-width: 380px;
+      min-width: 80%;
+      /* max-width: 100%; */
       max-width: 100%;
       height: 2rem;
-      display: flex ;
       text-align: left;
       text-indent: 1rem;
-      justify-content: space-between;      
+      /* justify-content: space-between;       */
       /* margin-bottom: .3rem;  */
-      margin-bottom: .9rem;
+      margin-bottom: .6rem;
     }
 
     button {
-      gap: 1rem;
+      display: flex ;
+      flex-basis: 110;
+      color: var(--text-clr);
+      margin-top: .3rem;
+      min-width: 190px;
+      text-align: left;
+      /* gap: 1rem;
       border: 1px solid transparent;
       border-radius: 6px;
       min-width: 45%;
-      /* width: 100vh; */
+      
       margin-top: .5rem;
       margin-left: .5rem;
       margin-right: .5rem;
@@ -68,44 +65,57 @@
       font-family: inherit;
       background-color: var(--secondary-text-clr);    
       cursor: pointer;
-      transition: border-color 0.25s; 
-      /* padding: 20px 10px 20px 10px;  */
+      transition: border-color 0.25s;  */
+
     }
 
     button:focus, button:focus-visible {
       outline: 4px auto -webkit-focus-ring-color;
     }
+}
+
+.button_link{
+  /* height: 100%; */
+
+  /* display: flex;
+   */
+  display: flex ; 
+  /* flex-direction: column; */
+  align-items: center; 
+  justify-items: stretch;
+  justify-content: space-evenly;
+  /* width: 100%; */
+  /* margin: 20px; */
+  /* display: border-box; */
+  /* justify-content: center; */
+  /* justify-content: space-evenly; */
+  /* justify-content: space-evenly; */
+
+  a {
+    /* gap : 20px; */
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid var(--line-clr);
+    margin: 10px 10px 10px; /* Espaço entre os botões */
+
+    min-width: 10%;
+    width: 100%;
+
     
-    a {
-      /* min-width: 300px; */
-      text-decoration: none;
-      /* text-align: center; */
-      border: 1px solid var(--line-clr);
-      display: flex ;
-      /* gap: 10px;  */
-      /* min-width: 50%; */
-      /* width: 100%; */
-      /* display: inline-block;  */
-      /* flex-direction: row; */
-      /* Permite definir largura e altura */
-      /* justify-content: space-after;  */
-      justify-content: space-between; 
-      justify-content: center;
-      
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
     
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border-radius: 5px;
-      margin-right: 10px; /* Espaço entre os botões */
-      
-      font-size: 1em;
-      font-weight: 500;
-      font-family: inherit;
-      background-color: var(--secondary-text-clr);   
-      &:hover {
-        background-color: var(--hover-clr);  
-        color:rgb(247, 247, 247);
-      }
-    }  
-  }
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--secondary-text-clr);   
+    &:hover {
+      background-color: var(--hover-clr);  
+      color:rgb(247, 247, 247);
+    }
+    &:focus, &:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+    }
+  }  
+}    

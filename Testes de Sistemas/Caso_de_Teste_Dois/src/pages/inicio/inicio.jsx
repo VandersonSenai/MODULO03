@@ -6,6 +6,7 @@ export const Inicio = () => {
       <div className="divcontainer">
         <div className="container">
           <p>Deseja realizar um <a href="/login">login</a> ou <a href="/cadastro">cadastrar</a> uma conta?</p>
+          <p><a href="/cadastronovo">cadastronovo</a></p>
         </div>
       </div>  
   )
