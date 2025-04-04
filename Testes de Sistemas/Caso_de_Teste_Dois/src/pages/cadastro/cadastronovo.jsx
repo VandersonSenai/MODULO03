@@ -1,14 +1,18 @@
-import React from 'react'
+//import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom"
 import Styles from './cadastronovo.module.css'
+import { useState } from 'react'
+import {Login} from "../login/login.jsx";
 
 export const Cadastronovo = (props) => {
+  const [nome, setNome]   = useState(props ? props.nome : "")
+  const [email, setEmail] = useState(props ? props.email : "")
+  const [senha, setSenha] = useState(props ? props.senha : "")
   const navigate = useNavigate();
-  // const [nome, setNome]   = useState(props ? props.nome : "")
-  // const [email, setEmail] = useState(props ? props.email : "")
-  // const [senha, setSenha] = useState(props ? props.senha : "")
 
+  // console.log("DADOS : ", senha);
+  
   const { 
     watch,
     register, 
@@ -20,17 +24,27 @@ export const Cadastronovo = (props) => {
 // const onSubmit = values => console.log(values);
 const onSubmit = (data) => {
     console.log("DADOS : ", data)
+    setEmail(data.email);
+    setSenha(data.senha);
+    
+        <Login 
+        email={email} senha={senha}
+        />
+        // irParaLogin();
+    // {formState.errors && <p className={Styles.error}>{errors.nome.message}</p>}
 
 };
+      
+
 const onError = (errors) => {
     console.log("ERROS : ", errors)
 };  
 const VoltarHome = () => {
   navigate("/")
 }
-
-
-// const teste = watch("confirmarSenha");
+const irParaLogin = () => {
+  navigate("/login")
+}
 
   return (
 <div className={Styles.divformulario}>
@@ -46,7 +60,7 @@ const VoltarHome = () => {
             {...register("nome", {
               required: "O nome é obrigatório",
               maxLength: {
-                value: 2,
+                value: 20,
                 message: "O nome deve ter menos de 20 caracteres",
               },
               pattern: {
@@ -55,7 +69,7 @@ const VoltarHome = () => {
                 message: "O nome só pode conter letras",
               },
             })}
-             
+
           />
           {/* {errors.nome && <p className={Styles.error}>{errors.nome.message}</p>} */}
         </label>
@@ -73,6 +87,9 @@ const VoltarHome = () => {
               },
               validate: (value) => value.includes("@") || "Email inválido",
             })}
+            onChange={(formData)=>{
+              setEmail(formData.target.value);
+          }} 
           />
           {/* {errors.email && (
             <p className={Styles.error}>{errors.email.message}</p>
@@ -103,6 +120,9 @@ const VoltarHome = () => {
                   "Deve conter uma letra maiúscula, uma minúscula, um número e um caracter especial",
               },
             })}
+            onChange={(formData)=>{
+              setNome(formData.target.value);
+          }} 
           />
           {/* {errors.senha && (
             <p className={Styles.error}>{errors.senha.message}</p>

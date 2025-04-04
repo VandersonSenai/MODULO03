@@ -9,6 +9,11 @@ export const Login = (props) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState(props ? props.email : "")
   const [senha, setSenha] = useState(props ? props.senha : "")
+
+  console.log(email);
+  console.log(senha);
+  console.log(props);
+
     const { 
       watch,
       register, 
