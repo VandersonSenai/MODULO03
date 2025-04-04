@@ -55,7 +55,7 @@ const VoltarHome = () => {
                 message: "O nome só pode conter letras",
               },
             })}
-            
+             
           />
           {/* {errors.nome && <p className={Styles.error}>{errors.nome.message}</p>} */}
         </label>
@@ -109,7 +109,10 @@ const VoltarHome = () => {
           )} */}
         </label>
         <label>
-          <span>Confirme a senha :</span>
+          <span>Confirme a senha :
+          {errors.confirmarSenha && (
+            <p className={Styles.error}>{errors.confirmarSenha.message}</p>
+          )}</span>
           <input
              id="confirmarSenha" name="confirmarSenha" placeholder="Confirmar Senha"
             type="password" autoComplete="new-password"
@@ -118,10 +121,7 @@ const VoltarHome = () => {
               validate: (value) =>
                 value === watch('senha') || "As senhas não coincidem",
             })}
-          />
-          {errors.confirmarSenha && (
-            <p className={Styles.error}>{errors.confirmarSenha.message}</p>
-          )}
+            />
         </label>
        
         {/* <label>

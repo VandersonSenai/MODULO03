@@ -1,14 +1,12 @@
 // import React from 'react'
 // import './index.css'
-import { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import { useNavigate } from "react-router-dom"
 import Styles from './login.module.css'
+import { useState } from 'react'
 
 export const Login = (props) => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState(props ? props.email : "")
-  const [senha, setSenha] = useState(props ? props.senha : "")
+   const [email, setEmail] = useState(props ? props.email : "")
+   const [senha, setSenha] = useState(props ? props.senha : "")
     const { 
       watch,
       register, 
@@ -22,9 +20,7 @@ export const Login = (props) => {
     const onError = (errors) => {
         console.log("ERROS : ", errors)
     };  
-    const VoltarHome = () => {
-      navigate("/")
-    }
+
   return (
     // <div>login</div>
 <div className={Styles.divformulario}>
@@ -76,8 +72,16 @@ export const Login = (props) => {
 
         </label>
 
-          <button type="submit" className={Styles.button_link}>Cadastrar</button>
-          <button className={Styles.button_link} onClick={VoltarHome}>Retornar</button>
+          <div className={Styles.button_link}>
+            <a type="submit" >Salvar
+            </a>
+            {/* <a type="submit" href="/login">Salvar
+            </a> */}
+            <a href="/">Retornar
+            </a>
+          </div>
+          <button type="submit" className={Styles.button}>Enviar</button>
+
         </form>
 
  

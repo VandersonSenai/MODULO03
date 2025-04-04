@@ -6,33 +6,42 @@
   align-items: center; 
   justify-content: center;
   background: var(--base-clr);
+  flex-direction: column;
+  position: relative;
+  padding: 0px 30px 0px 20px;
   
 }
 
 .formularioItems {
 
   border-radius: 6px;
-  max-width: 500px;
+  min-width: 450px;
   
   padding: 20px 10px 20px 10px;
-  /* display: flex ;  */
+  /* display: flex 1;  */
   flex-direction: column;
-  justify-items: stretch;
-  justify-content: space-between;
+  /* justify-items: stretch; */
+  /* justify-content: space-between; */
   
-    .label {
+    p {
+      min-width: 100px;
+      
+    }
+    label {
       /* display: flex ; */
-      margin-top: .3rem;
+      /* margin-top: .3rem; ------------*/
       /* width: 300px; */
+      /* min-width: 100px; */
       color: var(--text-clr);
       text-align: left;
-      min-width: 300px;
+      /* min-width: 300px; */
       /* display: flex 1; */
 
     }
     span {
       align-items: center;
-      margin-top: .3rem;
+      /* margin-top: 5px; */
+      /* margin-top: .3rem; -------------*/
       /* min-width: 300px; */
       color: var(--text-clr);
       text-align: left;
@@ -75,7 +84,7 @@
       cursor: pointer;
       transition: border-color 0.25s; 
       &:hover {
-        background-color: var(--hover-clr);  
+        background-color: var(--hover-clr);   
         /* color:rgb(247, 247, 247); */
         /* color: var(--text-clr) ; */
         color: var(--secondary-text-clr) ;
@@ -92,8 +101,12 @@
 .error{
   color: red;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: .3rem;
   text-indent: .5em;
+  font-size: .9em;
+  font-weight: 400;
+  font-family: inherit;
+  /* height: 2em; */
 }
 .success{
   color: green;
