@@ -1,9 +1,11 @@
 Preparar o VSCODE para o REACT
 
+----------------------------------------------------------------
 Extensão 
 ES7+ React/Redux/React-Native snippets
 Prettier - Code formatter
 
+----------------------------------------------------------------
 Arquivo / Preferencias / Configurações (^ + ,)
 		digite na busca [ emmet ]
 		Encontre o : [ Emmet: Include Languages ]
@@ -15,4 +17,21 @@ Arquivo / Preferencias / Configurações (^ + ,)
 			"charset": "UTF-8"
   	}
 
+----------------------------------------------------------------
 
+Ctrl+P > search & edit for settings.json > add below
+
+ "editor.fontFamily": "Fira Code",
+ "editor.fontLigatures": true,
+ "terminal.integrated.fontFamily": "Fira Code",
+ "editor.fontSize": 12
+
+OR
+
+Faça o download google Fire Code Font Family
+https://fonts.google.com/specimen/Fira+Code
+Instale todas as fontes disponíveis no zip.
+
+Open VsCode > settings > add Fira Code in Font Family input
+
+Obs: Se precisar reinicie o VsCode
