@@ -6,20 +6,39 @@ import { useNavigate } from "react-router-dom"
 import Styles from './login.module.css'
 
 export const Login = (props) => {
+  var resultado = document.getElementById('resultado');
   const navigate = useNavigate();
-  const [emailBanco, setEmailBanco] = useState('plmedeiros@findes.org.br');
-  const [senhaBanco, setSenhaBanco] = useState('123456789');
+  const [emailBanco, setEmailBanco] = useState('teste@teste.com.br');
+  const [senhaBanco, setSenhaBanco] = useState('asd23AA3$as');
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
 
-  // setEmail("pertraplmedeiros@findes.org.br");
-  // setSenha("123456");
+
+  // asdf1#@asaAaaa
+  console.log("emailBanco : ", emailBanco)
+  console.log("senhaBanco : ", senhaBanco)
+  console.log("emailForm : ", email)
+  console.log("senhaForm : ", senha)
   
-  console.log("emailBanco : ", {emailBanco})
-  console.log("senhaBanco : ", {senhaBanco})
-  console.log("emailForm : ", {email})
-  console.log("senhaForm : ", {senha})
-  
+  console.log("toggleStatus: ", resultado)
+
+
+  function toggleMessage(){
+    // if ((emailBanco == email) & (senhaBanco == senha)){
+    //   toggleStatus.classList.toggle("sucesso");
+    // }
+    // alert("Login com sucesso!");
+    if ((emailBanco == email) && (senhaBanco == senha)) {
+      // resultado.innerHTML = 'Digite um valor válido';
+      // document.write('Digite um valor válido </br>');
+      resultado.innerHTML = 'Login com sucesso!';
+      // return;     
+    } else {
+      resultado.innerHTML = 'Login invalido!';
+    }
+    
+  };
+
     const { 
       watch,
       register, 
@@ -29,9 +48,12 @@ export const Login = (props) => {
 
     const onSubmit = (data) => {
         console.log("DADOS : ", data)
+        toggleMessage()
+        
     };
     const onError = (errors) => {
         console.log("ERROS : ", errors)
+        toggleMessage()
     };  
     const VoltarHome = () => {
       navigate("/")
@@ -52,7 +74,7 @@ export const Login = (props) => {
             {...register("email", {
               required: "O email é obrigatório",
               validate: (value) =>
-                value === emailBanco || "Email invalido",
+                value === emailBanco || "E-mail não cadastrado",
                 // value === watch(emailBanco) || "Email invalido",
               // pattern: {
               //   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -99,10 +121,14 @@ export const Login = (props) => {
 
         </label>
 
-          <button type="submit" className={Styles.button_link}>Cadastrar</button>
-          <button className={Styles.button_link} onClick={VoltarHome}>Retornar</button>
+          <button type="submit" className={Styles.button_link}>
+            Login
+            </button>
+          <button className={Styles.button_link} onClick={VoltarHome}>
+            Retornar
+            </button>
+        <p><span  className={Styles.resultado} id="resultado"></span></p>
         </form>
-        <label htmlFor="">Login efetuado com sucesso</label>
  
     </div>
   )

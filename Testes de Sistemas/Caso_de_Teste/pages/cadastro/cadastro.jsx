@@ -52,8 +52,12 @@ const VoltarHome = () => {
           placeholder="Nome"
             {...register("nome", {
               required: "O nome é obrigatório",
+              mimLength: {
+                value: 4,
+                message: "O nome deve ter menos de 20 caracteres",
+              },
               maxLength: {
-                value: 20,
+                value: 30,
                 message: "O nome deve ter menos de 20 caracteres",
               },
               pattern: {
@@ -72,10 +76,10 @@ const VoltarHome = () => {
           <input
             placeholder="Email" autoComplete="new-password"
             {...register("email", {
-              required: "O email é obrigatório",
+              required: "O e-mail é obrigatório",
               pattern: {
                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Email inválido",
+                message: "E-mail inválido",
               },
               validate: (value) => value.includes("@") || "Email inválido",
             })}
