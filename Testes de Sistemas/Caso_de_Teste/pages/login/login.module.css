@@ -7,7 +7,6 @@
   background: var(--base-clr);
   /* min-width: 400px; */
   --base-formSize: min(450px, 90vw);
- 
 }
 
 .formularioItems {
@@ -41,6 +40,7 @@
       text-align: left;
       display: flex ;
     }
+
     input {
       width: 100%; /* em vez de min-width */
       max-width: var(--base-formSize);
@@ -52,29 +52,24 @@
       text-indent: 1rem;
       margin-bottom: .6rem;
     }
-    .error {
-      color: red;
-      font-size: 12px;
-      margin-top: .3rem;
-      text-indent: .5em;
-      font-size: .9em;
-      font-weight: 400;
-      font-family: inherit;
-      /* height: 2em; */
-    }
-    
 
+    .error {
+      color: var(--accent-red-dark);
+      text-indent: .5em;
+    }
 }
 
 .error{
-  color: red;
-  font-size: 12px;
-  margin-top: .3rem;
-  text-indent: .5em;
+  /* color: red; */
+  /*------------------------*/
+  /* font-size: 12px;       */
+  /* margin-top: .3rem;     */
+  /*------------------------*/
+  /* text-indent: .5em;
   font-size: .9em;
   font-weight: 400;
   font-family: inherit;
-  /* height: 2em; */
+  height: 2em; */
 }
 
 .modal {
@@ -86,6 +81,7 @@
   opacity: 80%;
   background: black ;
 }
+
 .modalWindows {
   display: flex;
   justify-content: center;
@@ -140,12 +136,9 @@
       font-weight: 500;
       font-family: inherit;
       background-color: var(--secondary-text-clr);    
-      /* cursor: pointer; */
       transition: border-color 0.25s; 
       &:hover {
         background-color: var(--hover-clr);   
-        /* color:rgb(247, 247, 247); */
-        /* color: var(--text-clr) ; */
         color: var(--secondary-text-clr) ;
       }
       &:focus, &:focus-visible {
@@ -153,7 +146,6 @@
       }
   }
 }
-
 
 @media (max-width: 400px) {
   .divformulario {

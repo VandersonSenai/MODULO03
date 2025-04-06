@@ -78,7 +78,7 @@ export const Login = (props) => {
         >
         <label>
           <span>Email :{errors.email && (
-            <p className={Styles.error}>{errors.email.message}</p>
+            <span className={Styles.error}>{errors.email.message}</span>
           )}</span>
           <input
             placeholder="Email" autoComplete="new-password"
@@ -101,8 +101,11 @@ export const Login = (props) => {
           />
         </label>
         <label>
-          <span>Senha:{errors.senha && (
+          {/* <span>Senha:{errors.senha && (
             <p className={Styles.error}>{errors.senha.message}</p>
+          )} */}
+          <span>Senha:{errors.senha && (
+            <span className={Styles.error}>{errors.senha.message}</span>
           )}
           </span>
           <input id="senha" name="senha" placeholder="Senha"
