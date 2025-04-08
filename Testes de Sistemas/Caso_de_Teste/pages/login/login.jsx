@@ -4,17 +4,25 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom"
 import Styles from './login.module.css'
-
+ 
 export const Login = (props) => {
   var resultado = document.getElementById('resultado');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+   
   const navigate = useNavigate();
   const [emailBanco, setEmailBanco] = useState('teste@teste.com.br');
   const [senhaBanco, setSenhaBanco] = useState('asd23AA3$as');
   const [email, setEmail] = useState();
   const [senha, setSenha] = useState();
 
+  function openModal(){
+    setIsModalOpen(true);
+  }
 
-  // asdf1#@asaAaaa
+  function closeModal(){
+    setIsModalOpen(false);
+  }
+  // asd23AA3$as
   console.log("emailBanco : ", emailBanco)
   console.log("senhaBanco : ", senhaBanco)
   console.log("emailForm : ", email)
@@ -32,9 +40,11 @@ export const Login = (props) => {
       // resultado.innerHTML = 'Digite um valor válido';
       // document.write('Digite um valor válido </br>');
       resultado.innerHTML = 'Login com sucesso!';
+      resultado.classList.toggle('sucessoLogin')
       // return;     
     } else {
-      resultado.innerHTML = 'Login invalido!';
+      resultado.classList.toggle('errorLogin')
+      resultado.innerHTML = '';
     }
     
   };
@@ -48,7 +58,8 @@ export const Login = (props) => {
 
     const onSubmit = (data) => {
         console.log("DADOS : ", data)
-        toggleMessage()
+        toggleMessage();
+        openModal();
         
     };
     const onError = (errors) => {
@@ -67,20 +78,22 @@ export const Login = (props) => {
         >
         <label>
           <span>Email :{errors.email && (
-            <p className={Styles.error}>{errors.email.message}</p>
+            <span className={Styles.error}>{errors.email.message}</span>
           )}</span>
           <input
             placeholder="Email" autoComplete="new-password"
             {...register("email", {
               required: "O email é obrigatório",
-              validate: (value) =>
-                value === emailBanco || "E-mail não cadastrado",
-                // value === watch(emailBanco) || "Email invalido",
-              // pattern: {
-              //   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              //   message: "Email inválido",
-              // },
-              // validate: (value) => value.includes("@") || "Email inválido",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: "Email inválido",
+              },
+              validate: { 
+                naoCadastrado: (value) =>
+                  value === emailBanco || "E-mail não cadastrado",
+                // naoContemArroba: (value) => 
+                // value.includes("@") || "Email inválido",
+              }
             })}
             onChange={(formData)=>{
               setEmail(formData.target.value);
@@ -88,8 +101,11 @@ export const Login = (props) => {
           />
         </label>
         <label>
-          <span>Senha:{errors.senha && (
+          {/* <span>Senha:{errors.senha && (
             <p className={Styles.error}>{errors.senha.message}</p>
+          )} */}
+          <span>Senha:{errors.senha && (
+            <span className={Styles.error}>{errors.senha.message}</span>
           )}
           </span>
           <input id="senha" name="senha" placeholder="Senha"
@@ -104,15 +120,9 @@ export const Login = (props) => {
                 message: "Deve ter pelo menos 8 caracteres",
               },
               maxLength: {
-                value: 10,
+                value: 16,
                 message: "Deve ter menos de 20 caracteres",
               },
-              // pattern: {
-              //   value:
-              //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-              //   message:
-              //     "Deve conter uma letra maiúscula, uma minúscula, um número e um caracter especial",
-              // },
             })}
             onChange={(formData)=>{
               setSenha(formData.target.value);
@@ -120,16 +130,32 @@ export const Login = (props) => {
           />
 
         </label>
-
-          <button type="submit" className={Styles.button_link}>
+        <div className={Styles.botoesWrapper}>
+          <button type="submit" className={Styles.button}>
             Login
             </button>
-          <button className={Styles.button_link} onClick={VoltarHome}>
+          <button className={Styles.button} onClick={VoltarHome}>
             Retornar
             </button>
-        <p><span  className={Styles.resultado} id="resultado"></span></p>
+        </div>
+
+        <p className={Styles.resultado} id="resultado"></p>
+        
         </form>
- 
+
+        {/* Testes para uma futuro modal */}
+        {/* {isModalOpen && (
+          <div className={Styles.modal}>
+            <div className={Styles.modalWindows}>
+              <span>Login com sucesso!</span>
+
+                <button className={Styles.button} 
+                  onClick={VoltarHome}>Retornar
+                </button>
+
+            </div>
+          </div>
+        )} */}
     </div>
   )
 }

@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   min-width: 0;
+  /* box-sizing: border-box; */
 }
 
 :root {
@@ -14,6 +15,26 @@
   --accent-clr: #5e63ff;
   --secondary-text-clr: #b0b3c1;
   --error-text-clr:rgb(165, 26, 26);
+  /* Azul */
+  --accent-blue: #5e63ff;
+  --accent-blue-dark: #3f43b7;
+  --accent-blue-light: #8c8fff;
+
+  /* Verde */
+  --accent-green: #1dd16a;
+  --accent-green-dark: #119956;
+  --accent-green-light: #5ff59b;
+
+  /* Vermelho */
+  --accent-red: #ff5e5e;
+  --accent-red-dark: #cc3a3a;
+  --accent-red-light: #ff9e9e;
+
+  /* Amarelo */
+  --accent-yellow: #ffd54a;
+  --accent-yellow-dark: #e6b800;
+  --accent-yellow-light: #ffed99;
+  --accent-clr: #5e63ff;
 }
 /* 
 .inter-<uniquifier> {
@@ -49,34 +70,33 @@ html{
   }
 
 .divcontainer2{
-  height: 100vh;
+  /* height: 100vh;
   display: flex ;
   align-items: center; 
   justify-content: center;
-  background: var(--base-clr);
+  background: var(--base-clr); */
   }
 
 .container2 {
-  border-radius: 6px;
+  /* border-radius: 6px;
   backgroundColor: var (--secondary-text-clr);
   padding: 20px 10px 20px 10px;
   min-width: 390px;
   display: flex 1 ; 
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 
     label {
-      color: var(--text-clr);
+      /* color: var(--text-clr);
       margin-top: .3rem;
       min-width: 180px;
-      /* max-width: 100vw; */
       display: flex ;
       text-align: left;
-      justify-content: space-between;
+      justify-content: space-between; */
     }
 
     input {
-      gap: 1;
+      /* gap: 1;
       border-radius: 6px;
       min-width: 380px;
       max-width: 100%;
@@ -86,10 +106,10 @@ html{
       text-indent: 1rem;
       justify-content: space-between;
 
-      margin-bottom: .9rem;
+      margin-bottom: .9rem; */
     }
     button {
-      border: 1px solid transparent;
+      /* border: 1px solid transparent;
       border-radius: 6px;
       min-width: 380px;
       margin-top: .5rem;
@@ -101,11 +121,11 @@ html{
       font-family: inherit;
       background-color: var(--secondary-text-clr);    
       cursor: pointer;
-      transition: border-color 0.25s; 
+      transition: border-color 0.25s;  */
 
     }
     button:focus, button:focus-visible {
-      outline: 4px auto -webkit-focus-ring-color;
+      /* outline: 4px auto -webkit-focus-ring-color; */
     }
 
   }
