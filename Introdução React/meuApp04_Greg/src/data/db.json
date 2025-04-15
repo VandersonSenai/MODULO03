@@ -1,0 +1,26 @@
+{
+  "funcionarios": [
+    {
+      "id": "1",
+      "nome": "Vanderson",
+      "email": "teste1@teste1.com",
+      "senha": "123",
+      "tipo" : "Administrador"
+    },
+    {
+      "id": "2",
+      "nome": "Onça",
+      "email": "teste2@teste2.com",
+      "senha": "123",
+      "tipo" : "Administrador"
+    },
+    {
+      "id": "3",
+      "nome": "Maria",
+      "email": "teste3@teste3.com",
+      "senha": "123",
+      "tipo" : "Administrador"
+    }
+  ]
+
+}
