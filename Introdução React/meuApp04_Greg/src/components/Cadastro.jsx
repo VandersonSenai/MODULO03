@@ -3,6 +3,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import styles from "./Cadastro.module.css";
 import Button from "react-bootstrap/Button";
+import {AddFuncionario} from "../hooks/useApi.js"
 
 // Importação do hook do React Hook Form para lidar com o formulário
 import { useForm } from "react-hook-form";
@@ -21,6 +22,7 @@ const Cadastro = () => {
   // Função chamada quando o formulário é enviado com sucesso
   const onSubmit = (data) => {
     console.log("Dados:", data);
+    AddFuncionario(data)
   };
 
   // Função chamada quando há erros no envio do formulário
@@ -100,7 +102,7 @@ const Cadastro = () => {
             {...register("senha", {
               required: "A senha é obrigatória",
               minLength: {
-                value: 8,
+                value: 2,
                 message: "A senha deve ter pelo menos 8 caracteres",
               },
               maxLength: {
