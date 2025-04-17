@@ -31,18 +31,19 @@ export const Login = (props) => {
   console.log("toggleStatus: ", resultado)
 
 
-  function toggleMessage(){
+  function toggleMessage(data){
     // if ((emailBanco == email) & (senhaBanco == senha)){
     //   toggleStatus.classList.toggle("sucesso");
     // }
     // alert("Login com sucesso!");
+    
     if ((emailBanco == email) && (senhaBanco == senha)) {
       // resultado.innerHTML = 'Digite um valor válido';
       // document.write('Digite um valor válido </br>');
       resultado.innerHTML = 'Login com sucesso!';
       resultado.classList.toggle('sucessoLogin')
       // return;     
-    } else {
+    } else  {
       resultado.classList.toggle('errorLogin')
       resultado.innerHTML = '';
     }
@@ -58,13 +59,13 @@ export const Login = (props) => {
 
     const onSubmit = (data) => {
         console.log("DADOS : ", data)
-        toggleMessage();
+        toggleMessage({data});
         openModal();
         
     };
     const onError = (errors) => {
-        console.log("ERROS : ", errors)
-        toggleMessage()
+        console.log("ERROS : ", errors);
+        toggleMessage();
     };  
     const VoltarHome = () => {
       navigate("/")
