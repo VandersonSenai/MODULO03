@@ -6,7 +6,7 @@ const Tabela = () => {
   const funcionarios = GetFuncionarios()
   console.log("Dados vindos da funcao getFuncionarios: ", funcionarios)
   return (
-    <div  style={{ width: "90%", margin: "auto" }}>
+    <div  style={{ width: "80%", margin: "auto" }}>
       <h1>Tabela</h1>
       <Table striped bordered hover>
         <thead>
@@ -31,6 +31,7 @@ const Tabela = () => {
                 <td>{funcionario.nome}</td>
                 <td>{funcionario.email}</td>
                 <td>{funcionario.tipo}</td>
+                <td><button>+</button></td>
               </tr>
           ))}
         </tbody>
