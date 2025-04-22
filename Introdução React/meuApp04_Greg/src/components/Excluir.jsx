@@ -3,6 +3,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import styles from "./Cadastro.module.css";
 import Button from "react-bootstrap/Button";
+import {DeletarFuncionario} from "../hooks/useApi.js"
 
 // Importação do hook do React Hook Form para lidar com o formulário
 
@@ -21,6 +22,8 @@ const Excluir = () => {
   // Função chamada quando o formulário é enviado com sucesso
   const onSubmit = (data) => {
     console.log("Dados:", data);
+    DeletarFuncionario(data.id);
+    window.location.reload();
   };
 
   // Função chamada quando há erros no envio do formulário

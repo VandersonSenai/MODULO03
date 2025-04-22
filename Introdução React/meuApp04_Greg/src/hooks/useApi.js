@@ -47,3 +47,40 @@ export function AddFuncionario(funcionario){
     }
     fetchData()
 }
+
+export function DeletarFuncionario(funcionarioId){
+    async function fetchData() {
+        try{
+            const resposta = await fetch(`${url}/${funcionarioId}`,{
+                method:"DELETE",
+            })
+            const data = await resposta.json()
+            console.log("Funcionário excluído com sucesso :", data)
+        }
+        catch(error){
+            console.log("Erro ao deletar funcionário:", error)
+        }
+    }
+    fetchData()
+}
+
+export function EditarFuncionario(funcionario){
+    async function fetchData() {
+        try{
+            const resposta = await fetch(`${url}/${funcionario.id}`,{
+                method: "PUT",
+                headers: {
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(funcionario)
+            })
+            const data = await resposta.json()
+            console.log("Funcionario editado :", data)
+        }
+        catch(error){
+            console.log("Erro ao editar funcionário:", error)
+        }
+
+    }
+    fetchData()
+}

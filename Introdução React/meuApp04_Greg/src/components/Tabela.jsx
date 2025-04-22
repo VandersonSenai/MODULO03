@@ -1,5 +1,7 @@
 // Importação dos componentes do Bootstrap
 import Table from "react-bootstrap/Table";
+import Button from "react-bootstrap/Button";
+
 import {GetFuncionarios} from "../hooks/useApi.js"
 
 const Tabela = () => {
@@ -8,6 +10,11 @@ const Tabela = () => {
   return (
     <div  style={{ width: "80%", margin: "auto" }}>
       <h1>Tabela</h1>
+      <Button className="c-flex mb-3  w-100 mx-auto" variant="primary"
+        onClick={ () => {
+          window.location.reload()
+        }}> reload
+       </Button >
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -31,7 +38,7 @@ const Tabela = () => {
                 <td>{funcionario.nome}</td>
                 <td>{funcionario.email}</td>
                 <td>{funcionario.tipo}</td>
-                <td><button>+</button></td>
+                <td><button>Edit</button></td>
               </tr>
           ))}
         </tbody>

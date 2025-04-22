@@ -23,6 +23,8 @@ const Cadastro = () => {
   const onSubmit = (data) => {
     console.log("Dados:", data);
     AddFuncionario(data)
+    alert("Peão Cadastrado")
+    window.location.reload()
   };
 
   // Função chamada quando há erros no envio do formulário
