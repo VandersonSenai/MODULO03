@@ -10,7 +10,7 @@ const Tabela = () => {
   return (
     <div  style={{ width: "80%", margin: "auto" }}>
       <h1>Tabela</h1>
-      <Button className="c-flex mb-3  w-100 mx-auto" variant="primary"
+      <Button className="c-flex mb-3  w-100 mx-auto  text-center" variant="primary"
         onClick={ () => {
           window.location.reload()
         }}> reload
@@ -38,7 +38,12 @@ const Tabela = () => {
                 <td>{funcionario.nome}</td>
                 <td>{funcionario.email}</td>
                 <td>{funcionario.tipo}</td>
-                <td><button>Edit</button></td>
+                <td><button
+                onClick={ () => {
+                  alert(`${funcionario.id}`)
+                }}
+                
+                >edit {funcionario.id}</button></td>
               </tr>
           ))}
         </tbody>

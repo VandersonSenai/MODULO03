@@ -3,18 +3,14 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import styles from "./Cadastro.module.css";
 import Button from "react-bootstrap/Button";
-import {AddFuncionario} from "../hooks/useApi.js"
-import { useState } from "react";
+import {EditarFuncionario} from "../hooks/useApi.js"
+
 
 // Importação do hook do React Hook Form para lidar com o formulário
 import { useForm } from "react-hook-form";
 
-const Cadastro = (props) => {
-    const [nome, setNome]   = useState(props ? props.nome : "");
-    const [email, setEmail] = useState(props ? props.email : "");
-    const [senha, setSenha] = useState(props ? props.senha : "");
-    const [tipo, setTipo] = useState(props ? props.tipo : "");
-    const [id, setId] = useState(props ? props.id : "");
+const Editar = () => {
+
   
   // Hook useForm para gerenciar o estado do formulário
   // register: função para registrar os campos do formulário
@@ -29,8 +25,8 @@ const Cadastro = (props) => {
   // Função chamada quando o formulário é enviado com sucesso
   const onSubmit = (data) => {
     console.log("Dados:", data);
-    AddFuncionario(data)
-    alert("Peão Cadastrado")
+    EditarFuncionario(data)
+    alert("Peão Editado")
     window.location.reload()
   };
 
@@ -41,11 +37,41 @@ const Cadastro = (props) => {
 
   return (
     <div>
-      <h1>Cadastro</h1>
+      <h1>Editar</h1>
       <form
         className={styles.formulario}
         onSubmit={handleSubmit(onSubmit, onError)}
       >
+        {/* Caixinha de Id */}
+        <FloatingLabel
+          controlId="floatingInpuId"
+          label="id"
+          className="mb-4 w-100"
+        >
+          <Form.Control
+            size="sm"
+            type="text"
+            placeholder=""
+            {...register("id", {
+              required: "O Id é obrigatório",
+              minLength: {
+                value: 1,
+                message: "O ID teve ter pelo menos 1 caracteres",
+              },
+              maxLength: {
+                value: 20,
+                message: "O nome deve ter ate 20 caracteres",
+              },
+              pattern: {
+                // value: /^[A-Za-z\s]+$/i,
+                message: "O ID só pode conter letras",
+              },
+            })}
+          />
+          {errors.id && <p className={styles.error}>{errors.id.message}</p>}
+        </FloatingLabel>
+
+
         {/* Caixinha de nome */}
         <FloatingLabel
           controlId="floatingInputNome"
@@ -67,7 +93,7 @@ const Cadastro = (props) => {
                 message: "O nome deve ter ate 20 caracteres",
               },
               pattern: {
-                value: /^[A-Za-z\s]+$/i,
+                value: /^[A-Za-z0-9._%+-]+$/i,
                 message: "O nome só pode conter letras",
               },
             })}
@@ -157,4 +183,4 @@ const Cadastro = (props) => {
   );
 };
 
-export default Cadastro;
+export default Editar;

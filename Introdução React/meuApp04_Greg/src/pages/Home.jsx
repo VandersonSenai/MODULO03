@@ -1,16 +1,32 @@
 // Importação dos componentes do Bootstrap
-import Col from "react-bootstrap/esm/Col";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/esm/Button";
 
 // Importação dos componentes para criar a pagina
 import Cadastro from "../components/Cadastro";
 import Tabela from "../components/Tabela";
 import Excluir from "../components/Excluir";
+import Editar from "../components/editar";
+import { useState } from "react";
 
 const Home = () => {
+  const [opcao, setOpcao] = useState(false)
+
+  const handleOpcao = () =>{
+    setOpcao(!opcao) //inverte o valor da opção
+  }
   return (
-      <div className="d-flex flex-wrap" >
+      <div className="d-flex flex-wrap text-center" >
         <Col xs={6} style={{ backgroundColor: "#eee" }}>
-          <Cadastro />
+
+          <Button variant="warning" className="mb-2 mt-2"
+            onClick={handleOpcao}>
+                {opcao ? "Quero Editar" : "Quero Cadastrar"}
+            </Button>
+            {opcao ?  <Editar /> : <Cadastro />}
+
+          {/* <Editar />
+          <Cadastro /> */}
           <Excluir />
         </Col>
         <Col xs={6} style={{ backgroundColor: "#eef" }}>

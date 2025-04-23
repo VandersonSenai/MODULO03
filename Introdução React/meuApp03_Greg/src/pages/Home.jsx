@@ -9,7 +9,7 @@ const Home = () => {
         CADASTRAR
       </Button>
       <br />
-      <MyCard
+      <MyCard 
         titulo="The Goat"
         img="https://jpimg.com.br/uploads/2024/11/cristiano-ronaldo-676x450.jpg"
         desc="O melhor jogador da história do planeta terra"

@@ -27,6 +27,13 @@
       "email": "vanderson.silva13@aluno.senai.br",
       "senha": "1234",
       "tipo": "Administrador"
+    },
+    {
+      "id": "3f6a",
+      "nome": "Vanderson2",
+      "email": "adadad@teste.com.br",
+      "senha": "098-08-09",
+      "tipo": "Gerente"
     }
   ]
 }
