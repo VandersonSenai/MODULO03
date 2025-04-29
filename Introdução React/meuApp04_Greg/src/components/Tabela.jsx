@@ -43,7 +43,7 @@ const Tabela = () => {
                   alert(`${funcionario.id}`)
                 }}
                 
-                >edit {funcionario.id}</button></td>
+                >+</button></td>
               </tr>
           ))}
         </tbody>
