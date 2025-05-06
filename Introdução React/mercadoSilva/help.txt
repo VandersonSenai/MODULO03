@@ -1,0 +1,4 @@
+em data criar um arquivo ./data/db.json
+  "scripts": {
+    "server": "json-server --watch src/data/db.json --port 5000"
+  },

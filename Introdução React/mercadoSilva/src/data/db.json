@@ -1,0 +1,29 @@
+{
+    "usuarios":[
+        {
+            "id":"1",
+            "nome":"Vanderson",
+            "email":"vandersondasilva@gmail.com",
+            "senha":"1"
+        },
+        {
+            "id":"2",
+            "nome":"Greg & Cris",
+            "email":"greg_e_cris@hotmail.com",
+            "senha":"1"
+        },
+        {
+            "id":"3",
+            "nome":"Julius",
+            "email":"3_empregos@gmail.com",
+            "senha":"1"
+        }
+    ],
+    "produtos":[
+
+    ],
+    "categorias":[
+
+    ]
+
+}

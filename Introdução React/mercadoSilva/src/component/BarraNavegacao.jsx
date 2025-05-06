@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button"
 import { BsBoxSeamFill } from "react-icons/bs";
 
 const BarraNavegacao = () => {
-    const usuarioNome = "Vistante"
+    const usuarioNome = "Visitante"
   return (
     <div style={{ position: "sticky", top: "0", width: "100%", zIndex: 1 }}>
         
@@ -29,21 +29,20 @@ const BarraNavegacao = () => {
                                 Usuário: {usuarioNome} |
                             </Navbar.Text>
                             {/* Caso o usuário tenha feito login, aparece o botão SAIR, senão o botão ENTRAR */}
-                            {
-                                    usuarioNome === "Visitante" ? (
-                                        <>
-                                            <Button variant="primary" 
-                                                    href="/login">
-                                                Entrar
-                                            </Button>
-                                        </>
+                            {usuarioNome === "Visitante" ? (
+                                  <>
+                                    <Button variant="primary" 
+                                            href="/login">
+                                            Entrar
+                                    </Button>                           
+                                    </>
                                     ) : (
-                                        <>
-                                            <Button variant="danger" 
-                                                    href="/login">
-                                                Sair
-                                            </Button>
-                                        </>
+                                    <>
+                                    <Button variant="danger"
+                                            href="/login">
+                                            Sair
+                                    </Button>
+                                    </>
                                     )
                             }
                         </Nav>

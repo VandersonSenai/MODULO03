@@ -1,4 +1,3 @@
-
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -8,6 +7,7 @@ import Alert from "react-bootstrap/Alert";
 import { useForm } from "react-hook-form";
 import { BsBoxArrowInRight } from "react-icons/bs";
 
+import { useState } from "react";
 
 const Login = () => {
     const {
@@ -15,9 +15,24 @@ const Login = () => {
         handleSubmit,
         formState: { errors },
         } = useForm();
+
+    const onSubmit =(data) =>{
+        // exibe os dados enviados ao carregar o evento
+        console.log("Dados : ", data);
+        
+    }
+    const onError =(errors) =>{
+        // exibe os erros no console.log
+        console.log("Erros : ", errors);
+    }
+    
+    const [alertClass, setAlertClass] = useState ("mb-3 d-none")
+    const [alertMensage, serAlertMensage] = useState ("")
+
   return (
-    <div>Login
-        <Container style={{ height: "100vh" }} className="justify-content-center align-content-center">
+    <div>
+        <Container style={{ height: "100vh" }} className="justify-content-center align-content-center"
+        onSubmit={handleSubmit(onSubmit, onError)}>
             <BsBoxArrowInRight style={{
                 fontSize: "100px",
                 color: "green",
@@ -42,8 +57,8 @@ const Login = () => {
                             },
                             validate: (value) => value.includes("@") || "Email inválido",
                         })}
-                        />
-                        {errors.email && <p className="error">{errors.email.message}</p>}
+                    />
+                    {errors.email && <p className="error">{errors.email.message}</p>}
                 </FloatingLabel>
 
                 {/* caixa de senha */}
@@ -51,10 +66,11 @@ const Login = () => {
                 controlId="floatingPassword" 
                 label="Senha" 
                 className="mb-5">
+                    {/* Form.Control define as regras de controle  */}
                     <Form.Control 
                         type="password" 
                         placeholder="Senha"
-                        {...register("Senha", {
+                        {...register("senha", {
                             required: "A senha é obrigatória",
                         })}
                     />
@@ -67,8 +83,9 @@ const Login = () => {
                         size="lg">
                     Login
                 </Button>
-                <Alert variant="danger" 
-                        className="mb-5" 
+                <Alert variant="danger"
+                // com o alertClass no className podemos dizer quando que ele ira aparecer. 
+                        className={alertClass}
                         style={{ 
                             position:"absolute", 
                             width: "30%", 
