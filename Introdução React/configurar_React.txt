@@ -31,6 +31,8 @@ $ npm create vite@latest meuApp01
 	- Instal o gerenciador de rotas formulariosReact
 		npm i react-hook-form
 
+
+		npm i  bootstrap react-bootstrap json-server react-hook-form react-router-dom react-icons
 	
 
 	Instale o [ ES7+ React/Redux/React-Native snippets ]  +14mi Users para os snippets.
