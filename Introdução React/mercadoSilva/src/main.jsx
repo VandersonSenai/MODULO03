@@ -11,7 +11,7 @@ import MyRouter from "./MyRouter.jsx"
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
-    {/* Atribui o nosso componete MyRouter como guia para o provedor de rotas*/}
+    {/* Atribui o nosso componente MyRouter como guia para o provedor de rotas*/}
     <RouterProvider router={MyRouter}/>
     
   </StrictMode>

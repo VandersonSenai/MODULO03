@@ -4,9 +4,13 @@ import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button"
 
 import { BsBoxSeamFill } from "react-icons/bs";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/UserContext";
+
 
 const BarraNavegacao = () => {
-    const usuarioNome = "Visitante"
+    // const usuarioNome = "Visitante"
+    const {usuarioNome, logout } = useContext (AuthContext)
   return (
     <div style={{ position: "sticky", top: "0", width: "100%", zIndex: 1 }}>
         
@@ -39,7 +43,8 @@ const BarraNavegacao = () => {
                                     ) : (
                                     <>
                                     <Button variant="danger"
-                                            href="/login">
+                                            href="/login"
+                                            onClick={logout}>
                                             Sair
                                     </Button>
                                     </>

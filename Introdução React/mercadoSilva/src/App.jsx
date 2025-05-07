@@ -8,17 +8,19 @@ import Container from "react-bootstrap/Container"
 
 import BarraNavegacao from "./component/BarraNavegacao.jsx"
 
+import { AuthProvider } from "./contexts/UserContext.jsx";
+
 function App() {
   return (
     <>
-      <div className="App">
-        <BarraNavegacao/>
-
-        <Container>
-             <Outlet />
-        </Container>
-
-      </div>
+      <AuthProvider>
+        <div className="App">
+          <BarraNavegacao/>
+            <Container>
+                <Outlet />
+            </Container>
+        </div>
+      </AuthProvider>
     </>
   )
 }

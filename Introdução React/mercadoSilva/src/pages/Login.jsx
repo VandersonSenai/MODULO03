@@ -9,16 +9,44 @@ import { BsBoxArrowInRight } from "react-icons/bs";
 
 import { useState } from "react";
 
+import { useVerificaLogin } from "../hooks/useApi";
+
+import { useNavigate } from "react-router-dom";
+
+
 const Login = () => {
+
+    
+
     const {
         register,
         handleSubmit,
         formState: { errors },
         } = useForm();
 
+    const { verificaLogin } = useVerificaLogin()
+
+    const navigate = useNavigate()
+
+
     const onSubmit =(data) =>{
         // exibe os dados enviados ao carregar o evento
         console.log("Dados : ", data);
+
+        // repassa para a funcao verificaLogin() os valores do form
+        // armazenando em respostaVerificacao o resoltado
+        const respostaVerificacao = verificaLogin(data)
+
+        // verificamos o retorno da funcao respostaVerificacao
+        if(respostaVerificacao == "login efetuado com sucesso!"){
+            alert(respostaVerificacao)
+            // caso tenha sucesso manda para a rota ./home
+            navigate("/home")
+        }
+        else {
+            setAlertClass("mb-5 mt-2")
+            serAlertMensage(respostaVerificacao)
+        }
         
     }
     const onError =(errors) =>{

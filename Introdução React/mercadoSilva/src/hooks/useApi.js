@@ -5,13 +5,16 @@
 // da api
 const url = import.meta.env.API_URL
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 
+import { AuthContext } from "../contexts/UserContext"
 
 // para o react entender que é um hook a função precisa conter o "use" em seu nome.
 export function useVerificaLogin(){
     // carregar lista de usuários da api.
     const [usuarios, setUsuarios] = useState([])
+
+    const { login } = useContext(AuthContext)
 
     useEffect( () =>{
 
@@ -22,8 +25,8 @@ export function useVerificaLogin(){
                 const users = await req.json()
                 setUsuarios(users)
             }
-            catch (error){
-                console.log("Error", error.message)
+            catch (erro){
+                console.log("Error", erro.message)
             }
         }
 
@@ -39,6 +42,9 @@ export function useVerificaLogin(){
         });
         // verfica o user nao é "indefinido" que significaria que ele nao foi encontrado e depois compara se a senha é igual a que esta atribuída ao user encontrado.
         if(userToFind != undefined && userToFind.senha == data.senha){
+
+            // salva o usuario encontrado no storage
+            login(userToFind)
             console.log("user logged", userToFind.nome)
             return "login efetuado com sucesso!"
         }else{
@@ -48,5 +54,3 @@ export function useVerificaLogin(){
 
     return { verificaLogin }
 }
-
-
