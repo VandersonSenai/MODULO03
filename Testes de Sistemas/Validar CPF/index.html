@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Desenvolva uma função que determine se um número é primo ou não. 
+     Retorne true se for primo e false se não for. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número é primo ou não</title>
+    <script>
+        function verificaCPF(){
+            // https://calculadoradev.com.br/validadores/cpf
+            var numero = document.getElementById(`numero`).value;
+            var cpfTeste = "11144477709"
+            var resultado = document.getElementById('resultado');
+            var cpfValido = 0;
+            var msgValidacao = "CPF Valido";
+            var somaDigitos = 0;
+            var digitoVerificadorA = 0;
+            var digitoVerificadorB = 0;
+//            if (isNaN(numero) || numero <= 0 ) {
+            if (isNaN(numero)) {
+                    // resultado.innerHTML = 'Digite um valor válido';
+                // document.write('Digite um valor válido </br>');
+                msgValidacao = 'CPF deve possuir apenas números'
+                //resultado.innerHTML = msgValidacao;
+                return;
+            } else if ( numero.length >13 || numero.length<=12 ){
+                //resultado.innerHTML = 'Numero insuficiente';
+                msgValidacao = 'Numero dígitos insuficiente'
+            }
+
+            
+            for (var i = 10 ; i>=2 ; i--) {
+                // somaDigitos= somaDigitos + (cpfTeste.slice(10-i, 11-i)*(i+1));
+                console.log("i = " + i);
+                console.log("cpfTeste.slice = " + cpfTeste.slice(10-i, 11-i));
+                digitoVerificadorA = digitoVerificadorA +  cpfTeste.slice(10-i, 11-i)*(i);
+                digitoVerificadorA = digitoVerificadorA % 11;
+                if (digitoVerificadorA<=2){
+                    digitoVerificadorA=0;
+                } else {
+                    // digitoVerificadorA = 11-8;
+                }
+
+                console.log("somaDigitos = " + digitoVerificadorA);
+            }
+
+            // document.write('Linha ' + i + '</br>');
+            if (cpfValido == 0){
+                    //resultado.innerHTML = msgValidacao;
+                    //resultado.innerHTML = somaDigitos;
+                    resultado.innerHTML = digitoVerificadorA;
+                } else {
+                    resultado.innerHTML = msgValidacao;
+                }
+        }
+
+        
+    </script>
+</head>
+<body>
+
+    <div align="Center">
+    <h1>
+        Validador de CPF
+    </h1>
+    <label for="numero"></label>
+    <input type="text" id="numero" name="numero" />
+    <button onclick="verificaCPF()">Verificar</button>
+    <p><span id="resultado"></span></p>
+    </div>  
+    </br>
+    
+</body>
+</html>
