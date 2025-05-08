@@ -10,47 +10,63 @@
         function verificaCPF(){
             // https://calculadoradev.com.br/validadores/cpf
             var numero = document.getElementById(`numero`).value;
-            var cpfTeste = "11144477709"
             var resultado = document.getElementById('resultado');
-            var cpfValido = 0;
-            var msgValidacao = "CPF Valido";
-            var somaDigitos = 0;
-            var digitoVerificadorA = 0;
-            var digitoVerificadorB = 0;
-//            if (isNaN(numero) || numero <= 0 ) {
-            if (isNaN(numero)) {
-                    // resultado.innerHTML = 'Digite um valor válido';
-                // document.write('Digite um valor válido </br>');
-                msgValidacao = 'CPF deve possuir apenas números'
-                //resultado.innerHTML = msgValidacao;
-                return;
-            } else if ( numero.length >13 || numero.length<=12 ){
-                //resultado.innerHTML = 'Numero insuficiente';
-                msgValidacao = 'Numero dígitos insuficiente'
-            }
 
+            var cpfTeste = String(numero).replace(/[^\d]/g,'')
+            // var cpfTeste = String(numero).replace(/[^\d]/g, '')
+            // var cpfTeste = "11144477735"
+            var cpfTeste2 = "11144477738"
+            var verificador = [];
+            var cpfValido = new Boolean(true)
+            var msgValidacao = "";
+
+            console.log("teste - " + cpfTeste);
             
-            for (var i = 10 ; i>=2 ; i--) {
-                // somaDigitos= somaDigitos + (cpfTeste.slice(10-i, 11-i)*(i+1));
-                console.log("i = " + i);
-                console.log("cpfTeste.slice = " + cpfTeste.slice(10-i, 11-i));
-                digitoVerificadorA = digitoVerificadorA +  cpfTeste.slice(10-i, 11-i)*(i);
-                digitoVerificadorA = digitoVerificadorA % 11;
-                if (digitoVerificadorA<=2){
-                    digitoVerificadorA=0;
-                } else {
-                    // digitoVerificadorA = 11-8;
+            if ([
+                '00000000000',
+                '11111111111',
+                '22222222222',
+                '33333333333',
+                '44444444444',
+                '55555555555',
+                '66666666666',
+                '77777777777',
+                '88888888888',
+                '99999999999',
+                ].indexOf(cpfTeste) !== -1){
+                    cpfValido = false;
+                    msgValidacao = "Erro: Sequencia de números invalida";
                 }
+        
 
-                console.log("somaDigitos = " + digitoVerificadorA);
+            if (isNaN(cpfTeste) && cpfValido ) {
+                msgValidacao = 'Erro: CPF deve possuir apenas números'
+                cpfValido = false;
+                
+            } else if ( (cpfTeste.length !== 11) && cpfValido ){
+                msgValidacao = 'Erro: Numero dígitos incorretos';
+                cpfValido = false;
+            } 
+
+            for (var x = 0 ; x <=1 ; x++){
+                for (var i = 10+x ; i>=2 ; i--){
+                    verificador[x] = verificador[x] +  parseInt(cpfTeste.substring((x+10)-i, (x+11)-i)*(i));
+                }
+            }
+            for (var x = 0 ; x <=1 ; x++) {
+                if (verificador[x]%11<2){
+                    verificador[x]=0;
+                } else {
+                    verificador[x] = (11-(verificador[x]%11));
+                }
             }
 
-            // document.write('Linha ' + i + '</br>');
-            if (cpfValido == 0){
-                    //resultado.innerHTML = msgValidacao;
-                    //resultado.innerHTML = somaDigitos;
-                    resultado.innerHTML = digitoVerificadorA;
-                } else {
+            if (cpfValido == true){
+
+                if ( (cpfTeste.substring(9, 10) == verificador[0]) && (cpfTeste.substring(10, 11) == verificador[1])){
+                    resultado.innerHTML = "CPF VALIDO !!!";
+                } 
+            } else {
                     resultado.innerHTML = msgValidacao;
                 }
         }
