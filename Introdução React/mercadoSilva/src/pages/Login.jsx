@@ -4,19 +4,23 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
-import { useForm } from "react-hook-form";
-import { BsBoxArrowInRight } from "react-icons/bs";
-
-import { useState } from "react";
-
-import { useVerificaLogin } from "../hooks/useApi";
+import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import { useForm } from "react-hook-form";
+
+import { useVerificaLogin } from "../hooks/useApi";
+
+import { BsBoxArrowInRight } from "react-icons/bs";
+
+import { useContext } from "react";
+
+import { AuthContext } from "../contexts/UserContext";
 
 const Login = () => {
 
-    
+    const { logout } = useContext(AuthContext);
 
     const {
         register,
@@ -34,7 +38,7 @@ const Login = () => {
         console.log("Dados : ", data);
 
         // repassa para a funcao verificaLogin() os valores do form
-        // armazenando em respostaVerificacao o resoltado
+        // armazenando em respostaVerificacao o resultado
         const respostaVerificacao = verificaLogin(data)
 
         // verificamos o retorno da funcao respostaVerificacao
@@ -45,17 +49,25 @@ const Login = () => {
         }
         else {
             setAlertClass("mb-5 mt-2")
-            serAlertMensage(respostaVerificacao)
+            serAlertMessage(respostaVerificacao)
         }
         
-    }
+    };
     const onError =(errors) =>{
         // exibe os erros no console.log
         console.log("Erros : ", errors);
-    }
-    
-    const [alertClass, setAlertClass] = useState ("mb-3 d-none")
-    const [alertMensage, serAlertMensage] = useState ("")
+    };
+
+    // Assim que entrar nessa página, o localStorage é resetado
+    useEffect(() => {
+        //Resetar localstorage
+        logout()
+      }, []);
+        
+    const [alertClass, setAlertClass] = useState("mb-3 d-none");
+    const [alertMessage, serAlertMessage] = useState ("");
+    const [alertVariant, setAlertVariant] = useState("danger");
+
 
   return (
     <div>
