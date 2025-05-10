@@ -7,52 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Número é primo ou não</title>
     <script>
+        //   function formatar(mascara, documento) {
+        //         let i = documento.value.length;
+        //         let saida = '#';
+        //         let texto = mascara.substring(i);
+        //         while (texto.substring(0, 1) != saida && texto.length ) {
+        //         documento.value += texto.substring(0, 1);
+        //         i++;
+        //         texto = mascara.substring(i);
+        //         }
+        //     }
+
         function verificaCPF(){
             // https://calculadoradev.com.br/validadores/cpf
             var numero = document.getElementById(`numero`).value;
             var resultado = document.getElementById('resultado');
-
-            var cpfTeste = String(numero).replace(/[^\d]/g,'')
-            // var cpfTeste = String(numero).replace(/[^\d]/g, '')
-            // var cpfTeste = "11144477735"
-            var cpfTeste2 = "11144477738"
-            var verificador = [];
+            // Regex que remover qualquer caracter que nao seja numero.
+            // var cpfTeste = String(numero).replace(/[^\d]/g,'');
+            var cpfTeste = numero;
+            var verificador = [0,0];
             var cpfValido = new Boolean(true)
-            var msgValidacao = "";
+            var msgValidacao = "🚨 CPF inválido. 🚨";
 
-            console.log("teste - " + cpfTeste);
-            
-            if ([
-                '00000000000',
-                '11111111111',
-                '22222222222',
-                '33333333333',
-                '44444444444',
-                '55555555555',
-                '66666666666',
-                '77777777777',
-                '88888888888',
-                '99999999999',
-                ].indexOf(cpfTeste) !== -1){
-                    cpfValido = false;
-                    msgValidacao = "Erro: Sequencia de números invalida";
-                }
-        
 
-            if (isNaN(cpfTeste) && cpfValido ) {
-                msgValidacao = 'Erro: CPF deve possuir apenas números'
+            if ((cpfTeste==null) || (cpfTeste.length==0) || (cpfTeste=="") ){
                 cpfValido = false;
-                
-            } else if ( (cpfTeste.length !== 11) && cpfValido ){
-                msgValidacao = 'Erro: Numero dígitos incorretos';
+                msgValidacao = "Atenção: 🚨 Obrigatório fornecer um numero de CPF. 🚨";
+            }
+
+            if (!(isNaN(cpfTeste)) && (cpfValido) ){
+                for (x = 0 ; x<=9 ; x++){
+                    var verificaSequencia = "";
+                    for (y = 0 ; y<=10 ; y++){
+                        verificaSequencia = verificaSequencia + x;
+                    }
+                    if ( verificaSequencia == cpfTeste ) {
+                        cpfValido = false;
+                        msgValidacao = "Atenção: 🚨 Sequencia de números invalida. 🚨";
+                    }
+                } 
+            }
+            
+            // Verifica se o CPF possui apenas numero
+            if (isNaN(cpfTeste) && cpfValido ) {
+                msgValidacao = 'Atenção: 🚨 CPF deve possuir apenas números. 🚨'
+                cpfValido = false;
+                // Verifica se o CPF possui os 11 numeros obrigatórios
+            } else if ( (cpfTeste.length != 11) && cpfValido ){
+                msgValidacao = 'Atenção: 🚨 Insira os 11 dígitos do CPF. 🚨';
                 cpfValido = false;
             } 
 
+            // Processa o numero identificando os numeros verificadores
             for (var x = 0 ; x <=1 ; x++){
                 for (var i = 10+x ; i>=2 ; i--){
                     verificador[x] = verificador[x] +  parseInt(cpfTeste.substring((x+10)-i, (x+11)-i)*(i));
                 }
             }
+
             for (var x = 0 ; x <=1 ; x++) {
                 if (verificador[x]%11<2){
                     verificador[x]=0;
@@ -61,27 +73,24 @@
                 }
             }
 
-            if (cpfValido == true){
-
-                if ( (cpfTeste.substring(9, 10) == verificador[0]) && (cpfTeste.substring(10, 11) == verificador[1])){
-                    resultado.innerHTML = "CPF VALIDO !!!";
-                } 
-            } else {
+            if ( (cpfValido == true) && (cpfTeste.substring(9, 10) == verificador[0]) && (cpfTeste.substring(10, 11) == verificador[1])){
+                    resultado.innerHTML = "( ͡° ͜ʖ ͡°)  🟢 CPF válido 🟢";
+                } else {
                     resultado.innerHTML = msgValidacao;
                 }
-        }
-
-        
+        }    
     </script>
 </head>
 <body>
 
     <div align="Center">
     <h1>
-        Validador de CPF
+        Verificador de CPF
     </h1>
     <label for="numero"></label>
-    <input type="text" id="numero" name="numero" />
+    <input type="text" id="numero" name="numero" maxlength="11"/>
+    <!-- Input com mascara de entrada ao carregar a funcao formatar('###.###.###-##',this) -->
+    <!-- <input type="text" id="numero" name="numero" maxlength="14" OnKeyPress="formatar('###.###.###-##',this)"/> -->
     <button onclick="verificaCPF()">Verificar</button>
     <p><span id="resultado"></span></p>
     </div>  
