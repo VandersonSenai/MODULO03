@@ -17,12 +17,6 @@
   }
 }
 
-.navbar-nav{
-  color: var(--clr-text);
-}
-.Navbar.Text{
-  color: var(--clr-text);
-}
 .Navbar{
     /* background-color: rgb(218, 105, 12); */
     /* background-color: var(--clr-bg); */
