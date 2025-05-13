@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const CardCurso = (props) => {
   return (
-          <Card bg="info" border="info" style={{ width: "19rem", padding:"2px", marginBottom:"20px", marginTop:"20px", borderRadius:"10px" }} className="text-center">
+          <Card bg="info" border="info" style={{ width: "19rem", padding:"0.1rem", marginBottom:"20px", marginTop:"20px", borderRadius:"10px" }} className="text-center">
         <Card.Img
           variant="top"
           src={
