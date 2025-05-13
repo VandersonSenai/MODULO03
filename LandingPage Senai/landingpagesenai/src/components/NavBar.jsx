@@ -18,13 +18,14 @@ const NavBar = () => {
 {/* adicionando icones aos menus             */}
         <img
               alt="SenaiLogo"
-              src="./logo_senai.svg"
-              width="300"
+              src="./SenaiLogoBranco.svg"
+              // src="./logo_senai.svg"
+              width="250"
               // height="30"
               className="d-inline-block align-top"
               />{' '}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle className={styles.text} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto bg" >
 
@@ -53,7 +54,8 @@ const NavBar = () => {
                 <Navbar.Text className={styles.text} >
                     login :
 {/* <a href='#login' className="p-2">Visitante</a> */}
-<a href='/login' className="p-2">Visitante</a>
+{/* <a href='/login' className="p-2">Visitante</a> */}
+<a href='/login' className={styles.login}>Visitante</a>
                 </Navbar.Text>
                 {/* <Button  variant="danger" >Sair</Button> */}
                 {/* <Button  variant="success" >Login</Button> */}

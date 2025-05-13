@@ -11,41 +11,46 @@
   h1{
     color: var(--clr-text );
   }
-
   .text{
     color: var(--clr-text);
   }
-}
-
-.Navbar{
-    /* background-color: rgb(218, 105, 12); */
-    /* background-color: var(--clr-bg); */
-    
-    /* padding: 10px 20px;
-    color: white;
-    display: flex-box;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100vw; */
-
-}
-
-.link{
-    text-decoration: none;
+  .text:hover{
     color: var(--clr-laranja);
+  }
+
+  .link{
+    text-decoration: none;
+    color: var(--clr-text);
     /* color: wheat; */
     margin:0px 10px;
     /* color: var(--clr-text ); */
-}
-.link:hover {
+  }
+  /* hover no texto do menu */
+  .link:hover{
     color: var(--clr-laranja);
     text-decoration: underline;
-    /* color: var(--clr-laranja); */
-    /* color: var(--clr-text ); */
+  }
+  /* alterando cor no texto Visitante/Login */
+  .login{
+    color: var(--clr-text);
+    padding: 0.5em;
+  }
+  /* hover no texto Visitante/Login */
+  .login:hover{
+  color: var(--clr-laranja);
+  text-decoration: underline;
+  /* color: var(--clr-laranja); */
+  /* color: var(--clr-text ); */
+  }
+  .navbar-toggler {
+  border-color: rgb(255,102,203);
+  } 
+  .navbar-toggler-icon {
+  border-color: rgb(255,102,203);
+  } 
+
+
 }
+
 
 
