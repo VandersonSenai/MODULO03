@@ -44,7 +44,14 @@
   }
   
 
-
+  .navbar_toggler {
+    border-color:   var(--clr-text);
+    fill:           var(--clr-text);
+    color:          var(--clr-text);
+    stroke:         rgba(233, 14, 14, 0.5);
+    color: white;
+    border-color: lightgreen;
+  } 
 
 }
 
