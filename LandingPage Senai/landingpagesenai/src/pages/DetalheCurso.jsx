@@ -2,12 +2,12 @@ import React from 'react'
 import styles from "./Estilos.module.css";
 
 
-const Cursos = () => {
+const DetalheCurso = () => {
   return (
     <div className={styles.divPagina}>
-      Cursos
+      Detalhamento do Curso
     </div>
   )
 }
 
-export default Cursos
+export default DetalheCurso

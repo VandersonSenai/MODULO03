@@ -1,8 +1,8 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from "./Footer.module.css";
 
-const Footer2 = () => <footer className="page-footer font-small blue pt-2">
+
+const Footer2 = () => <footer className="page-footer font-small blue pt-5">
     <div className="container-fluid text-left text-md-left">
         <div className="row">
             <div className="col-md-8 mt-md-0 mt-3">

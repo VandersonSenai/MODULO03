@@ -2,55 +2,49 @@
   /* background-color: var(--clr-base-dark); */
   /* color: var(--clr-text ); */
 
-  a{
-    color: var(--clr-text );
-  }
-  p{
-    color: var(--clr-text );
-  }
-  h1{
-    color: var(--clr-text );
-  }
-  .text{
+  a {
     color: var(--clr-text);
   }
-  .text:hover{
+  p {
+    color: var(--clr-text);
+  }
+  h1 {
+    color: var(--clr-text);
+  }
+  .text {
+    color: var(--clr-text);
+  }
+  .text:hover {
     color: var(--clr-laranja);
   }
 
-  .link{
+  .link {
     text-decoration: none;
     color: var(--clr-text);
     /* color: wheat; */
-    margin:0px 10px;
+    margin: 0px 10px;
     /* color: var(--clr-text ); */
   }
   /* hover no texto do menu */
-  .link:hover{
+  .link:hover {
     color: var(--clr-laranja);
     text-decoration: underline;
   }
   /* alterando cor no texto Visitante/Login */
-  .login{
+  .login {
     color: var(--clr-text);
     padding: 0.5em;
   }
   /* hover no texto Visitante/Login */
-  .login:hover{
-  color: var(--clr-laranja);
-  text-decoration: underline;
-  /* color: var(--clr-laranja); */
-  /* color: var(--clr-text ); */
+  .login:hover {
+    color: var(--clr-laranja);
+    text-decoration: underline;
+    /* color: var(--clr-laranja); */
+    /* color: var(--clr-text ); */
   }
-  .navbar-toggler {
-  border-color: rgb(255,102,203);
-  } 
-  .navbar-toggler-icon {
-  border-color: rgb(255,102,203);
-  } 
+  
+
 
 
 }
-
-
 

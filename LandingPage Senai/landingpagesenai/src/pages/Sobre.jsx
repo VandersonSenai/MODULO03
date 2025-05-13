@@ -1,8 +1,10 @@
 import React from 'react'
+import styles from "./Estilos.module.css";
 
 const Sobre = () => {
   return (
-    <div>Sobre</div>
+    <div className={styles.divPagina}>
+      Sobre</div>
   )
 }
 

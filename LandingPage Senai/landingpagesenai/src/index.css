@@ -1,15 +1,25 @@
+.App {
+  background-color: rgb(231, 231, 231);
+  height: 100%;
+}
+.error {
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
 :root {
-  --clr-base                : rgb(31, 41, 172);
-  --clr-base-dark           : rgb(16, 31, 98);
-  --clr-base-light          : rgb(70, 190, 214);
-  --clr-laranja             : rgb(252, 87, 7);
-  --clr-amarelo             : rgb(242, 171, 19);
-  --clr-roxo                : rgb(81, 25, 158);
-  --clr-text                : rgb(230, 230, 239);
-  --clr-text-secondary      : rgb(176, 179, 193);
-  --clr-bg                  : rgb(166, 167, 172);
+  --clr-base: rgb(31, 41, 172);
+  --clr-base-dark: rgb(16, 31, 98);
+  --clr-base-light: rgb(70, 190, 214);
+  --clr-laranja: rgb(252, 87, 7);
+  --clr-amarelo: rgb(242, 171, 19);
+  --clr-roxo: rgb(81, 25, 158);
+  --clr-text: rgb(230, 230, 239);
+  --clr-text-secondary: rgb(176, 179, 193);
+  --clr-bg: rgb(166, 167, 172);
 
-  
   /* background-color: var(--clr-base-dark); */
   -webkit-font-smoothing: antialiased;
 }

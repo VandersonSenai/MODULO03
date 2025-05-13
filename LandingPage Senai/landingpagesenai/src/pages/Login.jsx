@@ -1,8 +1,10 @@
 import React from 'react'
+import styles from "./Estilos.module.css";
 
 const Login = () => {
   return (
-    <div>Login</div>
+    <div className={styles.divPagina}>
+      Login</div>
   )
 }
 
