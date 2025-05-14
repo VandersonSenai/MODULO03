@@ -14,24 +14,23 @@ const Home = () => {
   return (
   <div className={styles.divPagina}>
 
-    <div className="row">
-      <CarouselSenai/>
-      {/* <div style={{ width: "100%",marginLeft: "auto",
-    marginRight: "auto", marginTop: "40px", marginBottom: "40px"}}>
-        
-        <a href="https://conteudo.senaies.com.br/cursos-qualificacao" target="_blank" rel="noopener noreferrer">
-        <img
-          src="banner-Acelera-Senai_desktop.png"
-          className="card-img-top"
-          alt="..."
-        />
-        </a>
-     </div> */}
-    </div>
-    <section id="contact">
+      <div className="row">
+        <CarouselSenai/>
+        {/* <div style={{ width: "100%",marginLeft: "auto",
+      marginRight: "auto", marginTop: "40px", marginBottom: "40px"}}>
+          
+          <a href="https://conteudo.senaies.com.br/cursos-qualificacao" target="_blank" rel="noopener noreferrer">
+          <img
+            src="banner-Acelera-Senai_desktop.png"
+            className="card-img-top"
+            alt="..."
+          />
+          </a>
+      </div> */}
+      </div>
+    
       <h1 className="text-center" >Cursos Disponiveis</h1>
-            <div className="d-flex col-12 gap-2 mt-3 justify-content-between flex-wrap">
-
+        <div className="d-flex col-12 gap-2 mt-3 justify-content-between flex-wrap">
         {cursos.map((prod) => (
           <CardCurso
             key={prod.id}
@@ -43,9 +42,8 @@ const Home = () => {
             valor={prod.valor}
           />              
         ))}
-        
-    </div>
-    </section>
+        </div>
+    
   </div>
   )
 }
