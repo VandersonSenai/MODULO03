@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar xpand='xxl' />
       
         <Container  >
 {/* xpand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'} */}

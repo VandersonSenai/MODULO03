@@ -29,8 +29,8 @@ const Home = () => {
       </div> */}
       </div>
     
-      <h1 className="text-center" >Cursos Disponiveis</h1>
-        <div className="d-flex col-12 gap-2 mt-3 justify-content-between flex-wrap">
+      <h3 className="text-center mt-4" >Cursos Disponiveis</h3>
+        <div className="d-flex justify-content-center gap-5 mt-3  flex-wrap">
         {cursos.map((prod) => (
           <CardCurso
             key={prod.id}

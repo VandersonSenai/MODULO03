@@ -1,7 +1,0 @@
-.carouselControl {
-  display: none;
-
-  a[class$="carousel-control"] {
-      display: none;
-  }
-}

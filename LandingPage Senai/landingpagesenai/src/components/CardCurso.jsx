@@ -16,16 +16,19 @@ const CardCurso = (props) => {
         />
         <Card.Body >
           <Card.Title style={{ color: "var(--clr-text)" }}>{props.nome}</Card.Title>
-          <Card.Text>
+          {/* <Card.Subtitle style={{ color: "var(--clr-text-secondary)" }} className="text-start pb-3">
+            <b>Preço: </b>{props.valor}
+          </Card.Subtitle> */}
+          <Card.Text className="text-start">
             <b>Modalidade : </b>            
             {props.modalidade}
           </Card.Text>
-          <Card.Text>
+          <Card.Text className="text-start">
             <b>Cidade : </b> {props.cidade}
           </Card.Text>
-          <Card.Subtitle style={{ color: "var(--clr-text-secondary)" }} className="mb-4 ">
+          <Card.Text style={{ color: "var(--clr-text-secondary)" }} className="text-start pb-1">
             <b>Preço: </b>{props.valor}
-          </Card.Subtitle>
+          </Card.Text>
           <Card.Link href={`/detalhecurso/${props.id}`}>
             <Button variant="outline-info">Saiba mais...</Button>
           </Card.Link>

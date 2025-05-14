@@ -2,7 +2,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function CarouselSenai() {
   return (
-    <Carousel data-bs-theme="dark" controls="false" fade="true" interval="2000" slide="true" aria-hidden="true">	
+    <Carousel style={{ width: "100%"}}data-bs-theme="dark" fade={true} interval={2000} slide={true} aria-hidden={true} className='mb-4 mt-4' indicators={false}>	
       <Carousel.Item>
                 <a href="https://conteudo.senaies.com.br/cursos-qualificacao" target="_blank" rel="noopener noreferrer">
           <img
