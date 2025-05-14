@@ -43,7 +43,24 @@
       "categoria": "Saúde e Beleza",
       "preco": "7890",
       "imagemUrl": "https://st.depositphotos.com/2063219/2316/i/450/depositphotos_23164256-stock-photo-burning-objects-and-objects-on.jpg"
+    },
+    {
+      "nome": "Notebook Gamer",
+      "descricao": "É um notebook e é gamer, tem luzinha",
+      "categoria": "Saúde",
+      "preco": "8001",
+      "imagemUrl": "https://m.media-amazon.com/images/I/51O4bS147tL._AC_UF894,1000_QL80_.jpg",
+      "id": "0f41"
     }
   ],
-  "categorias": []
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Saúde"
+    },
+    {
+      "id": "2",
+      "nome": "Beleza"
+    }
+  ]
 }

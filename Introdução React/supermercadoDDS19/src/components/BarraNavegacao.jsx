@@ -31,7 +31,7 @@ const BarraNavegacao = () => {
             <Nav className="me-auto">
               {/* Páginas */}
               <Nav.Link href="/home"> Produtos </Nav.Link>
-              <Nav.Link hfer="/cadastraProduto"> Cadastro </Nav.Link>
+              <Nav.Link href="/cadastraproduto"> Cadastro </Nav.Link>
             </Nav>
 
             <Nav className="justify-content-end">

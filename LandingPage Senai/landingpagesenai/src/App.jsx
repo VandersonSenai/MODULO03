@@ -5,24 +5,25 @@ import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
 import Footer from "./components/Footer";
-
+import { AuthProvider } from "./contexts/UserContext";
 
 function App() {
 
   return (
     <>
-      <NavBar xpand='xxl' />
-      
-        <Container  >
-{/* xpand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'} */}
-{/* xpand='xxl'} */}
-      {/* <NavBar /> */}
-            <Outlet />
+      {/* xpand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'} */}
+      {/* xpand='xxl'} */}
 
-            <Footer />
+      <AuthProvider>
+      <div className="App">
+      <NavBar  />
+        <Container  >
+          <Outlet />
+          <Footer />
         </Container>
 
-
+      </div>
+      </AuthProvider>
     </>
   )
 }

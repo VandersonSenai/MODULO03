@@ -1,5 +1,5 @@
 .App {
-  background-color: rgb(231, 231, 231);
+  background-color: var(--clr-base-dark);
   height: 100%;
 }
 

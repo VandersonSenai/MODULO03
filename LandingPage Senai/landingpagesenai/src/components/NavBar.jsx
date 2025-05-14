@@ -4,13 +4,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/esm/Button';
 import styles from "./NavBar.module.css";
+import ModalLogin from './ModalLogin';
+import { useState } from "react";
+import { AuthContext } from "../contexts/UserContext";
+import { useContext } from "react";
 
 const NavBar = () => {
+   const { usuarioNome, logout } = useContext(AuthContext);
+
   return (
         // <Navbar expand="lg" className="bg-body-tertiary " bg="dark" data-bs-theme="dark">
 
         
-    <Navbar expand="lg" className={styles.navbar_custom}
+    <Navbar sticky="top" expand="lg" className={`container-fluid py-2 ${styles.navbar_custom}`}
       > 
 {/* adicionando thema dark */}
       <Container className="mt-0 p-1" >
@@ -20,7 +26,7 @@ const NavBar = () => {
               alt="SenaiLogo"
               src="./SenaiLogoBranco.svg"
               // src="./logo_senai.svg"
-              width="250"
+              width="200"
               // height="30"
               className="d-inline-block align-top"
               />{' '}
@@ -48,14 +54,25 @@ const NavBar = () => {
                 Guarapari
               </NavDropdown.Item>
             </NavDropdown> */}
-
           </Nav>
           <Nav >
                 <Navbar.Text className={styles.text} >
+
+                {usuarioNome === "Visitante" ? `Olá, ${usuarioNome}` : "Olá, Visitante"}
+
                     login :
-{/* <a href='#login' className="p-2">Visitante</a> */}
-{/* <a href='/login' className="p-2">Visitante</a> */}
 <a href='/login' className={styles.login}>Visitante</a>
+
+
+
+ {/* <span className={styles.login} onClick={() => setShowModal(true)} role="button">
+        Visitante
+      </span>
+      {showModal && (
+        <ModalLogin  onClose={() => setShowModal(false)} 
+        onClick={() => setShowModal(true)} 
+        />
+      )} */}
                 </Navbar.Text>
                 {/* <Button  variant="danger" >Sair</Button> */}
                 {/* <Button  variant="success" >Login</Button> */}

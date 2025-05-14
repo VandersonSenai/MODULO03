@@ -1,18 +1,10 @@
 .navbar_custom {
 
+  background-color: "#e3f2fd";
     -webkit-box-shadow  : 0 8px 2px -6px #999;
     -moz-box-shadow     : 0 8px 2px -6px #999;
     box-shadow          : 0 8px 2px -6px #999;
-
-    /* the rest of your styling */
-  /* background-color: var(--clr-base-dark); */
-  /* color: var(--clr-text ); */
-    /* -webkit-box-shadow: 10px 20px 20px #FC0; */
-    /* -moz-box-shadow:    10px 20px 20px #FC0; */
-    /* box-shadow:         4px 2px 4px rgb(76, 61, 163); */
-    /* box-shadow:         4px 2px 4px rgb(81, 25, 158); */
     z-index:999;
-
     margin: 0px;
     padding: 0px;
 
@@ -53,8 +45,7 @@
   .login:hover {
     color: var(--clr-laranja);
     text-decoration: underline;
-    /* color: var(--clr-laranja); */
-    /* color: var(--clr-text ); */
+
   }
   
 
@@ -62,10 +53,19 @@
     border-color:   var(--clr-text);
     fill:           var(--clr-text);
     color:          var(--clr-text);
-    stroke:         rgba(233, 14, 14, 0.5);
+    stroke:         rgba(204, 197, 197, 0.5);
     color: white;
-    border-color: lightgreen;
+    border-color: white;
   } 
 
 }
+
+  .navbar_toggler {
+    border-color:   var(--clr-text);
+    fill:           var(--clr-text);
+    color:          var(--clr-text);
+    stroke:         rgba(204, 197, 197, 0.5);
+    color: white;
+    border-color: white;
+  } 
 
