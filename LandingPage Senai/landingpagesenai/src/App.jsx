@@ -17,10 +17,10 @@ function App() {
       <AuthProvider>
       <div className="App">
       <NavBar  />
-        <Container  >
+        <Container className="container-fluid py-2">
           <Outlet />
-          <Footer />
         </Container>
+          <Footer />
 
       </div>
       </AuthProvider>

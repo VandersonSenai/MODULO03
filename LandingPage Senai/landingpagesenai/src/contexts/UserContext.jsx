@@ -11,9 +11,12 @@ export const AuthProvider = ({children}) => {
 
     const login = (data) => {
         console.log("Usuário atual:", data)
-        localStorage.setItem("userName", data.nome)
+        localStorage.setItem("userName", data.userName)
         localStorage.setItem("email", data.email)
-        setUsuarioNome(data.nome)
+        setUsuarioNome(data.userName)
+        // localStorage.setItem("userName", data.nome)
+        // localStorage.setItem("email", data.email)
+        // setUsuarioNome(data.nome)
     }
 
     const logout = () =>{

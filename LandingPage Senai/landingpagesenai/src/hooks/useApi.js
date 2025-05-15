@@ -30,7 +30,8 @@ export function useVerificaLogin() {
 
     if (userToFind != undefined && userToFind.senha == data.senha) {
       login(userToFind);
-      console.log("Usuário logado", userToFind.nome);
+      // console.log("Usuário logado", userToFind.nome);
+      console.log("Usuário logado", userToFind.userName);
       return "Login efetuado com sucesso";
     } else {
       return "Usuário ou senha inválidos";

@@ -5,8 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Footer2 = () => <footer className="page-footer font-small blue pt-5">
-    <div className={`container-fluid py-2 ${styles}`}>
+const Footer = () => <footer className="page-footer font-small blue pt-5">
+    <div className={`container-fluid g-0 py-2 ${styles.footer}`}>
         <Container className="container-fluid text-left text-md-left py-2 ">
             <Row >
               <Col className="text-start" xs={12} md={12}>
@@ -14,9 +14,7 @@ const Footer2 = () => <footer className="page-footer font-small blue pt-5">
                     <img
                     alt="logosenai_2024.png"
                     src="./logo_senai_2024.png"
-                    // src="./logo_senai.svg"
                     width="140"
-                    // height="30"
                     className="d-inline-block align-top "
                     />
                 </a>
@@ -29,8 +27,8 @@ const Footer2 = () => <footer className="page-footer font-small blue pt-5">
                   {/* <hr className="clearfix w-100 d-md-none pb-0"/> */}
                   </p> 
                 </Col>
-                <Col className="text-start" xs={12} md={1}>
-                  <ul className="list-unstyled d-flex gap-3 mt-0 ">
+                <Col className="text-start" xs={8} md={1}>
+                  <ul className="list-unstyled d-flex gap-2 ">
                     <li>
                       <a href="https://www.instagram.com/senaivitoria/" target="_blank">
                         <svg width="24"
@@ -121,4 +119,4 @@ const Footer2 = () => <footer className="page-footer font-small blue pt-5">
 
 </footer>
 
-export default Footer2
+export default Footer

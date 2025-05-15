@@ -2,9 +2,12 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
 
+
 const CardCurso = (props) => {
   return (
-          <Card bg="info" border="info" style={{ width: "19rem", padding:"0.1rem", marginBottom:"20px", marginTop:"20px", borderRadius:"10px" }} className="text-center">
+    
+
+          <Card bg="info" border="info" style={{ width: "20rem", padding:"0.1rem", marginBottom:"20px", marginTop:"20px", borderRadius:"10px" }} className="text-center">
         <Card.Img
           variant="top"
           src={
@@ -15,6 +18,7 @@ const CardCurso = (props) => {
           height="200px"
         />
         <Card.Body >
+        {/* <Card.Body style={{backgroundColor: "var(--clr-text)"}}> */}
           <Card.Title style={{ color: "var(--clr-text)" }}>{props.nome}</Card.Title>
           {/* <Card.Subtitle style={{ color: "var(--clr-text-secondary)" }} className="text-start pb-3">
             <b>Preço: </b>{props.valor}
@@ -34,6 +38,8 @@ const CardCurso = (props) => {
           </Card.Link>
         </Card.Body>
       </Card>
+
+    
   )
 }
 

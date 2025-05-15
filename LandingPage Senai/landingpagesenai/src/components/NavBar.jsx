@@ -58,11 +58,35 @@ const NavBar = () => {
           <Nav >
                 <Navbar.Text className={styles.text} >
 
-                {usuarioNome === "Visitante" ? `Olá, ${usuarioNome}` : "Olá, Visitante"}
+                {/* {usuarioNome === "Visitante" ? 
+                  `Olá, ${usuarioNome}` :
+                  `Olá, Visitante`} */}
+             {usuarioNome === "Visitante" ? (
+                <>
+                  <span>Olá, </span>
+                  <a href="/login" className={styles.login}>Visitante
+                  </a>
+                </>
+              ) : (
+                                <>
+                  <span>Olá, </span>
+                  <a href="/login" onClick={logout} className={styles.login}>{usuarioNome}
+                  </a>
+                </>
+                // `Olá, ${usuarioNome}`
+              )}
+              
 
-                    login :
-<a href='/login' className={styles.login}>Visitante</a>
+{/* 
+               <Button variant="danger" href="/login" onClick={logout}>
+                                  Sair
+                                </Button> */}
+                    
+{/* <span>Olá,</span><a href='/login' className={styles.login}>Visitante</a> */}
+{/* 
 
+`<span>Olá,</span><a href='/login' className={styles.login}>Visitante</a>`
+ */}
 
 
  {/* <span className={styles.login} onClick={() => setShowModal(true)} role="button">
