@@ -1,30 +1,32 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/esm/Button';
 import styles from "./NavBar.module.css";
-import ModalLogin from './ModalLogin';
-import { useState } from "react";
 import { AuthContext } from "../contexts/UserContext";
 import { useContext } from "react";
+
 
 const NavBar = () => {
    const { usuarioNome, logout } = useContext(AuthContext);
 
   return (
         // <Navbar expand="lg" className="bg-body-tertiary " bg="dark" data-bs-theme="dark">
-
-        
-    <Navbar sticky="top" expand="lg" className={`container-fluid py-2 ${styles.navbar_custom}`}
+    <Navbar sticky="top" expand="lg" className={`container-fluid py-2 px-0 ${styles.navbar_custom}`}
+        style={{ 
+        display: 'flex', 
+        alignItems: 'center'
+    }}
       > 
 {/* adicionando thema dark */}
-      <Container className="mt-0 p-1" >
-        <Navbar.Brand href="/home">
+      <Container className="mt-0 p-0 py-0" >
+        <Navbar.Brand as={NavLink} to="/home">
 {/* adicionando icones aos menus             */}
         <img
               alt="SenaiLogo"
-              src="./SenaiLogoBranco.svg"
+              src="/SenaiLogoBranco.png"
               // src="./logo_senai.svg"
               width="200"
               // height="30"
@@ -34,77 +36,76 @@ const NavBar = () => {
         <Navbar.Toggle className={styles.text} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto bg" >
+            {/* <Nav.Link as={NavLink} className={styles} 
+            style={({ isActive }) => {
+              return { color: isActive ?
+                     'var(--clr-laranja)' : 
+                     'var(--clr-text)',
+                    transition: 'all 0.2s ease',
+                    textDecoration: isActive ? 'underline' : 'none',
+                    fontWeight: isActive ? 'bold' : 'normal',
+                    fontSize: isActive ? '1.1rem' : '1rem',
+                    padding: isActive ? '0.5rem' : '0.5rem',
+                    }
+              }}
+            to="/contato">
+            Contato</Nav.Link> */}
 
-            <Nav.Link className={styles.link} href="/cursos">Cursos</Nav.Link>            
-            <Nav.Link className={styles.link} href="/contato">Contato</Nav.Link>
-            <Nav.Link className={styles.link} href="/login">Login</Nav.Link>
-            <Nav.Link className={styles.link} href="/sobre">Sobre</Nav.Link>
+            <Nav.Link as={NavLink} className={styles} 
+            style={({ isActive }) => {
+              return { color: isActive ?
+                     'var(--clr-base)' : 
+                     'var(--clr-text)',
+                    transition: 'all 0.2s ease',
+                    textDecoration: isActive ? 'underline' : 'none',
+                    fontWeight: isActive ? 'bold' : 'normal',
+                    }
+              }}
+            to="/contato">
+            Contato</Nav.Link>
+            <Nav.Link as={NavLink} className={styles} 
+            style={({ isActive }) => {
+              return { color: isActive ?
+                     'var(--clr-base)' : 
+                     'var(--clr-text)',
+                    transition: 'all 0.2s ease',
+                    textDecoration: isActive ? 'underline' : 'none',
+                    fontWeight: isActive ? 'bold' : 'normal',
+                    }
+              }}
+            to="/historia">
+            História</Nav.Link>
 
-            {/* <NavDropdown title="Unidades" id="basic-nav-dropdown" bg="dark" data-bs-theme="dark">
-              <NavDropdown.Item href="#action/3.1">Vitoria</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Serra
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Vila Velha</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Viana
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">
-                Guarapari
-              </NavDropdown.Item>
-            </NavDropdown> */}
+            {/* <Nav.Link as={NavLink} className={styles.link} to="/contato">
+            Contato</Nav.Link> */}
+            <Nav.Link as={NavLink} className={styles.link} to="/sobre">
+            Sobre</Nav.Link>
           </Nav>
           <Nav >
-                <Navbar.Text className={styles.text} >
-
-                {/* {usuarioNome === "Visitante" ? 
-                  `Olá, ${usuarioNome}` :
-                  `Olá, Visitante`} */}
+            <Navbar.Text className={styles.text} >
              {usuarioNome === "Visitante" ? (
                 <>
                   <span>Olá, </span>
-                  <a href="/login" className={styles.login}>Visitante
-                  </a>
+                  <Link  as={NavLink} 
+                          to="/login" 
+                          className={styles.login}>Visitante
+                  </Link>
                 </>
-              ) : (
-                                <>
+                ) : (
+                <>
                   <span>Olá, </span>
-                  <a href="/login" onClick={logout} className={styles.login}>{usuarioNome}
-                  </a>
+                  <Link  as={NavLink} to="/login" 
+                          onClick={logout} 
+                          className={styles.login}>{usuarioNome}
+                  </Link>
                 </>
-                // `Olá, ${usuarioNome}`
               )}
-              
-
-{/* 
-               <Button variant="danger" href="/login" onClick={logout}>
-                                  Sair
-                                </Button> */}
-                    
-{/* <span>Olá,</span><a href='/login' className={styles.login}>Visitante</a> */}
-{/* 
-
-`<span>Olá,</span><a href='/login' className={styles.login}>Visitante</a>`
- */}
-
-
- {/* <span className={styles.login} onClick={() => setShowModal(true)} role="button">
-        Visitante
-      </span>
-      {showModal && (
-        <ModalLogin  onClose={() => setShowModal(false)} 
-        onClick={() => setShowModal(true)} 
-        />
-      )} */}
-                </Navbar.Text>
-                {/* <Button  variant="danger" >Sair</Button> */}
-                {/* <Button  variant="success" >Login</Button> */}
+            </Navbar.Text>
           </Nav>
-
         </Navbar.Collapse>
       </Container>
     </Navbar>
+            
 
   )
 }

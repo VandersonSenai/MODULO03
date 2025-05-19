@@ -5,13 +5,7 @@
       "userName": "admin",
       "email": "eu@gmail.com",
       "senha": "1"
-    },
-    {
-      "id": "2",
-      "userName": "cliente",
-      "email": "cliente@gmail.com",
-      "senha": "1"
-    }    
+    }  
   ],
   "cursos": [
     {
@@ -24,7 +18,8 @@
       "valor": "R$ 3.198,96",
       "objetivo": "Proporcionar o desenvolvimento das capacidades técnicas, sociais, metodológicas e organizativas referente à qualificação profissional em Mecânico de Máquinas Industriais.",
       "prerequisito": "Idade mínima de 16 anos e Ensino Fundamental completo.",
-      "imagemUrl": "./curso_1111.jpg"
+      "imagemUrl_card": "/curso_1111.jpg",
+      "imagemUrl_detalhe": "/curso_1111_detalhe.jpg"
     },
     {
       "id": "2222",
@@ -36,7 +31,8 @@
       "valor": "R$ 2.198,96",
       "objetivo": "Proporcionar o desenvolvimento das capacidades técnicas, sociais, metodológicas e organizativas referente à qualificação profissional em Mecânico de Máquinas Industriais.",
       "prerequisito": "Idade mínima de 16 anos e Ensino Fundamental completo.",
-      "imagemUrl": "./curso_2222.jpg"
+      "imagemUrl_card": "/curso_2222.jpg",
+      "imagemUrl_detalhe": "/curso_2222_detalhe.jpg"
     },
     {
       "id": "3333",
@@ -48,8 +44,8 @@
       "valor": "R$ 852,80",
       "objetivo": "Iniciar o aluno nos conceitos e princípios básicos da pneumática industrial, considerando normas e requisitos técnicos de qualidade, saúde e segurança do trabalho e de meio ambiente.",
       "prerequisito": "Idade mínima de 16 anos e Ensino Fundamental completo.",
-      "imagemUrl": "./curso_3333.jpg"
-
+      "imagemUrl_card": "/curso_3333.jpg",
+      "imagemUrl_detalhe": "/curso_3333_detalhe.jpg"
     }
   ],
     "contato": [
