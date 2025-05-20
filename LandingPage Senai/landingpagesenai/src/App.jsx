@@ -11,16 +11,17 @@ function App() {
 
   return (
     <>
-      {/* xpand={'sm' | 'md' | 'lg' | 'xl' | 'xxl'} */}
-      {/* xpand='xxl'} */}
-
       <AuthProvider>
-      <div className="App">
-      <NavBar  />
-        <Container className="container-fluid py-2">
-          <Outlet />
+      <div className="App ">
+
+            <NavBar  />
+        <Container className="container-fluid py-0 px-0 ">
+
+            <Outlet />
+
+            <Footer />
         </Container>
-          <Footer />
+          
 
       </div>
       </AuthProvider>
