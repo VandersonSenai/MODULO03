@@ -1,0 +1,10 @@
+- Executar Scripts
+
+    $ node [nomeDoScript.js]
+    $ node [script.js]
+
+-Dentro da pasta que ira guardar os seu pacotes.
+$npm init -y
+
+- Instala pacote minimo de modulos externos
+$npm i minimist

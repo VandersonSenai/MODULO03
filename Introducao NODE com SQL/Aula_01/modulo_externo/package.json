@@ -1,0 +1,21 @@
+{
+  "name": "modulo_externo",
+  "version": "1.0.0",
+  "description": "Apernas um teste de pacote",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "primeira",
+    "aula",
+    "aula1",
+    "node",
+    "modules"
+  ],
+  "author": "Vanderson",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
