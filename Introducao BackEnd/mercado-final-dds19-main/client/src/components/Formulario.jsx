@@ -54,11 +54,11 @@ const Formulario = (props) => {
 
             if(produto && !carregado){
               reset({
-                nome: produto.nome,
-                descricao: produto.descricao,
-                categoria: produto.categoria,
-                preco: produto.preco,
-                imagemUrl: produto.imagemUrl
+                nome: produto[0].nome_prod,
+                descricao: produto[0].descricao_prod,
+                categoria: produto[0].categoria_prod,
+                preco: produto[0].preco_prod,
+                imagemUrl: produto[0].imagem_prod
               })
               setCarregado(true)
             }
@@ -154,19 +154,19 @@ const Formulario = (props) => {
               <Form.Select
                 {...register("categoria", {
                   validate: (value) =>
-                    !value.includes("nenhum") || "Escolha uma categoria ",
+                    !value == 0 || "Escolha uma categoria ",
                 })}
               >
-                <option value="nenhum"> Escolha uma categoria </option>
+                <option value="0"> Escolha uma categoria </option>
                 {categorias.map((cat) => (
                   <option
-                    key={cat.id}
-                    value={cat.nome}
+                    key={cat.id_cat}
+                    value={cat.id_cat}
                     selected={
-                      props.page === "editar" && watch("categoria") === cat.nome
+                      props.page === "editar" && watch("categoria") === cat.id_cat
                     }
                   >
-                    {cat.nome}
+                    {cat.nome_cat}
                   </option>
                 ))}
               </Form.Select>

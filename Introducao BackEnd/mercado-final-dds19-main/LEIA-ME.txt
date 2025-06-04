@@ -1,0 +1,9 @@
+
+$ npm i express mysql2 nodemon cors
+
+ - add no [ package.json ]
+
+"type": "module",
+
+* instala o script de execução do servidor
+"server": "nodemon index.js localhost 5000"

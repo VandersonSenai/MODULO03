@@ -31,13 +31,13 @@ const Home = () => {
 
         {produtos.map((prod) => (
           <CardProduto
-            key={prod.id}
-            id={prod.id}
-            nome={prod.nome}
-            descricao={prod.descricao}
-            preco={prod.preco}
-            categoria={prod.categoria}
-            imagemUrl={prod.imagemUrl}
+            key={prod.id_prod}
+            id={prod.id_prod}
+            nome={prod.nome_prod}
+            descricao={prod.descricao_prod}
+            preco={prod.preco_prod}
+            categoria={prod.nome_cat}
+            imagemUrl={prod.imagem_prod}
           />
         ))}
       </div>

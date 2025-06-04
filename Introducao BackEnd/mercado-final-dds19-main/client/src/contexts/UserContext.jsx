@@ -11,9 +11,9 @@ export const AuthProvider = ({children}) => {
 
     const login = (data) => {
         console.log("Usuário atual:", data)
-        localStorage.setItem("userName", data.nome)
-        localStorage.setItem("email", data.email)
-        setUsuarioNome(data.nome)
+        localStorage.setItem("userName", data.nome_usu)
+        localStorage.setItem("email", data.email_usu)
+        setUsuarioNome(data.nome_usu)
     }
 
     const logout = () =>{
