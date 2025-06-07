@@ -22,14 +22,14 @@ export function useListaLivros() {
   return livros
 }
 
-export function useBuscarLivroId() {
-  const BuscarLivroId = async (id) => {
+export function useBuscaLivroId() {
+  const BuscaLivroId = async (id) => {
     const req = await fetch(`${url}/livros/${id}`);
     const res = await req.json();
     // console.log("Curso encontrado:", res);
     return res;
   };
-  return { BuscarLivroId };
+  return { BuscaLivroId };
 }
 
 export function useSalvaUsuario() {

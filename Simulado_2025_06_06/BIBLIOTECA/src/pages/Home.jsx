@@ -33,6 +33,7 @@ const Home = () => {
               livro_status={livros.livro_status}
             />              
           ))}
+          
           </div>
         </section>
     </Container>
