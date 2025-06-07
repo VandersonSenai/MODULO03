@@ -1,0 +1,64 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "userName": "Eu",
+      "email": "eu@gmail.com"
+    },
+    {
+      "id": "2",
+      "userName": "Vanderson",
+      "email": "vanderson@gmail.com"
+    }
+  ],
+  "livros": [
+    {
+      "livro_id": "1",
+      "livro_titulo": "O Senhor dos Anéis",
+      "livro_autor": "J. R. R. Tolkien",
+      "livro_genero": "Fantasia/Ação",
+      "livro_status": "QUERO LER",
+      "livro_id_usercad": "1"
+    },
+    {
+      "livro_id": "2",
+      "livro_titulo": "Game of Thrones",
+      "livro_autor": "George R. R. Martin",
+      "livro_genero": "Fantasia/Ação",
+      "livro_status": "QUERO LER",
+      "livro_id_usercad": "1"
+    },
+    {
+      "livro_id": "3",
+      "livro_titulo": "Livro 3",
+      "livro_autor": "Autor Livro 3",
+      "livro_genero": "Documentario",
+      "livro_status": "LIDO",
+      "livro_id_usercad": "2"
+    },
+    {
+      "livro_id": "4",
+      "livro_titulo": "Livro 4",
+      "livro_autor": "Autor Livro 4",
+      "livro_genero": "Didatico",
+      "livro_status": "LIDO",
+      "livro_id_usercad": "1"
+    },
+    {
+      "livro_id": "5",
+      "livro_titulo": "Livro 5",
+      "livro_autor": "Autor Livro 5",
+      "livro_genero": "Terror",
+      "livro_status": "LIDO",
+      "livro_id_usercad": "1"
+    },
+    {
+      "livro_id": "6",
+      "livro_titulo": "Livro 6",
+      "livro_autor": "Autor Livro 6",
+      "livro_genero": "Biografico",
+      "livro_status": "LIDO",
+      "livro_id_usercad": "1"
+    }
+  ]
+}
