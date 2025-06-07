@@ -2,14 +2,14 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon index.js localhost 5000"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
+  "keywords": [],
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",

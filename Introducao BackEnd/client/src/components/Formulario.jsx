@@ -52,6 +52,7 @@ const Formulario = (props) => {
         try {
             const produto = await buscarProdutoPorId(id)
 
+            console.log(produto)
             if(produto && !carregado){
               reset({
                 nome: produto[0].nome_prod,

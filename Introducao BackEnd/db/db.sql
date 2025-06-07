@@ -1,6 +1,7 @@
 CREATE DATABASE mercado;
 
 USE mercado;
+
 CREATE TABLE usuarios(
     id_usu INT AUTO_INCREMENT PRIMARY KEY,
     nome_usu VARCHAR(50),
@@ -8,6 +9,12 @@ CREATE TABLE usuarios(
     senha_usu VARCHAR(50),
     tipo_usu enum('Administrador', 'Gerente', 'Funcionario')
 );
+
+CREATE TABLE categorias(
+    id_cat INT AUTO_INCREMENT PRIMARY KEY, 
+    nome_cat VARCHAR(50)
+ );
+
 CREATE TABLE produtos(
     id_prod INT AUTO_INCREMENT PRIMARY KEY,
     nome_prod VARCHAR(50),
@@ -18,12 +25,7 @@ CREATE TABLE produtos(
     FOREIGN KEY (categoria_prod) REFERENCES categorias(id_cat)
  );
 
- CREATE TABLE categorias(
-    id_cat INT AUTO_INCREMENT PRIMARY KEY, 
-    nome_cat VARCHAR(50)
- )
-
- CREATE VIEW prod_cat AS
+CREATE VIEW prod_cat AS
  SELECT *
  FROM produtos as p
  JOIN categorias as c
