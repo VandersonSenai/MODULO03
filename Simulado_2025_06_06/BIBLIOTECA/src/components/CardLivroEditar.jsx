@@ -36,7 +36,7 @@ const CardLivroEditar = ()  => {
     }, []);
   
 
-  // const [curso, setCurso] = useState({});
+  
 
   return (
     <div className='d-flex flex-column text-start justify-content-center'>
