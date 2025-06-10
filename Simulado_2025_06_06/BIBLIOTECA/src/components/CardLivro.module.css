@@ -1,0 +1,17 @@
+Card.Text{
+
+
+}
+svg {
+  fill:var (--clr-laranja);
+}
+
+Card {
+  width: 18rem;
+  padding:0.1rem;
+  marginBottom:20px;
+  marginTop:20px;
+  borderRadius:10px;
+  bordercolor:var(-clr-laranja);
+  backgroundColor:var(-clr-laranja);
+}

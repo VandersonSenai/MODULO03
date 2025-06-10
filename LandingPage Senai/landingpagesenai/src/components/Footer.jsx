@@ -5,32 +5,40 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const Footer2 = () => <footer className="page-footer font-small blue pt-5">
-    <div className={`container-fluid py-2 ${styles}`}>
-        <Container className="container-fluid text-left text-md-left py-2 ">
+const Footer = () => <footer className="page-footer font-small pt-5">
+    <div expand="lg" className={`container-fluid ${styles.footer}`}
+
+    >
+        <Container className="container-fluid text-left text-md-left py-2">
             <Row >
-              <Col className="text-start" xs={12} md={12}>
+              <Col  className="text-start " xs={12} md={12}>
                 <a href="/home">
-                    <img
+                    <img 
                     alt="logosenai_2024.png"
-                    src="./logo_senai_2024.png"
-                    // src="./logo_senai.svg"
+                    src="/logo_senai_2024.png"
                     width="140"
-                    // height="30"
-                    className="d-inline-block align-top "
                     />
                 </a>
 
               </Col>
-              <Row>
-                <Col className="text-start" xs={12} md={11}>
-                  <p>
-                  Serviço Nacional de Aprendizagem Industrial.
-                  {/* <hr className="clearfix w-100 d-md-none pb-0"/> */}
-                  </p> 
+            </Row>
+
+            <Row className="align-items-start">  
+                <Col xs={12} md={9}>
+                  <div className="text-start">
+                    SENAI - Serviço Nacional de Aprendizagem Industrial
+                  </div>
                 </Col>
-                <Col className="text-start" xs={12} md={1}>
-                  <ul className="list-unstyled d-flex gap-3 mt-0 ">
+                <Col xs={12} md={3} >
+                    <div className="d-flex 
+                                    justify-content-start 
+                                    justify-content-sm-start
+                                    justify-content-md-end 
+                                    ">
+<span>
+                  <ul className=" d-flex gap-2 list-unstyled">
+                  {/* <ul className="list-unstyled d-flex gap-2 "> */}
+
                     <li>
                       <a href="https://www.instagram.com/senaivitoria/" target="_blank">
                         <svg width="24"
@@ -107,9 +115,11 @@ const Footer2 = () => <footer className="page-footer font-small blue pt-5">
                       </a>
                     </li>
                   </ul>
+</span>
+                    </div>
+                    
                 </Col>
               </Row>
-            </Row>
             <Row>
               <div className="footer-copyright text-center ">
                 ©2025 Todos os direitos reservados.
@@ -121,4 +131,4 @@ const Footer2 = () => <footer className="page-footer font-small blue pt-5">
 
 </footer>
 
-export default Footer2
+export default Footer

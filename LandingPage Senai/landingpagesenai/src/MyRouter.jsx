@@ -7,6 +7,8 @@ import Cursos from "./pages/Cursos.jsx";
 import Login from "./pages/Login.jsx";
 import Sobre from "./pages/Sobre.jsx";
 import Home from "./pages/Home.jsx";
+import DetalheCurso from "./pages/DetalheCurso.jsx";
+import Historia from "./pages/Historia.jsx";
 
 const router = createBrowserRouter([
     {
@@ -19,14 +21,19 @@ const router = createBrowserRouter([
                 element:<Login />
             },
             {
+                path:"/#home",
+                element:<Home />
+            }, 
+            {
                 path:"/home",
                 element:<Home />
-            },            {
+            },            
+            {
                 path:"/login",
                 element:<Login />
             },                {
-                path:"/cursos",
-                element:<Cursos />
+                path:"/#cursos",
+                element:<Home section="cursos"/>
             },                 {
                 path:"/contato",
                 element:<Contato />
@@ -34,6 +41,14 @@ const router = createBrowserRouter([
             {
                 path:"/sobre",
                 element:<Sobre />
+            },
+            {
+                path:"/historia",
+                element:<Historia />
+            },
+            {
+                path:"/detalhecurso/:id",
+                element:<DetalheCurso />
             }
         ]
     },

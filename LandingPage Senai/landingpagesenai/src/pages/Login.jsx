@@ -1,4 +1,4 @@
-import styles from "./Estilos.module.css";
+// import styles from "./Estilos.module.css";
 // Importação dos componentes do bootstrap
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
@@ -40,7 +40,7 @@ const Login = () => {
 
     if (respostaVerificacao == "Login efetuado com sucesso") {
       alert(respostaVerificacao);
-      navigate("/home");
+      navigate("/home/#home");
     } else {
       setAlertClass("mb-5 mt-2");
       setAlertMensagem(respostaVerificacao);
@@ -62,10 +62,10 @@ const Login = () => {
       >
         <BsBoxArrowInRight
           style={{
-            fontSize: "300px",
+            fontSize: "100px",
             color: "green",
             margin: "auto",
-            width: "100%",
+            width: "10%",
           }}
         />
         <Form

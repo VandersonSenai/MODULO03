@@ -1,0 +1,9 @@
+$ npm i express mysql
+
+$ npm i express mysql2
+
+$ npm i nodemon
+
+
+add no script [packet.json]
+"start": "nodemon index.js localhost 5000"

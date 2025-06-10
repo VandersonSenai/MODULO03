@@ -1,0 +1,5 @@
+npm i bootstrap react-bootstrap json-server react-hook-form react-router-dom
+
+
+package.json
+"server": "json-server --watch src/data/db.json --port 3000 --delay 1000"
