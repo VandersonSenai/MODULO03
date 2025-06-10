@@ -1,0 +1,10 @@
+npm init -y
+
+npm i nodemon express mysql2 cors
+
+
+[package.json]
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js localhost 5000"

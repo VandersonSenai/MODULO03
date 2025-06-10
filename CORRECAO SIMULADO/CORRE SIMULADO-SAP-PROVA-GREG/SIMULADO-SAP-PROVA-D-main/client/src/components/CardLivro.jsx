@@ -22,7 +22,7 @@ const CardLivro = (props) => {
             <b>Autor:</b> <br /> {props.autor}
           </Card.Text>
           <Card.Text>
-            <b>Gênero:</b> <br /> {props.generos}
+            <b>Gênero:</b> <br /> {props.genero}
           </Card.Text>
           <Card.Text>
             <b>Dono:</b> <br /> {props.usuario}

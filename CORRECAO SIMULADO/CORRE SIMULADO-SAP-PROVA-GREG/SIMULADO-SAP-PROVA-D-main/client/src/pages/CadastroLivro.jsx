@@ -5,18 +5,16 @@ import Button from "react-bootstrap/Button";
 
 // Importação do Hook form pra validar e enviar o formulário
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useListaUsuarios } from "../hooks/useUsuario";
 
-import { useBuscarLivroPorId, useAtualizaLivro } from "../hooks/useLivro";
-import { useEffect, useState } from "react";
+import { useInserirLivro } from "../hooks/useLivro";
 
-const EditarLivro = () => {
+const CadastroLivro = () => {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
 
@@ -24,49 +22,17 @@ const EditarLivro = () => {
 
   const usuarios = useListaUsuarios();
 
-  const { buscarLivro } = useBuscarLivroPorId();
-  const { atualizaLivro } = useAtualizaLivro();
-
-  const { id } = useParams();
+  const { inserirLivro } = useInserirLivro();
 
   const onSubmit = (data) => {
     console.log(data);
-    atualizaLivro(data, id);
-    alert("livro atualizado");
+    inserirLivro(data);
+    alert("Usuario cadastro");
     navigate("/home");
   };
   const onError = (errors) => {
     console.log(errors);
   };
-
-  const [carregado, setCarregado] = useState(false);
-
-  useEffect(() => {
-    async function fetchLivro() {
-      try {
-        if (usuarios.length === 0) return;
-        const livro = await buscarLivro(id);
-
-        if (livro && !carregado) {
-          reset({
-            titulo: livro.titulo,
-            autor: livro.autor,
-            generos: livro.generos,
-            status: livro.status,
-            usuario: livro.usuario,
-          });
-          setCarregado(true);
-        }
-      } catch (erro) {
-        if (erro.message.includes("Unexpected")) {
-          alert("Livro não encontrado");
-          navigate("/home");
-        }
-      }
-    }
-    fetchLivro();
-  }, [usuarios]);
-
   return (
     <div>
       <Form className="mt-3 w-full" onSubmit={handleSubmit(onSubmit, onError)}>
@@ -148,10 +114,8 @@ const EditarLivro = () => {
           label="status"
           className="mb-5"
         >
-          <Form.Select {...register("status")}>
+          <Form.Select disabled value="Quero ler" {...register("status")}>
             <option value="Quero ler"> Quero Ler</option>
-            <option value="Lendo"> Lendo</option>
-            <option value="Lido"> Lido </option>
           </Form.Select>
           {errors.status && <p className="error">{errors.status.message}</p>}
         </FloatingLabel>
@@ -169,20 +133,25 @@ const EditarLivro = () => {
           >
             <option value="Nenhum"> Escolha um usuario </option>
             {usuarios.map((user) => (
-              <option key={user.id} value={user.nome}>
+              <option
+                key={user.id}
+                value={user.nome}
+              >
                 {user.nome}
               </option>
             ))}
           </Form.Select>
-          {errors.usuario && <p className="error">{errors.usuario.message}</p>}
+          {errors.usuario && (
+            <p className="error">{errors.usuario.message}</p>
+          )}
         </FloatingLabel>
         {/* Botão para enviar o formulário de cadastro de produto */}
         <Button variant="primary" size="lg" type="submit">
-          Editar
+         Cadastrar
         </Button>
       </Form>
     </div>
   );
 };
 
-export default EditarLivro;
+export default CadastroLivro;

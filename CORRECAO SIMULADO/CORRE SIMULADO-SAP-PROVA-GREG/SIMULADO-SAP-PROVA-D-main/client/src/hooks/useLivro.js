@@ -46,27 +46,3 @@ export function useListaLivros() {
 
   return livros;
 }
-
-export function useBuscarLivroPorId() {
-  const buscarLivro = async (idLivro) => {
-    const req = await fetch(`${url}/livros/${idLivro}`);
-    const res = await req.json();
-    return res;
-  };
-  return { buscarLivro };
-}
-
-
-export function useAtualizaLivro() {
-    const atualizaLivro = async (data,idLivro) => {
-    const req = await fetch(`${url}/livros/${idLivro}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    const res = await req.json();
-    console.log(res);
-    return res;
-  };
-  return { atualizaLivro };
-}

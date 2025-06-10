@@ -1,0 +1,37 @@
+{
+  "usuarios": [
+    {
+      "id": "7",
+      "nome": "Cristiano",
+      "email": "cr7@gmail.com"
+    },
+    {
+      "id": "677c",
+      "nome": "Neymar Jr",
+      "email": "cris@gmail.com"
+    },
+    {
+      "id": "0a1d",
+      "nome": "Cristiano",
+      "email": "cris@gmail.com"
+    }
+  ],
+  "livros": [
+    {
+      "id": "1",
+      "titulo": "A jornada",
+      "autor": "Ronaldo",
+      "genero": "Drama",
+      "status": "Quero ler",
+      "usuario": "Cristiano"
+    },
+    {
+      "id": "f61e",
+      "titulo": "Biografia CR7",
+      "autor": "CR7",
+      "generos": "Sim",
+      "status": "Quero ler",
+      "usuario": "Cristiano"
+    }
+  ]
+}

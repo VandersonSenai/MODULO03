@@ -1,28 +1,61 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nome": "vanderson",
-            "email": "1"
-        }
-    ],
-    "livros": [
-        {
-            "id": 1,
-            "titulo": "Livro 1",
-            "autor": "Autor 1",
-            "genero": "drama",
-            "status": "quero ler",
-            "usuario": "vanderson"
-        },
-        {
-            "id": 2,
-            "titulo": "Livro 2",
-            "autor": "Autor 2",
-            "genero": "ação",
-            "status": "quero ler",
-            "usuario": "vanderson"
-        }
-    ]
-
+  "usuarios": [
+    {
+      "id": "7",
+      "nome": "Cristiano",
+      "email": "cr7@gmail.com"
+    },
+    {
+      "id": "677c",
+      "nome": "Neymar Jr",
+      "email": "cris@gmail.com"
+    },
+    {
+      "id": "0a1d",
+      "nome": "Cristiano",
+      "email": "cris@gmail.com"
+    },
+    {
+      "id": "d380",
+      "titulo": "A jornada",
+      "autor": "Ronaldo",
+      "generos": "DOIDO",
+      "status": "Quero ler",
+      "usuario": "Cristiano"
+    }
+  ],
+  "livros": [
+    {
+      "titulo": "A jornada",
+      "autor": "Ronaldo",
+      "generos": "DOIDO2",
+      "status": "Quero ler",
+      "usuario": "Cristiano",
+      "id": "1"
+    },
+    {
+      "titulo": "Biografia CR7",
+      "autor": "CR7",
+      "generos": "Sim",
+      "status": "Lido",
+      "usuario": "Cristiano",
+      "id": "f61e"
+    },
+    {
+      "titulo": "TESTE",
+      "autor": "TESTE AUT",
+      "generos": "DOIDO",
+      "status": "Lendo",
+      "usuario": "Neymar Jr",
+      "id": "3a7a"
+    },
+    {
+      "id": "3788",
+      "titulo": "TESTE3",
+      "autor": "TESTE AUT3",
+      "generos": "DOIDO3",
+      "status": "Quero ler",
+      "usuario": "Neymar Jr"
+    }
+  ]
 }
