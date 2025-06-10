@@ -1,44 +1,40 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { useDeleteLivro } from "../hooks/useApi"
 
-import { useDeleteProduto } from "../hooks/useApi"
-
-const CardProduto = (props) => {
-  const { deletarProduto } = useDeleteProduto()
+const CardLivro = (props) => {
+  const { deletarProduto } = useDeleteLivro()
    const handleDelete = async () =>{
     const deletado = await deletarProduto(props.id)
     console.log()
-    alert(`Produto ${deletado.nome} deletado com sucesso`)
+    alert(`Livro ${deletado.titulo} deletado com sucesso`)
     window.location.reload()
   }
   
   return (
     <div>
       <Card style={{ width: "15rem", height: "30rem" }}>
-        <Card.Img
-          variant="top"
-          src={
-            props.imagemUrl != "null"
-              ? props.imagemUrl
-              : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdssSl3-znyXhffS9Qy09SBO0B-kIfYFlJQ&s"
-          }
-          height="200px"
-        />
+
         <Card.Body>
-          <Card.Title>{props.nome}</Card.Title>
+          <Card.Title>{props.titulo}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Preço:{props.preco}
+            Autor:{props.autor}
           </Card.Subtitle>
           <Card.Text>
-            <b>Descrição:</b> <br></br>
-            {props.descricao}
+            <b>Gênero:</b> <br></br>
+            {props.genero}
           </Card.Text>
           <Card.Text>
-            <b>Categoria:</b>
+            <b>Status:</b>
             <br></br>
-            {props.categoria}
+            {props.status}
           </Card.Text>
-          <Card.Link href={`/editarproduto/${props.id}`}>
+          <Card.Text>
+            <b>Usuario:</b>
+            <br></br>
+            {props.usuario_id}
+          </Card.Text>
+          <Card.Link href={`/editarlivro/${props.id}`}>
             <Button variant="warning">Editar</Button>
           </Card.Link>
           <Card.Link>
@@ -54,4 +50,4 @@ const CardProduto = (props) => {
   );
 };
 
-export default CardProduto;
+export default CardLivro;
