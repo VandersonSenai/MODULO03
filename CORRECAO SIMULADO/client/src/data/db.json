@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nome": "vanderson",
+            "email": "1"
+        }
+    ],
+    "livros": [
+        {
+            "id": 1,
+            "titulo": "Livro 1",
+            "autor": "Autor 1",
+            "genero": "drama",
+            "status": "quero ler",
+            "usuario": "vanderson"
+        },
+        {
+            "id": 2,
+            "titulo": "Livro 2",
+            "autor": "Autor 2",
+            "genero": "ação",
+            "status": "quero ler",
+            "usuario": "vanderson"
+        }
+    ]
+
+}
