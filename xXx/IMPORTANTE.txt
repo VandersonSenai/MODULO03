@@ -4,7 +4,7 @@ npm i bootstrap react-bootstrap json-server react-hook-form react-router-dom dot
 
 
 package.json   (apenas se for usar o json-server)
-"server": "json-server --watch src/data/db.json --port 3000 --delay 1000"
+"server": "json-server --watch src/data/db.json --port 5000 "
 
 
 
