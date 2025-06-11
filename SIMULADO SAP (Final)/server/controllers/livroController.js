@@ -12,10 +12,10 @@ export const buscarCategorias = async (req, res) => {
   });
 };
 
-export const deletarProduto = async (req, res) => {
+export const deletarLivro = async (req, res) => {
   const id = req.params.id;
 
-  const sql = `DELETE FROM produtos WHERE id_prod = '${id}'`;
+  const sql = `DELETE FROM livros WHERE id_prod = '${id}'`;
 
   conn.query(sql, (erro, result) => {
     if (erro) {
@@ -27,8 +27,8 @@ export const deletarProduto = async (req, res) => {
   });
 };
 
-export const buscarProdutos = async (req, res) => {
-  const sql = `SELECT * FROM prod_cat`;
+export const buscarLivros = async (req, res) => {
+  const sql = `SELECT * FROM livros`;
 
   conn.query(sql, (erro, dados) => {
     if (erro) {
@@ -39,7 +39,7 @@ export const buscarProdutos = async (req, res) => {
   });
 };
 
-export const criarProdutos = async (req, res) => {
+export const criarLivro = async (req, res) => {
   const nome = req.body.nome;
   const descricao = req.body.descricao;
   const categoria = req.body.categoria;
@@ -59,12 +59,10 @@ export const criarProdutos = async (req, res) => {
   });
 };
 
-
-
-export const buscarProdutoPorId = async (req, res) => {
+export const buscarLivroPorId = async (req, res) => {
   const id = req.params.id;
 
-  const sql = `SELECT * FROM produtos WHERE id_prod = '${id}'`;
+  const sql = `SELECT * FROM produtos WHERE id = '${id}'`;
 
   conn.query(sql, (erro, result) => {
     if (erro) {
@@ -76,7 +74,7 @@ export const buscarProdutoPorId = async (req, res) => {
   });
 };
 
-export const atualizarProduto = async (req, res) => {
+export const atualizarLivro = async (req, res) => {
   const id = req.params.id;
   const nome = req.body.nome;
   const descricao = req.body.descricao;

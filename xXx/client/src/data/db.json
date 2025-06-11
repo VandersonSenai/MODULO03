@@ -1,0 +1,58 @@
+{
+  "usuarios": [
+    {
+      "id": "7",
+      "nome": "Cristiano",
+      "email": "cr7@gmail.com"
+    },
+    {
+      "id": "677c",
+      "nome": "Neymar Jr",
+      "email": "cris@gmail.com"
+    },
+    {
+      "id": "0a1d",
+      "nome": "Cristiano",
+      "email": "cris@gmail.com"
+    },
+    {
+      "id": "4c80",
+      "nome": "Dougras",
+      "email": "dougras@gmail.com"
+    }
+  ],
+  "livros": [
+    {
+      "titulo": "A jornada",
+      "autor": "Ronaldo",
+      "generos": "Drama",
+      "status": "Lendo",
+      "usuario": "Cristiano",
+      "id": "1"
+    },
+    {
+      "titulo": "ACulpaÉDasEstrelas",
+      "autor": "John Green",
+      "generos": "Ficção Juvenil",
+      "status": "Lido",
+      "usuario": "Neymar Jr",
+      "id": "f61e"
+    },
+    {
+      "titulo": "Biografia CR7",
+      "autor": "CR7",
+      "generos": "ssss1",
+      "status": "Quero ler",
+      "usuario": "Neymar Jr",
+      "id": "cdd8"
+    },
+    {
+      "titulo": "Turma da Mônica 2 ",
+      "autor": "Maurício de Sousa",
+      "generos": "Ação",
+      "status": "Lido",
+      "usuario": "Dougras",
+      "id": "c9dd"
+    }
+  ]
+}

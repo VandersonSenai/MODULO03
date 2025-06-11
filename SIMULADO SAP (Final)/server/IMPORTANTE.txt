@@ -1,4 +1,4 @@
-npm i bootstrap react-bootstrap json-server react-hook-form react-router-dom dotenv
+npm i bootstrap react-bootstrap json-server react-hook-form react-router-dom dotenv cors
 
 
 package.json

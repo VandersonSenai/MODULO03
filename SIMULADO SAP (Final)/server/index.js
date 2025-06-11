@@ -3,8 +3,8 @@ const app = express()
 const port = 5000
 
 
-import { buscarUsuarios } from "./controllers/usuarioController.js"
-import { atualizarLivro, buscarUsuarios, buscarLivroPorId, buscarLivros, criarLivro, deletarLivro } from "./controllers/livroController.js"
+import { buscarUsuarios, listarUsuarios } from "./controllers/usuarioController.js"
+import { atualizarLivro, buscarLivroPorId, buscarLivros, criarLivro, deletarLivro } from "./controllers/livroController.js"
 
 import cors from "cors"
 
