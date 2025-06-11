@@ -73,7 +73,7 @@ const EditarLivro = () => {
         {/* Caixinha de titulo */}
         <FloatingLabel
           controlId="floatingInputtitulo"
-          label="titulo"
+          label="Titulo"
           className="mb-5"
         >
           <Form.Control
@@ -97,7 +97,7 @@ const EditarLivro = () => {
         {/* Caixinha de autor */}
         <FloatingLabel
           controlId="floatingInputautor"
-          label="autor"
+          label="Autor"
           className="mb-5"
         >
           <Form.Control
@@ -121,7 +121,7 @@ const EditarLivro = () => {
         {/* Caixinha de generos */}
         <FloatingLabel
           controlId="floatingInputgeneros"
-          label="generos"
+          label="Gêneros"
           className="mb-5"
         >
           <Form.Control
@@ -145,7 +145,7 @@ const EditarLivro = () => {
         {/* Caixinha de status */}
         <FloatingLabel
           controlId="floatingInputstatus"
-          label="status"
+          label="Status"
           className="mb-5"
         >
           <Form.Select {...register("status")}>
@@ -159,7 +159,7 @@ const EditarLivro = () => {
         {/* Select de usuario */}
         <FloatingLabel
           controlId="floatingSelectTipo"
-          label="usuario"
+          label="Usuário"
           className="mb-5"
         >
           <Form.Select
@@ -177,9 +177,15 @@ const EditarLivro = () => {
           {errors.usuario && <p className="error">{errors.usuario.message}</p>}
         </FloatingLabel>
         {/* Botão para enviar o formulário de cadastro de produto */}
-        <Button variant="primary" size="lg" type="submit">
+        <div className="d-flex justify-content-center">
+        <Button
+          variant="primary"
+          size="lg"
+          type="submit"
+          className="me-3">
           Editar
         </Button>
+        </div>
       </Form>
     </div>
   );

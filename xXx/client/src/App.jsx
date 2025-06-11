@@ -13,9 +13,9 @@ import BarraNavegacao from "./components/BarraNavegacao.jsx";
 function App() {
   return (
     <>
-      <div className="App">
+      <div className="App d-flex flex-column min-vh-100" >
         <BarraNavegacao />
-        <Container>
+        <Container className="flex-grow-1 p-0">
           <Outlet />
         </Container>
       </div>

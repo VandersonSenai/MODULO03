@@ -1,0 +1,20 @@
+> frontEnd
+
+npm i bootstrap react-bootstrap json-server react-hook-form react-router-dom dotenv
+
+
+package.json   (apenas se for usar o json-server)
+"server": "json-server --watch src/data/db.json --port 3000 --delay 1000"
+
+
+
+
+> BackEnd
+
+ npm init -y
+
+ npm install express nodemon mysql2
+
+
+package.json
+"server": "nodemon index.js localhost 5000"

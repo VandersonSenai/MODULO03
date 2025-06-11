@@ -33,7 +33,7 @@ const CadastroUsuario = () => {
 
   return (
     <div>
-      <Form className="mt-3 w-full" 
+      <Form className="mt-5 w-full" 
       onSubmit={handleSubmit(onSubmit, onError)}>
         {/* Caixinha de nome */}
         <FloatingLabel
@@ -76,7 +76,10 @@ const CadastroUsuario = () => {
           {errors.email && <p className="error">{errors.email.message}</p>}
         </FloatingLabel>
         {/* Botão para enviar o formulário de cadastro de produto */}
-        <Button variant="primary" size="lg" type="submit">
+        <Button variant="primary" 
+                size="lg" 
+                type="submit"
+                className="w-100">
          Cadastrar
         </Button>
       </Form>

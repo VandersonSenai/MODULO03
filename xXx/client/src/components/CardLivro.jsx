@@ -8,42 +8,47 @@ const CardLivro = (props) => {
 
   const handleDelete = async () => {
     const deletado = await deletarLivro(props.id);
-    alert("livro deletado com sucesso");
+    alert("Livro deletado com sucesso!");
     window.location.reload();
   };
+
   return (
     <div>
-      <Card border="primary" style={{ width: "18rem" }}>
+      <Card className="mb-2" border="primary" style={{ minWidth: "16rem"}}>
         <Card.Body>
           <Card.Text>
-            <b>Título:</b> <br /> {props.titulo}
+            <b>Título:</b> {props.titulo}
           </Card.Text>
           <Card.Text>
-            <b>Autor:</b> <br /> {props.autor}
+            <b>Autor:</b> {props.autor}
           </Card.Text>
           <Card.Text>
-            <b>Gênero:</b> <br /> {props.genero}
+            <b>Gênero:</b> {props.genero}
           </Card.Text>
           <Card.Text>
-            <b>Dono:</b> <br /> {props.usuario}
+            <b>Dono:</b> {props.usuario}
           </Card.Text>
-          <Button
-            size="lg"
-            variant="warning"
-            type="button"
-            href={`/editalivro/${props.id}`}
-            className="me-3"
-          >
-            Editar
-          </Button>
-          <Button
-            size="lg"
-            variant="danger"
-            type="button"
-            onClick={handleDelete}
-          >
-            Deletar
-          </Button>
+
+          <div className="d-flex justify-content-center">
+              <Button
+                size="lg"
+                variant="warning"
+                type="button"
+                href={`/editalivro/${props.id}`}
+                className="me-3"
+                >
+                Editar
+              </Button>
+              <Button
+                size="lg"
+                variant="danger"
+                type="button"
+                onClick={handleDelete}
+                
+                >
+                Deletar
+              </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

@@ -1,6 +1,7 @@
 .App{
     background-color: rgb(212,253,212);
     height: 100%;
+    min-width: 22rem;
 }
 .error{
     color: red;

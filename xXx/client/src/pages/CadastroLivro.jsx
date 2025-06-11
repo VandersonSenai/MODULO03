@@ -35,11 +35,11 @@ const CadastroLivro = () => {
   };
   return (
     <div>
-      <Form className="mt-3 w-full" onSubmit={handleSubmit(onSubmit, onError)}>
+      <Form className="mt-5 w-full" onSubmit={handleSubmit(onSubmit, onError)}>
         {/* Caixinha de titulo */}
         <FloatingLabel
           controlId="floatingInputtitulo"
-          label="titulo"
+          label="Titulo"
           className="mb-5"
         >
           <Form.Control
@@ -63,7 +63,7 @@ const CadastroLivro = () => {
         {/* Caixinha de autor */}
         <FloatingLabel
           controlId="floatingInputautor"
-          label="autor"
+          label="Autor"
           className="mb-5"
         >
           <Form.Control
@@ -87,7 +87,7 @@ const CadastroLivro = () => {
         {/* Caixinha de generos */}
         <FloatingLabel
           controlId="floatingInputgeneros"
-          label="generos"
+          label="Gêneros"
           className="mb-5"
         >
           <Form.Control
@@ -111,7 +111,7 @@ const CadastroLivro = () => {
         {/* Caixinha de status */}
         <FloatingLabel
           controlId="floatingInputstatus"
-          label="status"
+          label="Status"
           className="mb-5"
         >
           <Form.Select disabled value="Quero ler" {...register("status")}>
@@ -123,7 +123,7 @@ const CadastroLivro = () => {
         {/* Select de usuario */}
         <FloatingLabel
           controlId="floatingSelectTipo"
-          label="usuario"
+          label="Usuário"
           className="mb-5"
         >
           <Form.Select
@@ -146,7 +146,10 @@ const CadastroLivro = () => {
           )}
         </FloatingLabel>
         {/* Botão para enviar o formulário de cadastro de produto */}
-        <Button variant="primary" size="lg" type="submit">
+        <Button variant="primary" 
+                size="lg" 
+                type="submit"
+                className="w-100">
          Cadastrar
         </Button>
       </Form>
