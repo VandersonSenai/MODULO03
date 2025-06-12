@@ -1,10 +1,10 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.4">
   <diagram name="Página-1" id="MLhnPg5JZUquEKL-5mDn">
-    <mxGraphModel dx="1678" dy="999" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1665" dy="691" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Wq-zoc3ukTbrnnxYilDX-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#1468c2, #ededed);fillColor=none;" vertex="1" parent="1">
+        <mxCell id="Wq-zoc3ukTbrnnxYilDX-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;strokeColor=light-dark(#1468c2, #ededed);fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="370" y="117" width="580" height="633" as="geometry" />
         </mxCell>
         <mxCell id="HbgEYrR-LauY9sAgD6li-16" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0.1;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=12;startSize=8;endSize=8;entryX=0.073;entryY=0.758;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="HbgEYrR-LauY9sAgD6li-1" target="HbgEYrR-LauY9sAgD6li-6" edge="1">
@@ -27,16 +27,16 @@
         <mxCell id="HbgEYrR-LauY9sAgD6li-5" value="Cadastrar Usuario" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="418.5" y="164" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HbgEYrR-LauY9sAgD6li-6" value="Cadastrar Livro" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="HbgEYrR-LauY9sAgD6li-6" value="Cadastrar Tarefa" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="768" y="164" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HbgEYrR-LauY9sAgD6li-7" value="Visualizar Livros" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="HbgEYrR-LauY9sAgD6li-7" value="Visualizar Tarefas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="768" y="398" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HbgEYrR-LauY9sAgD6li-8" value="Editar Livros" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="HbgEYrR-LauY9sAgD6li-8" value="Editar Tarefas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="768" y="632" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HbgEYrR-LauY9sAgD6li-9" value="Excluir&lt;div&gt;&amp;nbsp;Livros&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="HbgEYrR-LauY9sAgD6li-9" value="Excluir&lt;div&gt;Tarefas&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="619" y="508" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="HbgEYrR-LauY9sAgD6li-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="HbgEYrR-LauY9sAgD6li-6" target="HbgEYrR-LauY9sAgD6li-6" edge="1">
@@ -86,7 +86,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Wq-zoc3ukTbrnnxYilDX-3" value="" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" target="HbgEYrR-LauY9sAgD6li-8" parent="1">
+        <mxCell id="Wq-zoc3ukTbrnnxYilDX-3" value="" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="HbgEYrR-LauY9sAgD6li-8" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="479" y="464" as="sourcePoint" />
             <Array as="points">
