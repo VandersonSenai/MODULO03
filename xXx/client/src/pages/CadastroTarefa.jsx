@@ -9,9 +9,9 @@ import { useNavigate } from "react-router-dom";
 
 import { useListaUsuarios } from "../hooks/useUsuario";
 
-import { useInserirLivro } from "../hooks/useLivro";
+import { useInserirLivro } from "../hooks/useTarefa";
 
-const CadastroLivro = () => {
+const CadastroTarefa = () => {
   const {
     register,
     handleSubmit,
@@ -157,4 +157,4 @@ const CadastroLivro = () => {
   );
 };
 
-export default CadastroLivro;
+export default CadastroTarefa;

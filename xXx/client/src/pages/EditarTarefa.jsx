@@ -9,10 +9,10 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { useListaUsuarios } from "../hooks/useUsuario";
 
-import { useBuscarLivroPorId, useAtualizaLivro } from "../hooks/useLivro";
+import { useBuscarLivroPorId, useAtualizaLivro } from "../hooks/useTarefa";
 import { useEffect, useState } from "react";
 
-const EditarLivro = () => {
+const EditarTarefa = () => {
   const {
     register,
     handleSubmit,
@@ -191,4 +191,4 @@ const EditarLivro = () => {
   );
 };
 
-export default EditarLivro;
+export default EditarTarefa;

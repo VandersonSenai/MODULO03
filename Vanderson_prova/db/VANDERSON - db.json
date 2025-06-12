@@ -1,0 +1,61 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Eu",
+      "email": "eu@email.com"
+    },
+    {
+      "id": 2,
+      "nome": "Tu",
+      "email": "tu@email.com"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": 1,
+      "descricao": "Revisar relatório de vendas",
+      "setor": "Comercial",
+      "prioridade": "alta",
+      "data": "2025-06-10",
+      "status": "a fazer",
+      "usuarios_id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "Organizar documentos fiscais",
+      "setor": "Financeiro",
+      "prioridade": "média",
+      "data": "2025-06-09",
+      "status": "fazendo",
+      "usuarios_id": 2
+    },
+    {
+      "id": 3,
+      "descricao": "Atualizar planilha de estoque",
+      "setor": "Logística",
+      "prioridade": "baixa",
+      "data": "2025-06-08",
+      "status": "a fazer",
+      "usuarios_id": 1
+    },
+    {
+      "id": 4,
+      "descricao": "Planejar reunião trimestral",
+      "setor": "RH",
+      "prioridade": "alta",
+      "data": "2025-06-07",
+      "status": "pronto",
+      "usuarios_id": 2
+    },
+    {
+      "id": 5,
+      "descricao": "Testar novo sistema de e-mail",
+      "setor": "TI",
+      "prioridade": "média ",
+      "data": "2025-06-06",
+      "status": "fazendo",
+      "usuarios_id": 1
+    }
+  ]
+}

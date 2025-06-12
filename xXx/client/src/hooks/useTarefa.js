@@ -3,8 +3,8 @@ const url = import.meta.env.VITE_API_URL;
 import { useState, useEffect } from "react";
 
 export function useInserirLivro() {
-  const inserirLivro = async (data) => {
-    const req = await fetch(`${url}/livros`, {
+  const inserirTarefa = async (data) => {
+    const req = await fetch(`${url}/tarefas`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -14,29 +14,29 @@ export function useInserirLivro() {
 
     return res;
   };
-  return { inserirLivro };
+  return { inserirTarefa };
 }
 
 export function useDeletaLivro() {
-  const deletarLivro = async (idLivro) => {
-    const req = await fetch(`${url}/livros/${idLivro}`, {
+  const deletarTarefa = async (idTarefa) => {
+    const req = await fetch(`${url}/tarefas/${idTarefa}`, {
       method: "DELETE",
     });
     const res = req.json();
     return res;
   };
-  return { deletarLivro };
+  return { deletarTarefa };
 }
 
-export function useListaLivros() {
-  const [livros, setLivros] = useState([]);
+export function useListaTarefas() {
+  const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const req = await fetch(`${url}/livros`);
+        const req = await fetch(`${url}/tarefas`);
         const res = await req.json();
-        setLivros(res);
+        setTarefas(res);
       } catch (erro) {
         console.log(erro);
       }
@@ -44,22 +44,22 @@ export function useListaLivros() {
     fetchData();
   }, []);
 
-  return livros;
+  return tarefas;
 }
 
-export function useBuscarLivroPorId() {
-  const buscarLivro = async (idLivro) => {
-    const req = await fetch(`${url}/livros/${idLivro}`);
+export function useBuscarTarefaPorId() {
+  const buscarTarefa = async (idTarefa) => {
+    const req = await fetch(`${url}/tarefas/${idTarefa}`);
     const res = await req.json();
     return res;
   };
 
-  return { buscarLivro };
+  return { buscarTarefa };
 }
 
-export function useAtualizaLivro() {
-  const atualizaLivro = async (data,idLivro) => {
-    const req = await fetch(`${url}/livros/${idLivro}`, {
+export function useAtualizaTarefa() {
+  const atualizaTarefa = async (data,idTarefa) => {
+    const req = await fetch(`${url}/tarefas/${idTarefa}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -68,5 +68,5 @@ export function useAtualizaLivro() {
     console.log(res);
     return res;
   };
-  return { atualizaLivro };
+  return { atualizaTarefa };
 }

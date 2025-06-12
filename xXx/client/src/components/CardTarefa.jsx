@@ -3,12 +3,12 @@ import Card from "react-bootstrap/Card";
 
 import { useDeletaLivro } from "../hooks/useLivro";
 
-const CardLivro = (props) => {
-  const { deletarLivro } = useDeletaLivro();
+const CardTarefa = (props) => {
+  const { deletarTarefa } = useDeletaTarefa();
 
   const handleDelete = async () => {
-    const deletado = await deletarLivro(props.id);
-    alert("Livro deletado com sucesso!");
+    const deletado = await deletarTarefa(props.id);
+    alert("Tarefa deletado com sucesso!");
     window.location.reload();
   };
 
@@ -17,16 +17,22 @@ const CardLivro = (props) => {
       <Card className="mb-2" border="primary" style={{ minWidth: "16rem"}}>
         <Card.Body>
           <Card.Text>
-            <b>Título:</b> {props.titulo}
+            <b>Tarefa : </b> {props.descricao}
           </Card.Text>
           <Card.Text>
-            <b>Autor:</b> {props.autor}
+            <b>Setor : </b> {props.setor}
           </Card.Text>
           <Card.Text>
-            <b>Gênero:</b> {props.genero}
+            <b>Prioridade : </b> {props.prioridade}
           </Card.Text>
           <Card.Text>
-            <b>Dono:</b> {props.usuario}
+            <b>Data : </b> {props.datacadastro}
+          </Card.Text>
+          <Card.Text>
+            <b>Status : </b> {props.status}
+          </Card.Text>
+          <Card.Text>
+            <b>Usuário : </b> {props.usuario}
           </Card.Text>
 
           <div className="d-flex justify-content-center">
@@ -34,7 +40,7 @@ const CardLivro = (props) => {
                 size="lg"
                 variant="warning"
                 type="button"
-                href={`/editalivro/${props.id}`}
+                href={`/editatarefa/${props.id}`}
                 className="me-3"
                 >
                 Editar
@@ -55,4 +61,4 @@ const CardLivro = (props) => {
   );
 };
 
-export default CardLivro;
+export default CardTarefa;
