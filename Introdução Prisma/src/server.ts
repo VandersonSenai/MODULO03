@@ -113,7 +113,7 @@ app.get("/pedidos/:id", async (request, reply) => {
 });
 
 
-app.get("/pedidos4", async (request, reply) => {
+app.get("/pedidos", async (request, reply) => {
   const { id } = request.params as {
     id: string;
   };
