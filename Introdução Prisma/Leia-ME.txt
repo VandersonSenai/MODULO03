@@ -1,3 +1,9 @@
+npx tsc --init
+
+npm i -D typescript tsx @types/node prisma fastify
+
+"dev": "tsx watch src/server.ts"
+
 npm install @prisma/client 
 
 npx prisma init --datasource-provider mysql
