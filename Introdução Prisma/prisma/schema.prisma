@@ -1,0 +1,155 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model pedido {
+  id                  Int                  @unique(map: "id_UNIQUE") @default(autoincrement())
+  dthr_criacao_pedido DateTime             @db.DateTime(0)
+  entrega_tipo        pedido_entrega_tipo?
+  entrega_dthr        DateTime?            @db.DateTime(0)
+  valor_frete         Decimal?             @db.Decimal(8, 2)
+  valor_total_pedido  Decimal?             @db.Decimal(10, 2)
+  valor_custo_pedido  Decimal?             @db.Decimal(10, 2)
+  dt_venc_pagamento   DateTime?            @db.DateTime(0)
+  dt_pagamento        DateTime?            @db.DateTime(0)
+  dest_logradouro     String?              @db.VarChar(60)
+  dest_numero         String?              @db.VarChar(12)
+  dest_bairro         String?              @db.VarChar(45)
+  dest_cidade         String?              @db.VarChar(45)
+  dest_estado         pedido_dest_estado?
+  status              pedido_status?
+  observacao          String?              @db.VarChar(255)
+  usuario_id          Int
+  pedido_cliente_id   Int
+  pedido_cliente      pedido_cliente       @relation(fields: [pedido_cliente_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_pedido_pedido_cliente")
+  usuario             usuario              @relation(fields: [usuario_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_pedido_usuario")
+  pedido_produto      pedido_produto[]
+
+  @@id([id, usuario_id, pedido_cliente_id])
+  @@index([pedido_cliente_id], map: "fk_pedido_pedido_cliente_idx")
+  @@index([usuario_id], map: "fk_pedido_usuario_idx")
+}
+
+model pedido_cliente {
+  id            Int      @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome          String   @db.VarChar(80)
+  telefone      String   @db.VarChar(20)
+  data_cadastro DateTime @db.DateTime(0)
+  pedido        pedido[]
+}
+
+model pedido_produto {
+  id                       Int     @default(autoincrement())
+  quantidade               Int
+  valor_venda              Decimal @db.Decimal(8, 2)
+  valor_custo              Decimal @db.Decimal(8, 2)
+  infor_adicional          String? @db.VarChar(45)
+  produto_id               Int
+  produto_unidade_id       Int
+  produto_categoria_id     Int
+  pedido_id                Int
+  pedido_usuario_id        Int
+  pedido_pedido_cliente_id Int
+  pedido                   pedido  @relation(fields: [pedido_id, pedido_usuario_id, pedido_pedido_cliente_id], references: [id, usuario_id, pedido_cliente_id], onDelete: NoAction, onUpdate: NoAction, map: "fk_pedido_produto_pedido")
+  produto                  produto @relation(fields: [produto_id, produto_unidade_id, produto_categoria_id], references: [id, unidade_id, categoria_id], onDelete: NoAction, onUpdate: NoAction, map: "fk_pedido_produto_produto")
+
+  @@id([id, produto_id, produto_unidade_id, produto_categoria_id, pedido_id, pedido_usuario_id, pedido_pedido_cliente_id])
+  @@index([pedido_id, pedido_usuario_id, pedido_pedido_cliente_id], map: "fk_pedido_produto_pedido_idx")
+  @@index([produto_id, produto_unidade_id, produto_categoria_id], map: "fk_pedido_produto_produto_idx")
+}
+
+model produto {
+  id                Int               @default(autoincrement())
+  nome              String            @db.VarChar(45)
+  preco_custo       Decimal           @db.Decimal(8, 2)
+  preco_venda       Decimal           @db.Decimal(8, 2)
+  unidade_id        Int
+  categoria_id      Int
+  estado            Int               @db.TinyInt
+  pedido_produto    pedido_produto[]
+  produto_categoria produto_categoria @relation(fields: [categoria_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_produto_categoria")
+  produto_unidade   produto_unidade   @relation(fields: [unidade_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_produto_unidade")
+
+  @@id([id, unidade_id, categoria_id])
+  @@index([categoria_id], map: "fk_produto_categoria_idx")
+  @@index([unidade_id], map: "fk_produto_unidade_idx")
+}
+
+model produto_categoria {
+  id        Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome      String    @db.VarChar(24)
+  descricao String    @db.VarChar(120)
+  produto   produto[]
+}
+
+model produto_unidade {
+  id         Int       @id @unique(map: "id_UNIQUE")
+  nome       String    @db.VarChar(25)
+  abreviacao String    @db.VarChar(8)
+  ativo      Int?      @db.TinyInt
+  produto    produto[]
+}
+
+model usuario {
+  id     Int          @id @unique(map: "id_UNIQUE") @default(autoincrement())
+  nome   String       @db.VarChar(45)
+  login  String       @unique(map: "login_UNIQUE") @db.VarChar(10)
+  senha  String       @db.VarChar(10)
+  tipo   usuario_tipo
+  pedido pedido[]
+}
+
+enum pedido_entrega_tipo {
+  ENVIO
+  RETIRADA
+}
+
+enum usuario_tipo {
+  Administrador
+  Operador
+  Gerente
+}
+
+enum pedido_dest_estado {
+  AC
+  AL
+  AP
+  AM
+  BA
+  CE
+  DF
+  ES
+  GO
+  MA
+  MS
+  MT
+  MG
+  PA
+  PB
+  PR
+  PE
+  PI
+  RJ
+  RN
+  RS
+  RO
+  RR
+  SC
+  SP
+  SE
+  TO
+}
+
+enum pedido_status {
+  Em_Andamento    @map("Em Andamento")
+  Aguardando_Pgto @map("Aguardando Pgto")
+  Agendado
+  Entregue
+  Cancelado
+}
