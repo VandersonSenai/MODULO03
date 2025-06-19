@@ -65,7 +65,7 @@ model pedido_produto {
 }
 
 model produto {
-  id                Int               @default(autoincrement())
+  id                Int               @unique(map: "id_UNIQUE") @default(autoincrement())
   nome              String            @db.VarChar(45)
   preco_custo       Decimal           @db.Decimal(8, 2)
   preco_venda       Decimal           @db.Decimal(8, 2)

@@ -39,9 +39,9 @@
       "id": "3",
       "descricao": "Atualizar planilha de estoque",
       "setor": "Logística",
-      "prioridade": "baixa,",
+      "prioridade": "baixa",
       "data": "2025-06-08",
-      "status": "a fazer,",
+      "status": "a fazer",
       "usuario": "Eu"
     },
     {
@@ -57,7 +57,7 @@
       "id": "5",
       "descricao": "Testar novo sistema de e-mail",
       "setor": "TI",
-      "prioridade": "média ",
+      "prioridade": "média",
       "data": "2025-06-06",
       "status": "fazendo",
       "usuarios": "Eu"

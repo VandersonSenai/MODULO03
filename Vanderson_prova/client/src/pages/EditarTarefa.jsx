@@ -101,7 +101,7 @@ const EditarTarefa = () => {
           label="Prioridade"
           className="mb-5"        >
           <Form.Select {...register("prioridade")}>
-            <option value="baixa,">baixa</option>
+            <option value="baixa">baixa</option>
             <option value="média">média</option>
             <option value="alta">alta</option>
           </Form.Select>
