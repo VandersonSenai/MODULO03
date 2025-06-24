@@ -89,7 +89,7 @@ model produto_categoria {
 }
 
 model produto_unidade {
-  id         Int       @id @unique(map: "id_UNIQUE")
+  id         Int       @id @unique(map: "id_UNIQUE") @default(autoincrement())
   nome       String    @db.VarChar(25)
   abreviacao String    @db.VarChar(8)
   ativo      Int?      @db.TinyInt
