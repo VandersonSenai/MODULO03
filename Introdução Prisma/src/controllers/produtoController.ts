@@ -6,8 +6,8 @@ export const buscarProdutos = async (request : any, response: any) => {
     response.status(200).send(produtos).end();
 };
 
-export const buscarProdutosPorId = async (request: { id: string }, response: any) => {
-     const { id } = request  
+export const buscarProdutoPorId = async (request: { id: string }, response: any) => {
+     const { id } = request
                         
 const produto = await prisma.produto.findUnique({
     where: { id: Number(id) },
@@ -35,7 +35,7 @@ const produto = await prisma.produto.findUnique({
   });
 
   if (!produto) {
-    return response.status(404).send({ error: "Pedido não encontrado" });
+    return response.status(404).send({ error: "Produto não encontrado" });
   }
   response.status(200).send(produto).end();
 

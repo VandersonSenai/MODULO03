@@ -3,7 +3,7 @@ import fastify from "fastify";
 import { prisma } from './lib/prisma'
 // import {} from  './controllers/ca'
 
-import { buscarProdutos, buscarProdutosPorId } from './controllers/produtoController'
+import { buscarProdutos, buscarProdutoPorId } from './controllers/produtoController'
 
 
 const app = fastify();
@@ -25,7 +25,41 @@ app.get("/teste", async (request, reply) => {
 
 app.get("/produtos", buscarProdutos)
 
-app.get("/produto/:id", buscarProdutosPorId)
+// app.get("/produto/:id", buscarProdutoPorId)
+app.get("/produto/:id", async (request, reply) => {
+    const { id } = request.params as {
+    id: string;
+    };
+const produto = await prisma.produto.findUnique({
+    where: { id: Number(id) },
+    select: {
+          id: true,
+          nome: true,
+          preco_custo: true,
+          preco_venda: true,
+          unidade_id: true,
+          categoria_id: true,
+          estado: true,
+              produto_categoria: {
+                      select: {
+                      id: true,
+                      nome: true,
+                  },
+              },
+              produto_unidade: {
+                  select: {
+                  id: true,
+                  abreviacao: true,
+                  },
+              },
+          },
+  });
+
+  if (!produto) {
+    return reply.status(404).send({ error: "Produto não encontrado" });
+  }
+  return produto;
+});
 
 
 
@@ -37,7 +71,7 @@ app.get("/categorias", async () => {
   return produto;
 });
 
-app.get("/categorias/:id", async (request, reply) => {
+app.get("/categoria/:id", async (request, reply) => {
     const { id } = request.params as {
     id: string;
     };
