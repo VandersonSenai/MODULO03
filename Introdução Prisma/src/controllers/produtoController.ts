@@ -1,14 +1,21 @@
-import { Decimal } from '../generated/prisma/runtime/library';
 import { prisma } from '../lib/prisma'
 
-export const buscarProdutos = async (request : any, response: any) => {
+
+
+
+export const buscarProdutos = async (request: any, response: any) => {
     const produtos = await prisma.produto.findMany()
     response.status(200).send(produtos).end();
 };
 
-export const buscarProdutoPorId = async (request: { id: string }, response: any) => {
-     const { id } = request
-                        
+// export const buscarProdutoPorId = async (request: { id: string }, response: any) => {
+//     const { id } = request as {
+//     id: string;
+//     };
+export const buscarProdutoPorId = async (request: any , response: any) => {
+    const { id } = request.params as {
+    id: string;
+    };
 const produto = await prisma.produto.findUnique({
     where: { id: Number(id) },
     select: {
@@ -37,6 +44,5 @@ const produto = await prisma.produto.findUnique({
   if (!produto) {
     return response.status(404).send({ error: "Produto não encontrado" });
   }
-  response.status(200).send(produto).end();
-
-}
+  return produto;
+};

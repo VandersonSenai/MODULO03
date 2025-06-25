@@ -4,6 +4,10 @@ import { prisma } from './lib/prisma'
 // import {} from  './controllers/ca'
 
 import { buscarProdutos, buscarProdutoPorId } from './controllers/produtoController'
+import { buscarCategorias, buscarCategoriaPorId } from './controllers/categoriaController'
+import { buscarUsuarios, buscarUsuarioPorId } from './controllers/usuariosController'
+import { buscarUnidades, buscarUnidadesPorId } from './controllers/unidadeController'
+import { buscarClientes, buscarClientePorId } from './controllers/clienteController'
 
 
 const app = fastify();
@@ -21,130 +25,121 @@ app.get("/teste", async (request, reply) => {
 });console.log("Servidor em execução")
 
 
-
-
 app.get("/produtos", buscarProdutos)
+// app.get("/produto/:id", async (request, reply) => {
+//     const { id } = request.params as {
+//     id: string;
+//     };
+app.get("/produto/:id", buscarProdutoPorId)
+// const produto = await prisma.produto.findUnique({
+//     where: { id: Number(id) },
+//     select: {
+//           id: true,
+//           nome: true,
+//           preco_custo: true,
+//           preco_venda: true,
+//           unidade_id: true,
+//           categoria_id: true,
+//           estado: true,
+//               produto_categoria: {
+//                       select: {
+//                       id: true,
+//                       nome: true,
+//                   },
+//               },
+//               produto_unidade: {
+//                   select: {
+//                   id: true,
+//                   abreviacao: true,
+//                   },
+//               },
+//           },
+//   });
+//   if (!produto) {
+//     return reply.status(404).send({ error: "Produto não encontrado" });
+//   }
+//   return produto;
+// });
+app.get("/categorias", buscarCategorias)
+// app.get("/categorias", async () => {
+//      const produto = await prisma.produto.findMany()
+//   return produto;
+// });
+app.get("/categoria/:id", buscarCategoriaPorId)
+// app.get("/categoria/:id", async (request, reply) => {
+//     const { id } = request.params as {
+//     id: string;
+//     };
+//   const categoria = await prisma.produto_categoria.findUnique({
+//     where: { id: Number(id) },
+//     select: {
+//         id: true,
+//         nome: true,
+//         descricao: true,
+//         // ativo: true,
+//                     },
+//   });
+//   if (!categoria) {
+//     return reply.status(404).send({ error: "Pedido não encontrado" });
+//   }
+//   return categoria;
+// });
+app.get("/usuarios", buscarUsuarios)
+// app.get("/usuarios", async () => {
+//      const usuarios = await prisma.usuario.findMany()
+//   return usuarios;
+// });
+app.get("/usuario/:id", buscarUsuarioPorId)
+// app.get("/usuario/:id", async (request, reply) => {
+//     const { id } = request.params as {
+//     id: string;
+//     };
+//   const usuario = await prisma.produto_unidade.findUnique({
+//     where: { id: Number(id) },
+//     select: {
+//         id: true,
+//         nome: true,
+//         abreviacao: true,
+//         ativo: true,
+//                     },
+//   });
 
-// app.get("/produto/:id", buscarProdutoPorId)
-app.get("/produto/:id", async (request, reply) => {
-    const { id } = request.params as {
-    id: string;
-    };
-const produto = await prisma.produto.findUnique({
-    where: { id: Number(id) },
-    select: {
-          id: true,
-          nome: true,
-          preco_custo: true,
-          preco_venda: true,
-          unidade_id: true,
-          categoria_id: true,
-          estado: true,
-              produto_categoria: {
-                      select: {
-                      id: true,
-                      nome: true,
-                  },
-              },
-              produto_unidade: {
-                  select: {
-                  id: true,
-                  abreviacao: true,
-                  },
-              },
-          },
-  });
+//   if (!usuario) {
+//     return reply.status(404).send({ error: "Pedido não encontrado" });
+//   }
+//   return usuario;
+// });
 
-  if (!produto) {
-    return reply.status(404).send({ error: "Produto não encontrado" });
-  }
-  return produto;
-});
+app.get("/unidades", buscarUnidades)
+// app.get("/unidades", async () => {
+//      const unidades = await prisma.produto_unidade.findMany()
+//   return unidades;
+// });
+app.get("/unidade/:id", buscarUnidadesPorId)
+// app.get("/unidade/:id", async (request, reply) => {
+//     const { id } = request.params as {
+//     id: string;
+//     };
+//   const unidade = await prisma.produto_unidade.findUnique({
+//     where: { id: Number(id) },
+//     select: {
+//         id: true,
+//         nome: true,
+//         abreviacao: true,
+//         ativo: true,
+//                     },
+//   });
+
+//   if (!unidade) {
+//     return reply.status(404).send({ error: "Pedido não encontrado" });
+//   }
+//   return unidade;
+// });
 
 
+app.get("/clientes", buscarClientes)
+app.get("/cliente/:id", buscarClientePorId)
 
-
-
-
-app.get("/categorias", async () => {
-     const produto = await prisma.produto.findMany()
-  return produto;
-});
-
-app.get("/categoria/:id", async (request, reply) => {
-    const { id } = request.params as {
-    id: string;
-    };
-  const categoria = await prisma.produto_categoria.findUnique({
-    where: { id: Number(id) },
-    select: {
-        id: true,
-        nome: true,
-        descricao: true,
-        // ativo: true,
-                    },
-  });
-
-  if (!categoria) {
-    return reply.status(404).send({ error: "Pedido não encontrado" });
-  }
-  return categoria;
-});
-
-
-
-
-app.get("/usuarios", async () => {
-     const usuarios = await prisma.usuario.findMany()
-  return usuarios;
-});
-
-app.get("/usuario/:id", async (request, reply) => {
-    const { id } = request.params as {
-    id: string;
-    };
-  const usuario = await prisma.produto_unidade.findUnique({
-    where: { id: Number(id) },
-    select: {
-        id: true,
-        nome: true,
-        abreviacao: true,
-        ativo: true,
-                    },
-  });
-
-  if (!usuario) {
-    return reply.status(404).send({ error: "Pedido não encontrado" });
-  }
-  return usuario;
-});
-
-
-
-app.get("/unidades", async () => {
-     const unidades = await prisma.produto_unidade.findMany()
-  return unidades;
-});
-
-app.get("/unidade/:id", async (request, reply) => {
-    const { id } = request.params as {
-    id: string;
-    };
-  const unidade = await prisma.produto_unidade.findUnique({
-    where: { id: Number(id) },
-    select: {
-        id: true,
-        nome: true,
-        abreviacao: true,
-        ativo: true,
-                    },
-  });
-
-  if (!unidade) {
-    return reply.status(404).send({ error: "Pedido não encontrado" });
-  }
-  return unidade;
-});
 
 app.get("/pedidos/:id", async (request, reply) => {
   const { id } = request.params as {
