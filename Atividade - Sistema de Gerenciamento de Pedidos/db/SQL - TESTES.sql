@@ -10,28 +10,11 @@ FROM db_final_boss.pedido AS pedido
 JOIN db_final_boss.pedido_produtos AS produtos  
 ON pedido.id = produtos.pedido_id;
 
-SELECT *  , sum(totalStreams)
-FROM db_final_boss.pedido_produtos AS produtos  
-JOIN db_final_boss.pedido AS pedido  
-ON produtos.pedido_id = pedido.id ;
-
 SELECT pedido.id, COUNT(produtos.pedido_id) AS total_produtos
 FROM db_final_boss.pedido AS pedido
 JOIN db_final_boss.pedido_produtos AS produtos
 ON pedido.id = produtos.pedido_id
 GROUP BY pedido.id;
-
-SELECT preco, sum(preco) AS total_preco
-FROM db_final_boss.produtos AS produtos
-JOIN db_final_boss.pedido AS pedido_produtos
-ON pedido.id = produtos.pedido_id
-GROUP BY pedido.id;
-
-SELECT descricao, sum(preco)
-FROM db_final_boss.produtos AS produtos
-JOIN db_final_boss.pedido_produtos AS pedido_produtos
-GROUP BY pedido_produtos.pedido_id;
-;
 
   
 SELECT 
@@ -45,4 +28,80 @@ JOIN
 GROUP BY 
   pedido_produtos.pedido_id, pedido_produtos.pedido_clientes_id;
   
+  
+SELECT 
+  p.id AS pedido_id,
+  c.nome AS nome_cliente,
+  u.nome AS nome_usuario,
+  p.forma_pgto,
+  p.status,
+  SUM(pp.quatidade * pr.preco) AS total_pedido
+FROM 
+  pedido_produtos pp
+JOIN 
+  produtos pr ON pp.produtos_id = pr.id
+JOIN 
+  pedido p ON pp.pedido_id = p.id AND pp.pedido_clientes_id = p.clientes_id
+JOIN 
+  clientes c ON p.clientes_id = c.id
+JOIN 
+  usuarios u ON p.usuarios_id = u.id
+GROUP BY 
+  p.id, c.nome, u.nome, p.forma_pgto, p.status;
 
+
+
+SELECT 
+  pp.pedido_id,
+  pp.produtos_id,
+  pr.nome AS nome_produto,
+  pr.preco,
+  SUM(pp.quatidade) AS total_quantidade,
+  SUM(pp.quatidade * pr.preco) AS total_por_produto
+FROM 
+  pedido_produtos pp
+JOIN 
+  produtos pr ON pp.produtos_id = pr.id
+GROUP BY 
+  pp.pedido_id, pp.produtos_id, pr.nome, pr.preco
+ORDER BY 
+  pp.pedido_id, pp.produtos_id;
+  
+  
+CREATE VIEW listarItensdoPedido AS
+SELECT 
+  pp.pedido_id,
+  pp.produtos_id,
+  pr.nome AS nome_produto,
+  pr.preco,
+  SUM(pp.quatidade) AS total_quantidade,
+  SUM(pp.quatidade * pr.preco) AS total_por_produto
+FROM 
+  pedido_produtos pp
+JOIN 
+  produtos pr ON pp.produtos_id = pr.id
+GROUP BY 
+  pp.pedido_id, pp.produtos_id, pr.nome, pr.preco
+ORDER BY 
+  pp.pedido_id, pp.produtos_id;
+  
+CREATE VIEW listarPedisosResumido AS
+SELECT 
+  p.id AS pedido_id,
+  c.nome AS nome_cliente,
+  u.nome AS nome_usuario,
+  p.forma_pgto,
+  p.status,
+  SUM(pp.quatidade * pr.preco) AS total_pedido
+FROM 
+  pedido_produtos pp
+JOIN 
+  produtos pr ON pp.produtos_id = pr.id
+JOIN 
+  pedido p ON pp.pedido_id = p.id AND pp.pedido_clientes_id = p.clientes_id
+JOIN 
+  clientes c ON p.clientes_id = c.id
+JOIN 
+  usuarios u ON p.usuarios_id = u.id
+GROUP BY 
+  p.id, c.nome, u.nome, p.forma_pgto, p.status;
