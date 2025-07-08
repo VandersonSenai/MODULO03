@@ -11,9 +11,8 @@ export const criarProduto = (req, res) => {
   const produto = {
     nome: req.body.nome,
     descricao: req.body.descricao,
-    categoria: req.body.categoria,
+    estoque: req.body.estoque,
     preco: req.body.preco,
-    imagem: req.body.imagemUrl,
   };
 
   inserirProduto(produto, (erro) => {
@@ -51,9 +50,8 @@ export const editarProduto = (req, res) => {
   const produto = {
     nome: req.body.nome,
     descricao: req.body.descricao,
-    categoria: req.body.categoria,
+    estoque: req.body.estoque,
     preco: req.body.preco,
-    imagem: req.body.imagemUrl,
   };
 
   atualizarProduto(id, produto, (erro) => {

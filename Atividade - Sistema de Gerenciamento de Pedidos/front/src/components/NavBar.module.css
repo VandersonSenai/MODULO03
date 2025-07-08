@@ -1,0 +1,107 @@
+.navbar_custom {
+    background-color: var(--light-gray);
+    -webkit-box-shadow  : 0 8px 2px -6px #999;
+    -moz-box-shadow     : 0 8px 2px -6px #999;
+    box-shadow          : 0 8px 2px -6px #999;
+    z-index:999;
+    margin: 0px;
+    padding: 0px;
+  
+   a {
+    color: var(--primary-dark-blue);
+
+    } 
+
+  p {
+    color: var(---primary-dark-blue);
+  }
+  h1 {
+    color: var(--primary-dark-blue);
+  }
+  .text{
+    color: var(--primary-dark-blue);
+    transition: 'all 0.5s ease';
+  }
+
+  .text:hover {
+    transition: 'all 0.5s ease';
+    color: var(--primary-dark-blue);
+    fill: var(--primary-dark-blue);
+  }
+
+  svg {
+    color: var(---primary-dark-blue);
+  }
+
+  .link {
+    text-decoration: none;
+    color: var(--primary-dark-blue);
+    margin: 0px 10px;
+    color: var(--primary-dark-blue );
+  } 
+  /* hover no texto do menu */
+  /* .link:hover{
+    color: var(--clr-laranja);
+    text-decoration: underline;
+  }
+   */
+  
+  /* .link:after{
+    color: var(--clr-laranja);
+    text-decoration: underline;
+  } */
+
+  /* .nav-link-active{
+    color: var(--clr-laranja);
+    text-decoration: underline;
+  } */
+
+
+  /* alterando cor no texto Visitante/Login */
+  .login {
+    color: var(--primary-dark-blue);
+    padding: 0.5em;
+  }
+  /* hover no texto Visitante/Login */
+  .login:hover {
+    color: var(--primary-dark-blue);
+    text-decoration: none;
+
+  }
+  
+
+  .navbar_toggler {
+    border-color:   var(--primary-dark-blue);
+    fill:           var(--primary-dark-blue);
+    color:          var(--primary-dark-blue);
+    stroke:         rgba(235, 16, 16, 0.5);
+    color: white;
+    border-color: white;
+  } 
+
+}
+
+  .navbar_toggler {
+    border-color:   var(--primary-dark-blue);
+    fill:           var(--primary-dark-blue);
+    color:          var(--primary-dark-blue);
+    stroke:         rgba(206, 11, 11, 0.5);
+    color: white;
+    border-color: white;
+  } 
+
+  .navbar_toggler:hover {
+    background-color: var(--clr-laranja);
+    border-color: var(--clr-laranja);
+  }
+
+a {
+  color: var(--primary-dark-blue);
+  text-decoration: none;
+  transition: all 0.5s ease;}
+a:hover{
+  color: var(--primary-dark-blue) !important;
+  text-decoration: underline !important;
+  transition: 'all 0.5s ease';
+  /* border-bottom: 2px solid var(--clr-laranja); */
+}  

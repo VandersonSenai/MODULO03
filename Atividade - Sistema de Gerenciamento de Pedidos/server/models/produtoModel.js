@@ -1,48 +1,46 @@
-import conn from "../config/conect.js"; 
+import banco from "../config/conect.js"; 
+
+export const buscarProdutos = (callback) => {
+  const sql = `SELECT * FROM produtos`; 
+  banco.query(sql, callback);
+};
 
 export const inserirProduto = (produto, callback) => {
   const sql = `
-    INSERT INTO produtos (nome_prod, descricao_prod, categoria_prod, preco_prod, imagem_prod)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO produtos (nome, descricao, preco, estoque)
+    VALUES (?, ?, ?, ?)
   `;
   const valores = [
     produto.nome,
     produto.descricao,
-    produto.categoria,
+    produto.estoque,
     produto.preco,
-    produto.imagem,
   ];
-  conn.query(sql, valores, callback);
-};
-
-export const buscarProdutos = (callback) => {
-  const sql = `SELECT * FROM prod_cat`; // View ou join
-  conn.query(sql, callback);
+  banco.query(sql, valores, callback);
 };
 
 export const buscarProdutoPorId = (id, callback) => {
-  const sql = `SELECT * FROM produtos WHERE id_prod = ?`;
-  conn.query(sql, [id], callback);
+  const sql = `SELECT * FROM produtos WHERE id = ?`;
+  banco.query(sql, [id], callback);
 };
 
 export const atualizarProduto = (id, produto, callback) => {
   const sql = `
     UPDATE produtos
-    SET nome_prod = ?, descricao_prod = ?, categoria_prod = ?, preco_prod = ?, imagem_prod = ?
-    WHERE id_prod = ?
+    SET nome = ?, descricao = ?, preco = ?, estoque = ?
+    WHERE id = ?
   `;
   const valores = [
     produto.nome,
     produto.descricao,
-    produto.categoria,
+    produto.estoque,
     produto.preco,
-    produto.imagem,
     id,
   ];
-  conn.query(sql, valores, callback);
+  banco.query(sql, valores, callback);
 };
 
 export const deletarProduto = (id, callback) => {
-  const sql = `DELETE FROM produtos WHERE id_prod = ?`;
-  conn.query(sql, [id], callback);
+  const sql = `DELETE FROM produtos WHERE id = ?`;
+  banco.query(sql, [id], callback);
 };

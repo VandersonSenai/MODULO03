@@ -16,7 +16,6 @@ export const listarUsuarios = (req, res) => {
 };
 export const criarUsuario = (req, res) => {
   const usuario = {
-    login: req.body.login,
     nome: req.body.nome,
     email: req.body.email,
     tipo: req.body.tipo,    
@@ -48,7 +47,6 @@ export const editarUsuario = (req, res) => {
   const { id } = req.params;
 
   const usuario = {
-    login: req.body.login,
     nome: req.body.nome,
     email: req.body.email,
     tipo: req.body.tipo,    

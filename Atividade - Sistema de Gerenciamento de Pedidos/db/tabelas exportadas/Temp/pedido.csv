@@ -1,0 +1,4 @@
+id;clientes_id;status;usuarios_id;forma_pgto;total
+1;1;Entregue;1;Pix;0.0
+2;2;Em preparo;1;Debito;0.0
+3;3;Pendente;1;Pix;0.0

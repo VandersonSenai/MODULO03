@@ -7,6 +7,7 @@ const conn = mysql.createConnection({
   user: "root",
   password: "",
   database: "mercado",
+  // database: "mercado",
 });
 
 // Código pra só iniciar a aplicação se conectar ao banco primeiro

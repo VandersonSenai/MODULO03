@@ -14,7 +14,7 @@ banco.connect((erro) => {
   if (erro) {
     console.log(erro);
   } else {
-    console.log("Conectado com sucesso");
+    console.log("Conectado com sucesso ao banco [ db_final_boss ]");
   }
 });
 

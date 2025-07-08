@@ -7,11 +7,11 @@ import clienteRoute from './routes/clienteRoute.js';
 import pedidoRoute from './routes/pedidoRoute.js';
 
 const app = express();
-const port = 5000;
+const port = 5001;
 
 // MW
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: `http://localhost:5184`,
   credentials: true
 }));
 app.use(express.json());

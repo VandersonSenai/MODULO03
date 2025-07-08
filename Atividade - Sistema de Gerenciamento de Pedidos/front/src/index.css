@@ -1,0 +1,93 @@
+.App {
+  background-color: rgb(231, 231, 231);
+  height: 100%;
+}
+.error {
+  color: red;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+:root {
+  --primary-dark-blue: rgb(44, 62, 80);
+  --white: rgb(255, 255, 255);
+  --light-gray: rgb(245, 247, 250);
+  --medium-gray: rgb(224, 224, 224);
+  --dark-text: rgb(51, 51, 51);
+  --soft-gray: rgb(237, 242, 247);
+  --secondary-blue: rgb(52, 152, 219);
+  --success-green: rgb(56, 161, 105);
+  --error-red: rgb(229, 62, 62);
+
+  /* background-color: var(--clr-base-dark); */
+  -webkit-font-smoothing: antialiased;
+}
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
